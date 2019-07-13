@@ -5,7 +5,7 @@
  * @version 1.0
  * @since 11-July-2019
  */
-package meta.mainApp;
+package meta.main;
 
 import java.util.Scanner;
 
