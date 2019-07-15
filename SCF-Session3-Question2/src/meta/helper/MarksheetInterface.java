@@ -6,7 +6,7 @@
  */
 package meta.helper;
 
-public interface SpecificationQn2_MarksheetInterface {
+public interface MarksheetInterface {
 	public double averageGrade(double[] grades) throws ArithmeticException;
 	public double maximumGrade(double[] grades) throws ArithmeticException;
 	public double minimumGrade(double[] grades) throws ArithmeticException;

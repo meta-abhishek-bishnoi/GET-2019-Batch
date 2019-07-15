@@ -8,7 +8,7 @@ package meta.helper;
 
 import java.text.DecimalFormat;
 
-public class SpecificationQn2_MarksheetImple implements SpecificationQn2_MarksheetInterface{
+public class MarksheetImplementation implements MarksheetInterface{
 
 	private DecimalFormat decimalFormat = new DecimalFormat("##.##");
 	/*

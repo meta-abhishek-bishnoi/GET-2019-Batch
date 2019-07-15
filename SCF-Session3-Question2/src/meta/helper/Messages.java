@@ -6,7 +6,7 @@
  */
 package meta.helper;
 
-public class SpecificationQn2_Message {
+public class Messages {
 	public static final String NO_OF_STUDENTS = "Enter No Of Students";
 	public static final String GRADES_FOR_STUDENT = "Enter Grade Of Student No. ";
 	public static final String ERROR_MARKS = "Marks Must Be Greater Zero";

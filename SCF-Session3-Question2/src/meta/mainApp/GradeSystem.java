@@ -8,34 +8,34 @@ package meta.mainApp;
 
 import java.util.Scanner;
 
-import meta.helper.SpecificationQn2_MarksheetImple;
-import meta.helper.SpecificationQn2_Message;
+import meta.helper.MarksheetImplementation;
+import meta.helper.Messages;
 
-public class SpecificationQn2 {
+public class GradeSystem {
 	public static void main(String[] args) {
-		SpecificationQn2_MarksheetImple service = new SpecificationQn2_MarksheetImple();
+		MarksheetImplementation service = new MarksheetImplementation();
 		// service class object
-		int NoOfStudents = getIntInput( SpecificationQn2_Message.NO_OF_STUDENTS );
+		int NoOfStudents = getIntInput( Messages.NO_OF_STUDENTS );
 		// getting no of students
 		double studentsGradesData[] = new double[NoOfStudents]; // array to store data of students
 		/*
 		 * loop for getting data(grades) from user
 		 */
 		for(int i=0; i<NoOfStudents; i++){
-			String message = SpecificationQn2_Message.GRADES_FOR_STUDENT;
+			String message = Messages.GRADES_FOR_STUDENT;
 			studentsGradesData[i] = getDoubleInput( message, i+1 );
 		}
 		double averageGrades = service.averageGrade(studentsGradesData); // average grades in class room
 		double maximumGrades = service.maximumGrade(studentsGradesData); // maximum grade of classroom
 		double minimumGrades = service.minimumGrade(studentsGradesData); // minimum grade of classroom
 		double studentsPassingPercentage = service.getPassedStudentPercentage(studentsGradesData);
-		String message = SpecificationQn2_Message.AVG_MARKS;
+		String message = Messages.AVG_MARKS;
 		printResult(message,averageGrades); // printing result
-		message = SpecificationQn2_Message.MAX_MARKS;
+		message = Messages.MAX_MARKS;
 		printResult(message,maximumGrades);
-		message = SpecificationQn2_Message.MIN_MARKS;
+		message = Messages.MIN_MARKS;
 		printResult(message,minimumGrades);
-		message = SpecificationQn2_Message.PASS_STU;
+		message = Messages.PASS_STU;
 		printResult(message,studentsPassingPercentage);
 	}
 
@@ -63,7 +63,7 @@ public class SpecificationQn2 {
 		 * and return same function or recursively call
 		 */
 		if(inputGrade<=0){
-			System.out.println(SpecificationQn2_Message.ERROR_MARKS);
+			System.out.println(Messages.ERROR_MARKS);
 			return getDoubleInput(message,i);
 		}
 		return inputGrade;
@@ -82,7 +82,7 @@ public class SpecificationQn2 {
 		 * and return same function or recursively call
 		 */
 		if(studentsNo<=0){
-			System.out.println(SpecificationQn2_Message.ERROR_INPUT);
+			System.out.println(Messages.ERROR_INPUT);
 			return getIntInput(noOfStudents);
 		}
 		return studentsNo;
