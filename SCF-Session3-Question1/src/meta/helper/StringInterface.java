@@ -6,7 +6,7 @@
  */
 package meta.helper;
 
-public interface SpecificationQn1_StirngInterface {
+public interface StringInterface {
 	public int isEquals(String stringOne, String stringTwo);
 	public String reverseString(String stringOne);
 	public String convertStringToZigZag(String stringOne);

@@ -6,7 +6,7 @@
  */
 package meta.helper;
 
-public class SpecificationQn1_Messages {
+public class Messages {
 	public static final String ARRAY_CHOICE_MESSAGE[] = 
 		{"Press A- To Compare Two String If they are Equal",
 		 "Press B- For Reverse Of String",

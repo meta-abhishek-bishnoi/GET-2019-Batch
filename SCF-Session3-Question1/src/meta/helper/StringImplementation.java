@@ -6,7 +6,7 @@
  */
 package meta.helper;
 
-public class SpecificationQn1_StringImple implements SpecificationQn1_StirngInterface {
+public class StringImplementation implements StringInterface {
 
 	/*
 	 * (non-Javadoc)
