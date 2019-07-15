@@ -7,7 +7,7 @@
  */
 package meta.helper;
 
-public class StaticCheckingAndCodeReviewQn2_Service {
+public class FCFS_Service {
 	/*
 	 *  @param timeArray[] this array is the time table of process (arrival time & brust time)
 	 *  @param numberOfProcess is the number of total process 

@@ -8,16 +8,16 @@ package meta.mainApp;
 
 import java.util.Scanner;
 
-import meta.helper.StaticCheckingAndCodeReviewQn2_Message;
-import meta.helper.StaticCheckingAndCodeReviewQn2_Service;
+import meta.helper.Messages;
+import meta.helper.FCFS_Service;
 
-public class StaticCheckingAndCodeReviewQn2 {
+public class FCFS_Main {
 
 	public static void main(String[] args) {
 		Scanner scanNumber = new Scanner(System.in);
-		StaticCheckingAndCodeReviewQn2_Service service = new StaticCheckingAndCodeReviewQn2_Service();
+		FCFS_Service service = new FCFS_Service();
 		// Object of class to access the services to calculate values
-		System.out.println(StaticCheckingAndCodeReviewQn2_Message.ENTER_PROCESS_MESSAGE);
+		System.out.println(Messages.ENTER_PROCESS_MESSAGE);
 		int noOfProcesses = scanNumber.nextInt();
 		int processCompilationTime[] = new int[noOfProcesses];// contains data of compilation time
 		int processTrunAroundTime[] = new int[noOfProcesses]; // contains data of turn around time
@@ -26,12 +26,12 @@ public class StaticCheckingAndCodeReviewQn2 {
 		// this is list of processes contains arrival time and brust time
 		int processMaximumWaitingTime=0;
 		double processAverageTime=0;
-		System.out.println(StaticCheckingAndCodeReviewQn2_Message.USER_INPUT_MESSAGE);
+		System.out.println(Messages.USER_INPUT_MESSAGE);
 		/*
 		 * this loop is taking input values from user into processArrivalTime[][] Array
 		 */
 		for(int i=0; i<noOfProcesses; i++){
-			System.out.println(StaticCheckingAndCodeReviewQn2_Message.EACH_PROCESS_MESSAGE+": "+i+1);
+			System.out.println(Messages.EACH_PROCESS_MESSAGE+": "+i+1);
 			for(int j=0; j<2; j++){
 				processArrivalTime[i][j]=scanNumber.nextInt();
 			}
@@ -53,13 +53,13 @@ public class StaticCheckingAndCodeReviewQn2 {
 		/*
 		 * results
 		 */
-		System.out.println(StaticCheckingAndCodeReviewQn2_Message.RESULT_MESSAGE);
+		System.out.println(Messages.RESULT_MESSAGE);
 		for(int i=0; i<noOfProcesses; i++)
 		{
 			System.out.println(i+1+".\t"+""+processCompilationTime[i]+"\t\t"+processTrunAroundTime[i]+"\t\t"+processWaitingTime[i]);
 		}
-		System.out.println(StaticCheckingAndCodeReviewQn2_Message.AVG_WAITING_TIME+": "+processAverageTime);
-		System.out.println(StaticCheckingAndCodeReviewQn2_Message.MAXIMUM_WAITING_TIME+": "+processMaximumWaitingTime);
+		System.out.println(Messages.AVG_WAITING_TIME+": "+processAverageTime);
+		System.out.println(Messages.MAXIMUM_WAITING_TIME+": "+processMaximumWaitingTime);
 	}
 
 }

@@ -6,7 +6,7 @@
  */
 package meta.helper;
 
-public class StaticCheckingAndCodeReviewQn2_Message 
+public class Messages 
 {
 	public static final String ENTER_PROCESS_MESSAGE = "Enter No Of Processes";
 	public static final String USER_INPUT_MESSAGE = "Enter Process in incresing order of arrival time";
