@@ -6,6 +6,6 @@
  */
 package meta.helper;
 
-public interface SpecificationQn3_ShapeInterface {
+public interface ShapeAreaInterface {
 	public double getArea( double dimentionOne,double dimentionTwo,String shapeName ) throws ArithmeticException;
 }

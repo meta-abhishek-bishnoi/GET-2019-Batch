@@ -8,7 +8,7 @@ package meta.helper;
 
 import java.text.DecimalFormat;
 
-public class SpecificationQn3_ShapeImplementation implements SpecificationQn3_ShapeInterface {
+public class ShapeAreaImplementation implements ShapeAreaInterface {
 
 	private DecimalFormat decimalFormat = new DecimalFormat("##.##");
 	/*
@@ -97,7 +97,7 @@ public class SpecificationQn3_ShapeImplementation implements SpecificationQn3_Sh
 	 * Assumption @param is in lower case
 	 */
 	private int getShapeIndex(String shapeName) {
-		String shapes[] = SpecificationQn3_Message.SHAPES;
+		String shapes[] = Messages.SHAPES;
 		int length = shapes.length;
 		for( int i=0; i<length; i++ ){
 			if(shapeName.equals(shapes[i])){

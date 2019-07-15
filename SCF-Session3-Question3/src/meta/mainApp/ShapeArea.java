@@ -8,17 +8,17 @@ package meta.mainApp;
 
 import java.util.Scanner;
 
-import meta.helper.SpecificationQn3_Message;
-import meta.helper.SpecificationQn3_ShapeImplementation;
+import meta.helper.Messages;
+import meta.helper.ShapeAreaImplementation;
 
-public class SpecificationQn3 {
+public class ShapeArea {
 	public static void main(String[] args) {
 		Scanner scanChar = new Scanner(System.in);
 		// java.util.Scanner object
-		SpecificationQn3_ShapeImplementation service = new SpecificationQn3_ShapeImplementation();
+		ShapeAreaImplementation service = new ShapeAreaImplementation();
 		// object to access service 
-		String messages[] = SpecificationQn3_Message.CHOICE_INPUT;
-		String shapes[] = SpecificationQn3_Message.SHAPES;
+		String messages[] = Messages.CHOICE_INPUT;
+		String shapes[] = Messages.SHAPES;
 		// storing messages to String array
 		int length = messages.length;
 		char cont='y';
@@ -36,53 +36,53 @@ public class SpecificationQn3 {
 			switch(choice){
 			case 'a':
 			case 'A':
-				shapeName = SpecificationQn3_Message.SHAPES[0];
-				message = SpecificationQn3_Message.TRIANGLE_HEIGHT;// taking input by calling a function
+				shapeName = Messages.SHAPES[0];
+				message = Messages.TRIANGLE_HEIGHT;// taking input by calling a function
 				double heightTri = input(message);
-				message = SpecificationQn3_Message.TRIANGLE_BASE;
+				message = Messages.TRIANGLE_BASE;
 				double baseTri =  input(message);
 				double resultTri = service.getArea(heightTri, baseTri, shapeName); 
 				// area calculation using service object functions
-				message = SpecificationQn3_Message.RESULT_TRIANGLE;
+				message = Messages.RESULT_TRIANGLE;
 				printResult("Result",resultTri);
 				break;
 			case 'b':
 			case 'B':
-				shapeName = SpecificationQn3_Message.SHAPES[1];
-				message = SpecificationQn3_Message.RECT_HEIGHT;
+				shapeName = Messages.SHAPES[1];
+				message = Messages.RECT_HEIGHT;
 				double heightRect = input(message);
-				message = SpecificationQn3_Message.RECT_WIDTH;
+				message = Messages.RECT_WIDTH;
 				double widthRect =  input(message);
 				double resultRect = service.getArea(heightRect, widthRect, shapeName);
 				// area calculation using service object functions
-				message = SpecificationQn3_Message.RESULT_RECTANGLE;
+				message = Messages.RESULT_RECTANGLE;
 				printResult("Result",resultRect);
 				break;
 			case 'c':
 			case 'C':
-				shapeName = SpecificationQn3_Message.SHAPES[2];
-				message = SpecificationQn3_Message.SQURE_SIDE;
+				shapeName = Messages.SHAPES[2];
+				message = Messages.SQURE_SIDE;
 				double side =  input(message);
 				double resultSqure = service.getArea(side, side, shapeName);
 				// area calculation using service object functions
-				message = SpecificationQn3_Message.RESULT_SQURE;
+				message = Messages.RESULT_SQURE;
 				printResult("Result",resultSqure);
 				break;
 			case 'd':
 			case 'D':
-				shapeName = SpecificationQn3_Message.SHAPES[3];
-				message = SpecificationQn3_Message.CIRCLE_RADIOUS;
+				shapeName = Messages.SHAPES[3];
+				message = Messages.CIRCLE_RADIOUS;
 				double radious =  input(message);
 				double resultRadious= service.getArea(radious, radious, shapeName);
 				// area calculation using service object functions
-				message = SpecificationQn3_Message.RESULT_CIRCLE;
+				message = Messages.RESULT_CIRCLE;
 				printResult("Result",resultRadious);
 				break;
 			default:
-				message = SpecificationQn3_Message.DEFAULT_MESSAGE;
+				message = Messages.DEFAULT_MESSAGE;
 				System.out.println(message);
 			}
-			message = SpecificationQn3_Message.CONTINUE_MESSAGE;
+			message = Messages.CONTINUE_MESSAGE;
 			System.out.println(message);
 			cont = scanChar.next().charAt(0);
 		}while(cont=='Y'||cont=='y');
@@ -104,7 +104,7 @@ public class SpecificationQn3 {
 		System.out.println(message);
 		double input = scanNumbers.nextDouble();
 		if(input<0){
-			System.out.println(SpecificationQn3_Message.DIMENTION_ERROR);
+			System.out.println(Messages.DIMENTION_ERROR);
 			return input(message);
 		}
 		return input;

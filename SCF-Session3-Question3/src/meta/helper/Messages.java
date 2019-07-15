@@ -6,7 +6,7 @@
  */
 package meta.helper;
 
-public class SpecificationQn3_Message {
+public class Messages {
 	public static final String SHAPES[] = { "triangle", "rectangle", "square", "circle" };
 	public static final String CHOICE_INPUT[] =
 		{"Press A. For Area Of ","Press B. For Area Of ","Press C. For Area Of ",
