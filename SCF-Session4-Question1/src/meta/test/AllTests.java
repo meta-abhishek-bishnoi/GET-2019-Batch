@@ -6,7 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ ClumpsTest.class, FixXYTest.class, MirrorSectionTest.class,
-		SplitArrayTest.class })
+		SplitArrayTest.class, FailTestCasesAllClasses.class })
 public class AllTests {
 
 }

@@ -1,89 +1,76 @@
 /*
- * 
+ * This is parameter test class 
+ * @author ABHISHEK BISHNOI
+ * @version 1.0
+ * @since 16-July-2019
  */
 package meta.test;
 
 import static org.junit.Assert.*;
 
 import java.io.IOException;
-import java.util.Properties;
+import java.util.Arrays;
+import java.util.Collection;
 
 import meta.utility.ArrOperations;
-import meta.utility.Clumps;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
+@RunWith(Parameterized.class)
 public class ClumpsTest {
+
 	private static ArrOperations operations;
-	private static Properties properties;
+	/*
+	 * This function runs before test function of the classes
+	 */
 	@BeforeClass
 	public static void start() throws IOException{
 		operations = new ArrOperations();
-		properties  = operations.getMessages();
 	}
 	/*
-	 * 
+	 * Testing function with @Parameters 
+	 * So these test cases will executes one by one(By Iteration)
+	 * so here we don't require to write too much test cases
 	 */
-	@Test
-	public void testGetClumpsCount1() {
-		
-		int arrayData[] = {1,1,1,1};
-		int expected = 1;
-		int actual = 0;
-		try {
-			actual = operations.getClumpsCount(arrayData);
-			assertEquals(expected, actual);
-		} catch (Exception e) {
-			System.out.println(e);
-			fail(properties.getProperty("EXCEPTION")+e);
-		}
-	}
-
-	@Test
-	public void testGetClumpsCount2() {
-		int arrayData[] = {1,2,2,3,4,4};
-		int expected = 2;
-		int actual = 0;
-		try {
-			actual = operations.getClumpsCount(arrayData);
-			assertEquals(expected, actual);
-		} catch (Exception e) {
-			System.out.println(e);
-			fail(properties.getProperty("EXCEPTION")+e);
-		}
-	}
-	
-	@Test
-	public void testGetClumpsCount3() {
-		int arrayData[] = {1,1,2,1,1};
-		int expected = 2;
-		int actual = 0;
-		try {
-			actual = operations.getClumpsCount(arrayData);
-			assertEquals(expected, actual);
-		} catch (Exception e) {
-			System.out.println(e);
-			fail(properties.getProperty("EXCEPTION")+e);
-		}
-	}
-	
+	 @Parameters
+	 public static Collection<Object[]> data() {
+		 return Arrays.asList(new Object[][] {
+				 { 1, new int[] {1, 1, 1, 2, 1} },
+				 { 2, new int[] {1, 2, 2, 3, 4, 5, 5, 5} },
+				 { 4, new int[] {1, 1, 4, 6, 9, 3, 3, 3, 3, 4, 4, 4, 6, 7, 5, 5}},
+				 { 0, new int[] {1, 2, 3, 4, 5, 6, 7 ,8 } },
+				 { 3, new int[] {1, 2, 2, 3, 3, 3, 4, 4, 4} }
+				 });
+	    }
+	    
+	 private int expected;
+	 private int[] inputArray;
+	 /*
+	  * Constructor Value for each testCase
+	  */
+	 public ClumpsTest(int expected, int[] inputArray){
+		 this.expected = expected;
+		 this.inputArray = inputArray;
+	 }
 	/*
-	 * false test cases
+	 * Runs For Each test Case    
 	 */
 	@Test
-	public void testGetClumpsCount4() throws Exception {
-		int arrayData[]={}; //sending null to fail test case
-		int expected = 0;
-		int actual = 0;
-		try {
-			actual = operations.getClumpsCount(arrayData);
-			assertEquals(expected, actual);
-		} catch (Exception e) {
-			System.out.println(e);
-			fail(properties.getProperty("EXCEPTION")+e);
-		}
+	public void test() throws Exception {
+		int actual = operations.getClumpsCount(inputArray);
+		assertEquals(expected,actual);
 	}
-	
+	/*
+	@Test(expected = IllegalArgumentException.class)
+	public static void failTest() throws Exception{
+		int actual = operations.getClumpsCount(inputArray);
+		assertEquals(expectedResult,actual);
+	}
+	*/
 }
+

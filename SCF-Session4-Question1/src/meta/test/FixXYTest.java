@@ -1,70 +1,73 @@
+/*
+ * This is parameter test class 
+ * This Class contains Testing Functions for FixXY Class
+ * @author ABHISHEK BISHNOI
+ * @version 1.0
+ * @since 16-July-2019
+ */
 package meta.test;
 
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Properties;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 import meta.utility.ArrOperations;
 import meta.utility.FixXY;
 
+@RunWith(Parameterized.class)
 public class FixXYTest {
 	private static ArrOperations operations;
-	private static Properties properties;
+	/*
+	 * This function runs before test function of the classes
+	 */
 	@BeforeClass
 	public static void start() throws IOException{
 		operations = new ArrOperations();
-		properties  = operations.getMessages();
 	}
-
-	@Test
-	public void testFixXy() {
-		int x = 4;
-		int y = 5;
-		int inputArray[] = {5,4,9,4,9,5};
-		int expectedArray[] = {9,4,5,4,5,9};
-		int resultArray[]=null;
-		try {
-			resultArray = operations.fixXy(x, y, inputArray);
-			assertArrayEquals(expectedArray,resultArray);
-		} catch (Exception e) {
-			System.out.println(e);
-			fail(properties.getProperty("EXCEPTION")+e);
-		}
-	}
-
-	@Test
-	public void testFixXy1() {
-		int x = 4;
-		int y = 5;
-		int inputArray[] = {1,4,1,5};
-		int expectedArray[] = {1,4,5,1};
-		int resultArray[]=null;
-		try {
-			resultArray = operations.fixXy(x, y, inputArray);
-			assertArrayEquals(expectedArray,resultArray);
-		} catch (Exception e) {
-			System.out.println(e);
-			fail(properties.getProperty("EXCEPTION")+e);
-		}
-	}
+	/*
+	 * Testing function with @Parameters 
+	 * So these test cases will executes one by one(By Iteration)
+	 * so here we don't require to write too much test cases
+	 */
+	@Parameters
+	public static Collection<Object[]> data() {
+		return Arrays.asList(new Object[][] {
+				{ 4, 5, new int[]{ 5, 4, 9, 4, 9, 5 }, new int[] { 9, 4, 5, 4, 5, 9 } },
+				{ 2, 3, new int[] { 1, 2, 1, 3, 2, 5, 6, 3 }, new int[] { 1, 2, 3, 1, 2, 3, 6, 5 }},
+				{ 4, 5, new int[] { 1, 4, 1, 5, 5, 4, 1 }, new int[]{1, 4, 5, 1, 1, 4, 5 }},
+				{ 0, 2, new int[] {2, 0, 1, 0, 2, 1}, new int[] {1, 0, 2, 0, 2, 1 }}, 
+				{ 1, 2, new int[] {3, 1, 3, 2, 2, 2, 1, 4, 1, 5}, new int[] {3, 1, 2, 3, 4, 5, 1, 2, 1, 2 }}
+				});
+	   }
+	private int x;
+	private int y;
+	private int expected[] ;
+	private int inputArray[];
 	
+	/*
+	 * Constructor Value for each testCase
+	 */
+	public FixXYTest( int x, int y, int[] inputArray, int[] expected ){
+		this.x = x;
+		this.y = y;
+		this.inputArray = inputArray;
+		this.expected = expected;
+	}
+	/*
+	 * Runs For Each test Case    
+	 */
 	@Test
-	public void testFixXy2() {
-		int x = 4;
-		int y = 5;
-		int inputArray[] = {1,4,1,5,5,4,1};
-		int expectedArray[] = {1,4,5,1,1,4,5};
-		int resultArray[]=null;
-		try {
-			resultArray = operations.fixXy(x, y, inputArray);
-			assertArrayEquals(expectedArray,resultArray);
-		} catch (Exception e) {
-			System.out.println(e);
-			fail(properties.getProperty("EXCEPTION")+e);
-		}
+	public void testFixXy() throws Exception {
+		int result[] = operations.fixXy(x, y, inputArray);
+		assertArrayEquals(expected,result);
 	}
 }
