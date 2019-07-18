@@ -33,7 +33,7 @@ public class Clumps{
 		 * throw an Exception if arraySize is zero
 		 */
 		if(arrayLength==0){
-			throw new IllegalArgumentException(properties.getProperty("SIZE_ZERO"));
+			throw new AssertionError(properties.getProperty("SIZE_ZERO"));
 		}
 		/*
 		 * 

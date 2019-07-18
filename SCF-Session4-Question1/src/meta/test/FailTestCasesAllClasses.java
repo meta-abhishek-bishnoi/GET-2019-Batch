@@ -22,7 +22,7 @@ public class FailTestCasesAllClasses {
 	 * This is fail test case for Clumps Class
 	 * when array size is zero
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = AssertionError.class)
 	public void failTestClupms() throws Exception {
 		 int expected=0;
 		 int[] inputArray={};
@@ -33,7 +33,7 @@ public class FailTestCasesAllClasses {
 	 *  This is fail test case for FixXY Class
 	 *  where array size is zero
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = AssertionError.class)
 	public void failTestFixXYOne() throws Exception {
 		 int x = 4;
 		 int y = 5;
@@ -59,7 +59,7 @@ public class FailTestCasesAllClasses {
 	 * This is fail test case for FixXY Class
 	 * When x -axis value is end of an array
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = AssertionError.class)
 	public void failTestFixXYThree() throws Exception {
 		 int x = 4;
 		 int y = 5;
@@ -72,7 +72,7 @@ public class FailTestCasesAllClasses {
 	 * This is fail test case for FixXY Class
 	 * when x-axis value is adjacent or x-axis and y-axis are equal
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = AssertionError.class)
 	public void failTestFixXYFour() throws Exception {
 		 int x = 4;
 		 int y = 4;
@@ -85,7 +85,7 @@ public class FailTestCasesAllClasses {
 	 * This is fail test case for MirrorSection Class
 	 * when array size is zero
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = AssertionError.class)
 	public void failTestMirror() throws Exception {
 		int expected = 0;
 		int array[] = {};
@@ -96,7 +96,7 @@ public class FailTestCasesAllClasses {
 	 * This is fail test case for SplitArray Class
 	 * when array size is zero
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = AssertionError.class)
 	public void failTestSplitArray() throws Exception {
 		int expected = 0;
 		int array[] = {};

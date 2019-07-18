@@ -29,7 +29,7 @@ public class SplitArray{
 		 * throws Exception if size is zero
 		 */
 		if(arrayLength==0){
-			throw new IllegalArgumentException(properties.getProperty("SIZE_ZERO"));
+			throw new AssertionError(properties.getProperty("SIZE_ZERO"));
 		}
 		/*
 		 * Checking Sum Of leftside and rightside

@@ -30,7 +30,7 @@ public class MirrorSection {
 		 * throws an exception if size is zero
 		 */
 		if(arraySize==0){
-			throw new IllegalArgumentException(properties.getProperty("SIZE_ZERO"));
+			throw new AssertionError(properties.getProperty("SIZE_ZERO"));
 		}
 		int arrayResultValue[][] = new int[arraySize+1][arraySize+1];
 		// 2-D array to track the data of last string matches

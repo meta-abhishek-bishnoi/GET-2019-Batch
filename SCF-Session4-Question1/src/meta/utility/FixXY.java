@@ -28,7 +28,7 @@ public class FixXY {
 		properties = operations.getMessages(); // loading messages in properties format
 		int dataLength = dataXY.length ; 
 		if(dataLength==0){ // throw Exception when size is zero
-			throw new IllegalArgumentException(properties.getProperty("SIZE_ZERO"));
+			throw new AssertionError(properties.getProperty("SIZE_ZERO"));
 		}
 		int indexesOfX[] = new int[dataLength]; // 
 		int indexesOfY[] = new int[dataLength]; //
@@ -46,13 +46,13 @@ public class FixXY {
 		 * section where we through an exception
 		 */
 		if(countOfX!=countOfY){ // if no of X-axis & Y-axis are not equal throw an Exception
-			throw new IllegalArgumentException(properties.getProperty("NOT_EQUAL_NUMBER"));
+			throw new AssertionError(properties.getProperty("NOT_EQUAL_NUMBER"));
 			// msg from .properties
 		}else if( x == dataXY[dataLength-1] ){ // if X-axis value is last value of array throw an Exception
-			throw new IllegalArgumentException(properties.getProperty("X_LAST_INDEX"));
+			throw new AssertionError(properties.getProperty("X_LAST_INDEX"));
 		}
 		else if(isXValAdjacent){ // if we found X-axis values adjacent then throw an Exception
-			throw new IllegalArgumentException(properties.getProperty("A_ADJACENT_VALUE"));
+			throw new AssertionError(properties.getProperty("A_ADJACENT_VALUE"));
 		}
 		/*
 		 *  Complexity O(n)
