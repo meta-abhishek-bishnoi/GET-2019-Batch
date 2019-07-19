@@ -14,7 +14,7 @@ public class HCF {
 	 * Assumption All Values Are Positive
 	 */
 	static int flag = -1;
-	public int hcf( ){ // hcf(3,5)
+	public static int hcf( ){ // hcf(3,5)
 		int hcf = 1;
 		if(flag==-1){
 			if( firstValue==0 || secondValue == 0){
