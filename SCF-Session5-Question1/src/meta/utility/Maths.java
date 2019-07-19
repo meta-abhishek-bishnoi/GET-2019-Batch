@@ -24,7 +24,7 @@ public class Maths {
 		 * Euclid Algorithm is works when first value is greater then second value
 		 * so in this section we swap the values if second value is larger then first
 		 */
-		if(flag==-1){
+		if(flag==-1){ // if we fount 0 value at first time of fn calling
 			if( firstValue==0 || secondValue == 0){
 				return 0;
 			}
@@ -58,7 +58,11 @@ public class Maths {
 		//return hcf;
 	}
 	/*
-	 * 
+	 * @param int first value to calculating lcm 
+	 * @param int second value to claculating lcm
+	 * @return int lcm value 
+	 * Auumption All Values Are Positive
+	 * Exception throws AssertionError when any value is Zero
 	 */
 	public static int lcm( int firstValue, int secondValue ) throws Exception{
 		int lcm = 0;
