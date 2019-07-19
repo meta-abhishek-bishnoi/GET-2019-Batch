@@ -18,6 +18,7 @@ public class BinarySearch implements Search {
 	 * @return int index of that element
 	 * Assumption All Values Are Positive
 	 * Assumption Array is always in sorter order
+	 * Assumption Values are Not repeat into array data
 	 * Exception AssertionError when array size is zero
 	 */
 	@Override
