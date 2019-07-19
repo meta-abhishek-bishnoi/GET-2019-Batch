@@ -1,5 +1,6 @@
 /*
  * This is Test class for testing function of MathsOperations 
+ * This Class contains common testcases for hcf and lcm
  * @author ABHISHEK BISHNOI
  * @version 1.0
  * @since 18-July-2019
