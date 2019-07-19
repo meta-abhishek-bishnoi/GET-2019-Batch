@@ -17,11 +17,13 @@ public class BinarySearch implements Search {
 	 * @param int[] dataset where we search
 	 * @return int index of that element
 	 * Assumption All Values Are Positive
+	 * Assumption Array is always in sorter order
 	 * Exception AssertionError when array size is zero
 	 */
 	@Override
 	public int search(int value, int[] array) {
 		int indexValue=-1;
+		
 		int midIndex;
 		if(firstIndex>lastIndex){
 			return indexValue;

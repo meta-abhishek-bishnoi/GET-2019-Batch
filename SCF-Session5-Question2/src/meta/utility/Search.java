@@ -6,6 +6,8 @@
 */
 package meta.utility;
 
+import java.io.IOException;
+
 public interface Search {
-	public int search(int value, int array[]);
+	public int search(int value, int array[]) throws IOException;
 }
