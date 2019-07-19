@@ -1,3 +1,11 @@
+/*
+* This class Contains Testcases for BinarySearch and LinearSearch
+* This Class Contains Common test case for binary and linear 
+* so testcases array should be sorted
+* @author ABHISHEK BISHNOI
+* @version 1.0
+* @since 17-July-2019
+*/
 package meta.test;
 
 import static org.junit.Assert.*;
@@ -31,6 +39,8 @@ public class SearchTest {
 	 * 	so here we don't require to write too much test cases
 	 * 	in test cases they contains in order of
 	 *  expected result value, starting index, last index , searching element and array  
+	 *  This testcase is common for binary and linear test 
+	 *	so input array shoud be sorted in incresing order
 	 */
 	@Parameters
 	public static Collection<Object[]> data(){
@@ -40,22 +50,30 @@ public class SearchTest {
 		});
 	}
 	/*
-	 * 
+	 *  variable initialization
 	 */
 	private int expected;
 	private int toBeSearch;
 	private int searchingArray[];
-	
+	/*
+	* This is constructor
+	*/
 	public SearchTest(int expected,int toBeSearch, int searchingArray[]){
 		this.expected = expected;
 		this.toBeSearch = toBeSearch;
 		this.searchingArray = searchingArray;
 	}
+	/*
+	* This is Test Function for Linear Search
+	*/
 	@Test
 	public void testLinearSearch() {
 		int actual = linearSearch.search(toBeSearch, searchingArray);
 		assertEquals(expected,actual);
 	}
+	/*
+	* This is Test Function for Binary Search
+	*/
 	@Test
 	public void testBinarySearch() {
 		int actual = binarySearch.search(toBeSearch, searchingArray);

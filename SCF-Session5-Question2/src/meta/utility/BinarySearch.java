@@ -1,8 +1,24 @@
+/*
+* This Class contains serach function 
+* using binary search algorithm
+* @author ABHISHEK BISHNOI
+* @version 1.0
+* @since 17-July-2019
+*/
 package meta.utility;
 
 public class BinarySearch implements Search {
 	int firstIndex=-1;
 	int lastIndex=-1;
+	/*
+	 * (non-Javadoc)
+	 * @see meta.utility.Search#search(int, int[])
+	 * @param int value to be search
+	 * @param int[] dataset where we search
+	 * @return int index of that element
+	 * Assumption All Values Are Positive
+	 * Exception AssertionError when array size is zero
+	 */
 	@Override
 	public int search(int value, int[] array) {
 		int indexValue=-1;
@@ -25,10 +41,10 @@ public class BinarySearch implements Search {
 			return indexValue;
 		}
 		if(array[midIndex]>value){
-			lastIndex = midIndex-1;
+			lastIndex = midIndex-1; // updating last index
 		}
 		if(array[midIndex]<value){
-			firstIndex = midIndex+1;
+			firstIndex = midIndex+1; // updating firstIndex
 		}
 		return search( value, array );
 	}

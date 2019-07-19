@@ -1,3 +1,9 @@
+/*
+* This is interface for Searching an Element 
+* @author ABHISHEK BISHNOI
+* @version 1.0
+* @since 17-July-2019
+*/
 package meta.utility;
 
 public interface Search {
