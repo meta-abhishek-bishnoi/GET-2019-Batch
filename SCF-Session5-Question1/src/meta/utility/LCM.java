@@ -1,11 +1,4 @@
- /*
- * This class Contains Recurrsive Function 
- * To Find LCM Value Of Two Numbers
- * @author ABHISHEK BISHNOI
- * @version 1.0
- * @since 18-July-2019
- */
- package meta.utility;
+package meta.utility;
 
 public class LCM {
 	private static int divisor=0;
@@ -13,8 +6,6 @@ public class LCM {
 	 * @param int as a first value
 	 * @param int as a second value
 	 * return int lcm value
-	 * Exception throw AssertionError when any value is zero to calculate LCM
-	 * Assumption All Values Are Positive
 	 */
 	public static int lcm(int firstValue, int secondValue)
 	{

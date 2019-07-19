@@ -1,9 +1,3 @@
-/*
-* This Class Contains Function to Calculte HCF using Recursive Fn Calling
-* @author ABHISHEK BISHNOI
-* @version 1.0
-* @since 18-July-2019
-*/
 package meta.utility;
 
 public class HCF {
