@@ -1,3 +1,11 @@
+/**
+ * This test cases is for subset function
+ * in this test case value sets and subsets are changes respectively 
+ * or we can say randomly but a subset contains all values of set 
+ * @author ABHISHEK BISHNOI
+ * @version 1.0
+ * @since 22-July-2019
+ */
 package meta.test;
 
 import static org.junit.Assert.*;
@@ -15,6 +23,13 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class IntSetIsSubSetTest {
 
+	/*
+	 * @parameter is used to avoid repeat of writing @Test function
+	 * In this block we set a Set value and a SubSet value wrt to Set 
+	 * and expected result 
+	 * This time we call some functions so each time we are getting various size of sets
+	 * with random value in it & subsets are always contains all values of set
+	 */
 	 @Parameters
 	 public static Collection<Object[]> data() {
 		 int set[];
@@ -41,6 +56,9 @@ public class IntSetIsSubSetTest {
 		 this.subset = subset;
 		 this.expected = expected;
 	 }
+	 /*
+	  * test cases
+	  */
 	@Test
 	public void test() {
 		 IntSet intSet = new IntSet(set);

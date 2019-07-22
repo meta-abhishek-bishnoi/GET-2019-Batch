@@ -1,3 +1,9 @@
+/*
+ * this class contains some test cases with fail and pass
+ * @author ABHISHEK BISHNOI
+ * @version 1.0
+ * @since 22-July-2019
+ */
 package meta.test;
 
 import static org.junit.Assert.*;

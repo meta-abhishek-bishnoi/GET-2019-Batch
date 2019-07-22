@@ -1,3 +1,11 @@
+/**
+ * This test cases is for isMember & size
+ * in this test case value sets and elements are changes respectively 
+ * or we can say randomly but element value contains value of set
+ * @author ABHISHEK BISHNOIS
+ * @version 1.0
+ * @since 22-July-2019
+ */
 package meta.test;
 
 import static org.junit.Assert.*;
@@ -55,13 +63,18 @@ public class IntSetIsMember_SizeTest {
 		 this.length = length;
 	 }
 	 
+	 /*
+	  * test cases for isMember()
+	  */
 	 @Test
 	 public void testIsMember(){
 		 IntSet intSet = new IntSet(set);
 		 boolean actual = intSet.isMember(value);
 		 assertEquals(result,actual);
 	 }
-	 
+	 /*
+	  * test cases for size()
+	  */
 	 @Test
 	 public void testSize(){
 		 IntSet intSet = new IntSet(set);
