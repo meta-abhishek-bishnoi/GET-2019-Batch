@@ -1,3 +1,9 @@
+/*
+* This class is contains expected array for addition and multiplication
+* @author ABHISHEK BISHNOI
+* @version 1.0
+* @since 22-July-2019
+*/
 package meta.test;
 
 public class testArrayAns {
