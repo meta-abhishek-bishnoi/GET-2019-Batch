@@ -61,7 +61,7 @@ public class Service
 	 * Complexity O(n^2)
 	 */
 	public int[][] addMatrix(int matrix1[][], int matrix2[][]){
-		if(matrix1.length!=matrix2.length && matrix1[0].length != matrix1[0].length){
+		if(matrix1.length!=matrix2.length || matrix1[0].length != matrix1[0].length){
 			throw new AssertionError("Addition Can't Perform");
 		}
 		int row = matrix1.length; 
