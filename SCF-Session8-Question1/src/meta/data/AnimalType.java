@@ -5,5 +5,5 @@ package meta.data;
  * Enum to store Available Animals In Zoo
  */
 public enum AnimalType{
-	LION, ELEPHANT, DEER, DOG, SNAKE, PEACOCK;
+	LION, ELEPHANT, DEER, DOG, SNAKE, PEACOCK,COCK,TURTLE;
 }

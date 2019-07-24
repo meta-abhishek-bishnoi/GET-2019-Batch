@@ -1,3 +1,7 @@
+/**
+ * This Class contains Methods For Adding Cage and mainitaing Cages in list
+ * @author Abhishek Bishnoi
+ */
 package meta.zoohierarchy;
 
 import java.util.ArrayList;
@@ -14,8 +18,12 @@ public class Zone {
 	private final int capacity;
 	private List<Cage> listOfCages = new ArrayList<>();
 	private boolean hasPark, hasCanteen;
-	/*
-	 * 
+	/**
+	 * Constructor of Zone 
+	 * @param zoneAnimalType type of animal class
+	 * @param capacity capicity of cages
+	 * @param hasPark has park or not
+	 * @param hasCanteen has canteen or not
 	 */
 	public Zone(AnimalCategory zoneAnimalType, int capacity, boolean hasPark, boolean hasCanteen) {
 		super();
@@ -25,78 +33,78 @@ public class Zone {
 		this.hasCanteen = hasCanteen;
 	}
 	/**
-	 * 
+	 * setter method for category of animals
 	 * @return
 	 */
 	public AnimalCategory getZoneAnimalType() {
 		return zoneAnimalType;
 	}
 	/**
-	 * 
+	 * setter method
 	 * @param zoneAnimalType
 	 */
 	public void setZoneAnimalType(AnimalCategory zoneAnimalType) {
 		this.zoneAnimalType = zoneAnimalType;
 	}
 	/**
-	 * 
-	 * @return
+	 *  getter method
+	 * @return List of Cages
 	 */
 	public List<Cage> getListOfCages() {
 		return listOfCages;
 	}
 	/**
-	 * 
+	 * setter method
 	 * @param listOfCages
 	 */
 	public void setListOfCages(List<Cage> listOfCages) {
 		this.listOfCages = listOfCages;
 	}
 	/**
-	 * 
+	 * getter method
 	 * @return
 	 */
 	public boolean isHasPark() {
 		return hasPark;
 	}
 	/**
-	 * 
+	 * setter method
 	 * @param hasPark
 	 */
 	public void setHasPark(boolean hasPark) {
 		this.hasPark = hasPark;
 	}
 	/**
-	 * 
+	 * getter method
 	 * @return
 	 */
 	public boolean isHasCanteen() {
 		return hasCanteen;
 	}
 	/**
-	 * 
+	 * setter method
 	 * @param hasCanteen
 	 */
 	public void setHasCanteen(boolean hasCanteen) {
 		this.hasCanteen = hasCanteen;
 	}
 	/**
-	 * 
+	 * getter method
 	 * @return
 	 */
 	public int getCapacity() {
 		return capacity;
 	}
 	/**
-	 * 
+	 * setter method
 	 * @return
 	 */
 	public int remainingCapicity(){
 		return capacity-listOfCages.size();
 	}
 	/**
-	 * 
-	 * @param cage
+	 * Adding A Cage into Zone
+	 * @param cage Object Of cage
 	 */
 	public void addCage(Cage cage){
 		if(remainingCapicity() != 0){
@@ -107,7 +115,7 @@ public class Zone {
 	}
 	/**
 	 * Adding animal into cages
-	 * @param animal
+	 * @param animal Object Of Animal
 	 * @return
 	 */
 	public boolean addAnimal(Animal animal){
@@ -125,9 +133,9 @@ public class Zone {
 		return flag;
 	}
 	/**
-	 * 
-	 * @param animal
-	 * @return
+	 * removing animal from cages list
+	 * @param animal Object Of animal
+	 * @return boolean value
 	 */
 	public boolean removeAnimal(AnimalType animal){
 		boolean removed = false;

@@ -1,3 +1,7 @@
+/**
+ * This Class contains List Of Animals, capacity value and Animal Type
+ * @author Abhishek Bishnoi
+ */
 package meta.zoohierarchy;
 
 import java.util.ArrayList;
@@ -14,7 +18,7 @@ public class Cage {
 	private int capacity;
 	List<Animal> listOfAnimals = new ArrayList<>();
 	/**
-	 * 
+	 * Constructor For Cage
 	 * @param animalType
 	 * @param capacity
 	 */
@@ -23,46 +27,25 @@ public class Cage {
 		this.capacity = capacity;
 	}
 	/**
-	 * 
-	 * @return
+	 * getter method
+	 * @return Animal Type
 	 */
 	public AnimalType getAnimalType() {
 		return animalType;
 	}
 	/**
-	 * 
-	 * @param animalType
-	 */
-	public void setAnimalType(AnimalType animalType) {
-		this.animalType = animalType;
-	}
-	/**
-	 * 
+	 * getter method for capacity 
 	 * @return
 	 */
 	public int getCapacity() {
 		return capacity;
 	}
 	/**
-	 * 
-	 * @param capacity
-	 */
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
-	}
-	/**
-	 * 
-	 * @return
+	 * getter method of List<Animal> 
+	 * @return A list of animal class
 	 */
 	public List<Animal> getListOfAnimals() {
 		return listOfAnimals;
-	}
-	/**
-	 * 
-	 * @param listOfAnimals
-	 */
-	public void setListOfAnimals(List<Animal> listOfAnimals) {
-		this.listOfAnimals = listOfAnimals;
 	}
 	/**
 	 * 
@@ -79,7 +62,7 @@ public class Cage {
 	}
 	/**
 	 * 
-	 * @return
+	 * @return return boolean value if animal is removed or not
 	 */
 	public boolean removeAnimal(){
 		boolean removed = false;

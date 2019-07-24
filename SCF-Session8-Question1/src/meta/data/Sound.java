@@ -17,8 +17,9 @@ public class Sound {
 		sound.put("dog", "bark");
 		sound.put("cock", "crow");
 		sound.put("eagle", "scream");
-		sound.put("snake", "buzzing ");
-		//https://www.quora.com/What-sounds-do-snakes-make for snake sound
+		sound.put("snake", "buzzing "); //https://www.quora.com/What-sounds-do-snakes-make for snake sound
+		sound.put("turtle", "clucking");
+		
 	}
 	public static String getSound(String animalName){
 		if(flag==true){

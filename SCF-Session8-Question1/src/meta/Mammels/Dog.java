@@ -1,3 +1,8 @@
+/**
+ * this class is for any specified Animal Type : 
+ * means this is for Dog where it contains some fix values or facts about that animal 
+ * @author Abhishek Bishnoi
+ */
 package meta.Mammels;
 
 import meta.animalhierarchy.Mammals;
@@ -8,16 +13,17 @@ public class Dog extends Mammals{
 	private static int id=1;
 	private static int legs = 4;
 	private static String name = "dog";
+	private static  String scientificName = "Canis lupus familiaris";
 	private static boolean hasFur=true;
 	/**
-	 * 
-	 * @param weight
-	 * @param age
+	 * Constructor Calling from driver function
+	 * @param weight of animal
+	 * @param age of animal
 	 */
-	public Dog(double weight, int age) {
+	public Dog(double weight, double age) {
 		/**
-		 * 
+		 * calling Parent's{Mammals} constructor
 		 */
-		super( ( name+" -"+(id++) ), weight, age, Sound.getSound(name), legs, AnimalType.DOG, hasFur );
+		super( ( name+" -"+(id++) ), scientificName, weight, age, Sound.getSound(name), legs, AnimalType.DOG, hasFur );
 	}
 }

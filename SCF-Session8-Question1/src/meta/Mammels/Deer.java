@@ -1,3 +1,8 @@
+/**
+ * this class is for any specified Animal Type : 
+ * means this is for Deer where it contains some fix values or facts about that animal 
+ * @author Abhishek Bishnoi
+ */
 package meta.Mammels;
 
 import meta.animalhierarchy.Mammals;
@@ -10,9 +15,17 @@ public class Deer extends Mammals {
 	private static int id=1;
 	private static int legs = 4;
 	private static String name = "deer";
+	private static  String scientificName = "Cervidae";
 	private static boolean hasFur=false;
-	
-	public Deer(double weight, int age) {
-		super( ( name+" -"+(id++) ), weight, age, Sound.getSound(name), legs, AnimalType.DEER, hasFur );
+	/**
+	 * Constructor Calling from driver function
+	 * @param weight of animal
+	 * @param age of animal
+	 */
+	public Deer(double weight, double age) {
+		/**
+		 * calling Parent's{Mammals} constructor
+		 */
+		super( ( name+" -"+(id++) ), scientificName, weight, age, Sound.getSound(name), legs, AnimalType.DEER, hasFur );
 	}
 }

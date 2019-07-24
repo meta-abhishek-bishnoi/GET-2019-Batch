@@ -1,5 +1,9 @@
-/*
- * 
+/**
+ * This is base class for all type(class) animals
+ * This class contains all common variable & respectively getter and setter method
+ * @author Abhishek Bishnoi
+ * @version 1.0
+ * @since 23-july-2019
  */
 package meta.animalhierarchy;
 
@@ -8,26 +12,28 @@ import meta.data.AnimalType;
 
 public class Animal {
 	private final String name;
+	private final String scientificName;
 	private double weight;
-	private int age;
+	private double age;
 	private final String sound;
 	private final int numberOfLegs;
 	private final AnimalCategory category;
 	private final AnimalType animalType;
 	/**
-	 * 
-	 * @param name
-	 * @param weight
-	 * @param age
-	 * @param sound
-	 * @param numberOfLegs
-	 * @param category
-	 * @param animalType
+	 * This is constructor values comes from child class
+	 * @param name name of animal 
+	 * @param weight weight of animal 
+	 * @param age age of animal 
+	 * @param sound sound type
+	 * @param numberOfLegs no of legs
+	 * @param category Animal Category like mammals, reptile etc etc
+	 * @param animalType animal type like lion, beer, deer etc etc
 	 */
-	public Animal(String name, double weight, int age, String sound, int numberOfLegs, AnimalCategory category,
+	public Animal(String name, String scientificName, double weight, double age, String sound, int numberOfLegs, AnimalCategory category,
 			AnimalType animalType) {
 		super();
 		this.name = name;
+		this.scientificName = scientificName;
 		this.weight = weight;
 		this.age = age;
 		this.sound = sound;
@@ -36,67 +42,74 @@ public class Animal {
 		this.animalType = animalType;
 	}
 	/**
-	 * 
-	 * @return
+	 * getter function
+	 * @return weight of animal
 	 */
 	public double getWeight() {
 		return weight;
 	}
 	/**
-	 * 
-	 * @param weight
+	 *  setter function
+	 * @param weight set weight of animal
 	 */
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 	/**
-	 * 
-	 * @return
+	 * getter method
+	 * @return age of animal
 	 */
-	public int getAge() {
+	public double getAge() {
 		return age;
 	}
 	/**
-	 * 
-	 * @param age
+	 * setter method of age
+	 * @param age set age
 	 */
-	public void setAge(int age) {
+	public void setAge(double age) {
 		this.age = age;
 	}
 	/**
-	 * 
-	 * @return
+	 * getter method
+	 * @return name of animal
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * 
-	 * @return
+	 * getyter method
+	 * @return sound pf animal
 	 */
 	public String getSound() {
 		return sound;
 	}
 	/**
-	 * 
-	 * @return
+	 * getter method
+	 * @return no of legs of animal
 	 */
 	public int getNumberOfLegs() {
 		return numberOfLegs;
 	}
 	/**
-	 * 
-	 * @return
+	 * getter method
+	 * @return category of animal
 	 */
 	public AnimalCategory getCategory() {
 		return category;
 	}
 	/**
-	 * 
-	 * @return
+	 * getter method
+	 * @return getter method of animal
 	 */
 	public AnimalType getAnimalType() {
 		return animalType;
+	}
+	/**
+	 * getter method 
+	 * @return scientific name
+	 */
+	public String getScientificName() {
+		return scientificName;
 	}
 	
 }
