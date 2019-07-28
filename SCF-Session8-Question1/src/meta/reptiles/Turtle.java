@@ -12,7 +12,7 @@ public class Turtle extends Reptile{
 	private static String scientificName = "Testudines";
 	private static boolean containsPoision = false;
 	
-	public Turtle(double weight, double age){
-		super( ( name+" -"+(id++) ), scientificName, weight, age, Sound.getSound(name), legs, containsPoision, AnimalType.SNAKE);
+	public Turtle(){
+		super( ( name+" -"+(id++) ), scientificName, Sound.getSound(name), legs, containsPoision, AnimalType.SNAKE);
 	}
 }

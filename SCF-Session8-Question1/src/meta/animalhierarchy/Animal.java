@@ -29,13 +29,11 @@ public class Animal {
 	 * @param category Animal Category like mammals, reptile etc etc
 	 * @param animalType animal type like lion, beer, deer etc etc
 	 */
-	public Animal(String name, String scientificName, double weight, double age, String sound, int numberOfLegs, AnimalCategory category,
+	public Animal(String name, String scientificName, String sound, int numberOfLegs, AnimalCategory category,
 			AnimalType animalType) {
 		super();
 		this.name = name;
 		this.scientificName = scientificName;
-		this.weight = weight;
-		this.age = age;
 		this.sound = sound;
 		this.numberOfLegs = numberOfLegs;
 		this.category = category;

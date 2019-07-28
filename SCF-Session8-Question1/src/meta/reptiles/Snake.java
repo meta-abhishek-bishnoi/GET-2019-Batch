@@ -15,11 +15,11 @@ public class Snake extends Reptile{
 	 * @param weight of animal
 	 * @param age of animal
 	 */
-	public Snake(double weight, double age){
+	public Snake(){
 		/**
 		 * calling Parent's{Reptile} constructor
 		 */
-		super( ( name+" -"+(id++) ), scientificName, weight, age, Sound.getSound(name), legs, containsPoision, AnimalType.SNAKE);
+		super( ( name+" -"+(id++) ), scientificName, Sound.getSound(name), legs, containsPoision, AnimalType.SNAKE);
 	}
 
 }

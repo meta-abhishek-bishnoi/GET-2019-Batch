@@ -15,10 +15,10 @@ public class ReptileZone extends Zone{
 	 * @param hasPark boolean value
 	 * @param hasCanteen boolean value
 	 */
-	public ReptileZone(int capacity, boolean hasPark, boolean hasCanteen){
+	public ReptileZone(){
 		/**
 		 * Calling Constructor of Zone
 		 */
-		super(AnimalCategory.REPTILE, capacity, hasPark, hasCanteen);
+		super(AnimalCategory.REPTILE);
 	}
 }

@@ -20,12 +20,11 @@ public class Reptile extends Animal {
 	 * @param containsPoision 
 	 * @param animlType of animal
 	 */
-	public Reptile(String name, String scientificName, double weight, double age, String sound,
-			int numberOfLegs, boolean containsPoision, AnimalType animlType){
+	public Reptile(String name, String scientificName, String sound, int numberOfLegs, boolean containsPoision, AnimalType animlType){
 		/**
 		 * calling Parent's{Animal} Constructor
 		 */
-		super(name, scientificName, weight, age, sound, numberOfLegs, AnimalCategory.REPTILE, animlType);
+		super(name, scientificName, sound, numberOfLegs, AnimalCategory.REPTILE, animlType);
 
 		this.containsPoision = containsPoision;
 	}

@@ -20,12 +20,11 @@ public class Bird extends Animal {
 	 * @param canFly boolean value if they can fly or not
 	 * @param animalType animal type like lion, beer, deer etc etc
 	 */
-	public Bird(String name, String scientificName, double weight, double age, String sound,
-			int numberOfLegs, boolean canFly, AnimalType animalType){
+	public Bird(String name, String scientificName, String sound, int numberOfLegs, boolean canFly, AnimalType animalType){
 		/**
 		 * calling Constructor OF Animal Class
 		 */
-		super(name, scientificName, weight, age, sound, numberOfLegs, AnimalCategory.BIRD, animalType);
+		super(name, scientificName, sound, numberOfLegs, AnimalCategory.BIRD, animalType);
 
 		this.canFly = canFly;
 	}

@@ -24,30 +24,19 @@ public class Zoo {
 	List<Zone> zones = new ArrayList<Zone>(); 
 
 	/**
-	 * This Function add a zone into zoo class
-	 * @param animalcategory Animal Category
-	 * @param capacity capacity of Zone
-	 * @param hasPark boolean value about has park
-	 * @param hasCanteen boolean value about hasCanteen
-	 * @return true if added sucessfully
+	 * 
+	 * @param zone
+	 * @return
 	 */
-	public boolean addZone(AnimalCategory animalcategory, int capacity, boolean hasPark, boolean hasCanteen){
-		Zone zone = null;
-		switch(animalcategory){
-		case BIRD:	  
-			zone = new BirdZone(capacity, hasPark, hasCanteen);
-			break;
-		case MAMMAL:  
-			zone = new MammalZone(capacity, hasPark, hasCanteen);
-			break;
-		case REPTILE: 
-			zone = new ReptileZone(capacity, hasPark, hasCanteen);
-			break;	
-		default:
-			return false;
+	public boolean addZone(Zone zone){
+		boolean result=true;
+		try{
+			zones.add(zone);
+		}catch(Exception exception){
+			result = false;
+			return result;
 		}
-		zones.add(zone);
-		return true;
+		return result;
 	}
 	/**
 	 * This Function perform operation of adding cage into zone

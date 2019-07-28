@@ -22,10 +22,10 @@ public class Elephant extends Mammals {
 	 * @param weight of animal
 	 * @param age of animal
 	 */
-	public Elephant(double weight, double age) {
+	public Elephant() {
 		/**
 		 * calling Parent's{Mammals} constructor
 		 */
-		super( ( name+" -"+(id++) ), scientificName, weight, age, Sound.getSound(name), legs, AnimalType.ELEPHANT, hasFur );
+		super( ( name+" -"+(id++) ), scientificName, Sound.getSound(name), legs, AnimalType.ELEPHANT, hasFur );
 	}
 }

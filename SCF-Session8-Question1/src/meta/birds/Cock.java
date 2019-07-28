@@ -20,10 +20,10 @@ public class Cock extends Bird {
 	 * @param weight input from user
 	 * @param age input from user
 	 */
-	public Cock(double weight, double age) {
+	public Cock() {
 		/**
 		 * Calling COnstructor of Bird Class
 		 */
-		super( ( name+" -"+(id++) ), scientificName, weight, age, Sound.getSound(name), legs, canFly, AnimalType.COCK);
+		super( ( name+" -"+(id++) ), scientificName, Sound.getSound(name), legs, canFly, AnimalType.COCK);
 	}
 }

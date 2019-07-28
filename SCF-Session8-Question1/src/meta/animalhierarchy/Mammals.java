@@ -22,12 +22,11 @@ public class Mammals extends Animal {
 	 * @param animalType
 	 * @param hasFur
 	 */
-	public Mammals(String name, String scientificName, double weight, double age, String sound, int numberOfLegs, 
-			AnimalType animalType, boolean hasFur) {
+	public Mammals(String name, String scientificName, String sound, int numberOfLegs, AnimalType animalType, boolean hasFur) {
 		/**
 		 * calling Parent's{Animal} Constructor
 		 */
-		super(name, scientificName, weight, age, sound, numberOfLegs, AnimalCategory.MAMMAL, animalType);
+		super(name, scientificName, sound, numberOfLegs, AnimalCategory.MAMMAL, animalType);
 		this.hasFur = hasFur;
 	}
 	/**

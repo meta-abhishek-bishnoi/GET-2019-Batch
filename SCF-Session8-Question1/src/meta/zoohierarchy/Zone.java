@@ -15,7 +15,7 @@ import meta.data.AnimalType;
 public class Zone {
 
 	private AnimalCategory zoneAnimalType; 
-	private final int capacity;
+	private int capacity;
 	private List<Cage> listOfCages = new ArrayList<>();
 	private boolean hasPark, hasCanteen;
 	/**
@@ -25,12 +25,9 @@ public class Zone {
 	 * @param hasPark has park or not
 	 * @param hasCanteen has canteen or not
 	 */
-	public Zone(AnimalCategory zoneAnimalType, int capacity, boolean hasPark, boolean hasCanteen) {
+	public Zone(AnimalCategory zoneAnimalType) {
 		super();
 		this.zoneAnimalType = zoneAnimalType;
-		this.capacity = capacity;
-		this.hasPark = hasPark;
-		this.hasCanteen = hasCanteen;
 	}
 	/**
 	 * setter method for category of animals
@@ -101,6 +98,13 @@ public class Zone {
 	 */
 	public int remainingCapicity(){
 		return capacity-listOfCages.size();
+	}
+	/**
+	 * 
+	 * @param capacity
+	 */
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
 	}
 	/**
 	 * Adding A Cage into Zone

@@ -11,24 +11,40 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import meta.Mammels.Lion;
+import meta.animalhierarchy.Animal;
 import meta.data.AnimalCategory;
 import meta.data.AnimalType;
+import meta.utility.FactoryMethod;
 import meta.utility.Zoo;
+import meta.zoohierarchy.Zone;
 
 
 public class ZooTest {
 
 	/**
 	 * In this function we are checking about the creation of zone and adding them to zoo
-	 * addZone() contains Animal category, capacity, hasPark and hasCanteen
+	 * addZone() contains Zone where Zone is created using factory method
+	 * and we set values like hasCanteen, hasPark etc etc using setter method
 	 */
 	@Test
 	public void addZonePaasTest(){
 		Zoo zoo = new Zoo();
-		assertTrue(zoo.addZone(AnimalCategory.MAMMAL, 3, true, true));
-		assertTrue(zoo.addZone(AnimalCategory.BIRD, 5, false, true));
-		assertTrue(zoo.addZone(AnimalCategory.REPTILE, 5, false, false));
-		assertTrue(zoo.addZone(AnimalCategory.BIRD, 7, false, true));
+		Zone zone;
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.MAMMAL);
+		zone.setCapacity(3);
+		zone.setHasCanteen(true);
+		zone.setHasPark(true);
+		assertTrue(zoo.addZone(zone));
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.BIRD);
+		zone.setCapacity(10);
+		zone.setHasCanteen(false);
+		zone.setHasCanteen(true);
+		assertTrue(zoo.addZone(zone));
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.REPTILE);
+		zone.setCapacity(17);
+		zone.setHasCanteen(false);
+		zone.setHasCanteen(false);
+		assertTrue(zoo.addZone(zone));
 	}
 	/**
 	 * Here we are adding a cage into a zone 
@@ -38,7 +54,12 @@ public class ZooTest {
 	@Test
 	public void addCagePassTest(){
 		Zoo zoo = new Zoo();
-		zoo.addZone(AnimalCategory.MAMMAL, 2, true, true);
+		Zone zone;
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.MAMMAL);
+		zone.setCapacity(5);
+		zone.setHasCanteen(true);
+		zone.setHasPark(true);
+		zoo.addZone(zone);
 		assertTrue(zoo.addCage(AnimalType.LION, 2));
 		assertTrue(zoo.addCage(AnimalType.DEER, 5));
 	}
@@ -50,7 +71,12 @@ public class ZooTest {
 	@Test(expected = AssertionError.class)
 	public void addCageFailTest0(){
 		Zoo zoo = new Zoo();
-		zoo.addZone(AnimalCategory.BIRD, 2, true, true);
+		Zone zone;
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.BIRD);
+		zone.setCapacity(15);
+		zone.setHasCanteen(true);
+		zone.setHasPark(true);
+		zoo.addZone(zone);
 		zoo.addCage(AnimalType.LION, 3);
 	}
 	/**
@@ -60,7 +86,12 @@ public class ZooTest {
 	@Test(expected = AssertionError.class)
 	public void addCageFailTest1(){
 		Zoo zoo = new Zoo();
-		zoo.addZone(AnimalCategory.MAMMAL, 2, true, true);
+		Zone zone;
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.MAMMAL);
+		zone.setCapacity(2);
+		zone.setHasCanteen(true);
+		zone.setHasPark(true);
+		zoo.addZone(zone);
 		zoo.addCage(AnimalType.LION, 1);
 		zoo.addCage(AnimalType.DEER, 5);
 		zoo.addCage(AnimalType.ELEPHANT, 3); 
@@ -72,9 +103,17 @@ public class ZooTest {
 	@Test
 	public void addAnimalTest(){
 		Zoo zoo = new Zoo();
-		zoo.addZone(AnimalCategory.MAMMAL, 2, true, true);
+		Zone zone;
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.MAMMAL);
+		zone.setCapacity(5);
+		zone.setHasCanteen(true);
+		zone.setHasPark(true);
+		zoo.addZone(zone);
 		zoo.addCage(AnimalType.LION, 3);
-		assertTrue(zoo.addAnimal(new Lion(25, 12)));
+		Animal animal = FactoryMethod.factoryMethod_Animal(AnimalType.LION);
+		animal.setAge(10);
+		animal.setWeight(254);
+		assertTrue(zoo.addAnimal(animal));
 	}
 
 	/**
@@ -84,9 +123,17 @@ public class ZooTest {
 	@Test(expected = AssertionError.class)
 	public void addAnimalFailTest(){
 		Zoo zoo = new Zoo();
-		zoo.addZone(AnimalCategory.MAMMAL, 2, true, true);
+		Zone zone;
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.MAMMAL);
+		zone.setCapacity(2);
+		zone.setHasCanteen(true);
+		zone.setHasPark(true);
+		zoo.addZone(zone);
 		zoo.addCage(AnimalType.ELEPHANT, 3);
-		assertTrue(zoo.addAnimal(new Lion(25, 12)));
+		Animal animal = FactoryMethod.factoryMethod_Animal(AnimalType.DEER);
+		animal.setAge(10);
+		animal.setWeight(79.500);
+		assertTrue(zoo.addAnimal(animal));
 	}
 
 	/**
@@ -95,9 +142,17 @@ public class ZooTest {
 	@Test
 	public void removeAnimal(){
 		Zoo zoo = new Zoo();
-		zoo.addZone(AnimalCategory.MAMMAL, 2, true, true);
+		Zone zone;
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.MAMMAL);
+		zone.setCapacity(5);
+		zone.setHasCanteen(true);
+		zone.setHasPark(true);
+		zoo.addZone(zone);
 		zoo.addCage(AnimalType.LION, 3);
-		zoo.addAnimal(new Lion(25, 12));
+		Animal animal = FactoryMethod.factoryMethod_Animal(AnimalType.LION);
+		animal.setAge(10);
+		animal.setWeight(254);
+		zoo.addAnimal(animal);
 		assertTrue(zoo.removeAnimal(AnimalType.LION));
 	}
 
@@ -109,9 +164,17 @@ public class ZooTest {
 	@Test(expected = AssertionError.class)
 	public void removeAnimalFailTest(){
 		Zoo zoo = new Zoo();
-		zoo.addZone(AnimalCategory.MAMMAL, 2, true, true);
+		Zone zone;
+		zone = FactoryMethod.factoryMethod_Zone(AnimalCategory.MAMMAL);
+		zone.setCapacity(5);
+		zone.setHasCanteen(true);
+		zone.setHasPark(true);
+		zoo.addZone(zone);
 		zoo.addCage(AnimalType.LION, 3);
-		zoo.addAnimal(new Lion(25, 12));
+		Animal animal = FactoryMethod.factoryMethod_Animal(AnimalType.LION);
+		animal.setAge(10);
+		animal.setWeight(254);
+		zoo.addAnimal(animal);
 		zoo.removeAnimal(AnimalType.ELEPHANT);
 	}
 

@@ -20,10 +20,10 @@ public class Peacock extends Bird {
 	 * @param weight input from user
 	 * @param age input from user
 	 */
-	public Peacock(double weight, double age) {
+	public Peacock() {
 		/**
 		 * Calling COnstructor of Bird Class
 		 */
-		super( ( name+" -"+(id++) ), scientificName, weight, age, Sound.getSound(name), legs, canFly, AnimalType.PEACOCK);
+		super( ( name+" -"+(id++) ), scientificName, Sound.getSound(name), legs, canFly, AnimalType.PEACOCK);
 	}
 }
