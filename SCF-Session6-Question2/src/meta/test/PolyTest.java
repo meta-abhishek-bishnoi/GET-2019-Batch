@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 
+import meta.utility.Poly;
 import meta.utility.Service;
 
 import org.junit.BeforeClass;
@@ -55,13 +56,13 @@ public class PolyTest {
 	    }
 	    
 	 private double expectedValue;
-	 private int value;
 	 private int expectedDegree;
-	 private int[][] inputArray;
+	 private int value;
+	 private Poly[] inputArray;
 	 /*
 	  * Constructor Value for each testCase
 	  */
-	 public PolyTest(double expectedValue, int expectedDegree, int value, int inputArray[][]){
+	 public PolyTest(double expectedValue, int expectedDegree, int value, Poly inputArray[]){
 		 this.expectedValue = expectedValue;
 		 this.value  = value;
 		 this.expectedDegree = expectedDegree;

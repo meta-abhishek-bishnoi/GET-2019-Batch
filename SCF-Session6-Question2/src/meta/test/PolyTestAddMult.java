@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 
+import meta.utility.Poly;
 import meta.utility.Service;
 
 import org.junit.BeforeClass;
@@ -47,14 +48,14 @@ public class PolyTestAddMult {
 				 });
 	    }
 	    
-	 private int[][] expectedAdd;
-	 private int[][] expectedMult;
-	 private int[][] arrayOne;
-	 private int[][] arrayTwo;
+	 private Poly[] expectedAdd;
+	 private Poly[] expectedMult;
+	 private Poly[] arrayOne;
+	 private Poly[] arrayTwo;
 	 /*
 	  * Constructor Value for each testCase
 	  */
-	 public PolyTestAddMult(int[][] expectedAdd, int[][] expectedMult, int[][] arrayOne, int[][] arrayTwo){
+	 public PolyTestAddMult(Poly[] expectedAdd, Poly[] expectedMult, Poly[] arrayOne, Poly[] arrayTwo){
 		 this.expectedAdd = expectedAdd;
 		 this.expectedMult = expectedMult;
 		 this.arrayOne = arrayOne;
@@ -65,13 +66,17 @@ public class PolyTestAddMult {
 	  */
 	@Test
 	public void testAddition() {
-		int actual[][] = service.addPolynomial(arrayOne, arrayTwo);
-		assertArrayEquals(expectedAdd,actual);
+		Poly actual[] = service.addPolynomial(arrayOne, arrayTwo);
+		int[][] expectedArr = service.toIntArray(expectedAdd);
+		int[][] actualArr = service.toIntArray(actual);
+		assertArrayEquals(expectedArr,actualArr);
 	}
 	@Test
 	public void testMultiplication(){
-		int actual[][] = service.multiplyPolynomial(arrayOne, arrayTwo);
-		assertArrayEquals(expectedMult,actual);
+		Poly actual[] = service.multiplyPolynomial(arrayOne, arrayTwo);
+		int[][] expectedArr = service.toIntArray(expectedMult);
+		int[][] actualArr = service.toIntArray(actual);
+		assertArrayEquals(expectedArr,actualArr);
 	}
 
 }

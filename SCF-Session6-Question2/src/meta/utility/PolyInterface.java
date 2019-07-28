@@ -7,8 +7,8 @@
 package meta.utility;
 
 public interface PolyInterface {
-	public double evalute(int array[][], int value);
-	public int degree(int array[][]);
-	public int[][] addPolynomial(int arrayOne[][], int arrayTwo[][]);
-	public int[][] multiplyPolynomial(int arrayOne[][], int arrayTwo[][]);
+	public double evalute(Poly array[], int value);
+	public int degree(Poly array[]);
+	public Poly[] addPolynomial(Poly polyArrayOne[], Poly polyArrayTwo[]);
+	public Poly[] multiplyPolynomial(Poly polyArrayOne[], Poly polyArrayTwo[]);
 }
