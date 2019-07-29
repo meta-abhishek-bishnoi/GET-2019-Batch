@@ -11,7 +11,7 @@ public class Triangle implements Shapes{
 	private Date timeStamp;
 
 	/**
-	 * 
+	 * Constructor
 	 */
 	public Triangle() {
 		
@@ -22,6 +22,9 @@ public class Triangle implements Shapes{
 		return Math.sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
 	}
 
+	/**
+	 * @return perimeter
+	 */
 	public double getPerimeter(){
 		return (sideA + sideB + sideC);
 	}
@@ -30,6 +33,10 @@ public class Triangle implements Shapes{
 		return origin;
 	}
 
+	/**
+	 * source https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
+	 * @return boolean value
+	 */
 	public boolean isPointEnclosed(Point point){
 		boolean enclosed = false;
 		double base = Math.sqrt(Math.pow(sideC, 2) - Math.pow(height, 2));
@@ -43,6 +50,10 @@ public class Triangle implements Shapes{
 		return enclosed;
 	}
 
+	/**
+	 * source https://mathinstructor.net/2012/08/how-to-find-area-of-triangle-given-three-vertices/ 
+	 * @return area of triangle by vertices
+	 */
 	private double getAreaByVertices(Point a, Point b, Point c) {
 		return Math.abs((a.getX() * (b.getY() - c.getY()) + b.getX() * 
 				(c.getY() - a.getY()) + c.getX() * (a.getY() - b.getY())) / 2.0);

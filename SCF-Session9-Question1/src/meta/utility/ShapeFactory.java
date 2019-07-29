@@ -27,15 +27,12 @@ public class ShapeFactory{
 			break;
 		case REGULAR_POLYGON:
 			shape = new RegularPolygon();
-			//new RegularPolygon(point, list.get(0), list.get(1));
 			break;
 		case SQUARE:
 			shape = new Square();
-			//new Square(point, list.get(0));
 			break;
 		case TRIANGLE:
 			shape = new Triangle();
-			//new Triangle(point, list.get(0), list.get(1), list.get(2), list.get(3));
 			break;
 		default:
 			throw new AssertionError("Invalid Shape Type !!");

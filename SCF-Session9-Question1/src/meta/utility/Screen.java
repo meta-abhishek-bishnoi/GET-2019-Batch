@@ -17,8 +17,8 @@ public class Screen{
 
 	/**
 	 * Parameterized Constructor
-	 * @param xMax : The maximum length of the screen.
-	 * @param yMax : The maximum breadth of the screen.
+	 * @param xMax  The maximum length of the screen.
+	 * @param yMax  The maximum breadth of the screen.
 	 */
 	public Screen(double xMax, double yMax){
 		XMAX = xMax;
@@ -27,7 +27,7 @@ public class Screen{
 
 	/**
 	 * Method to add shape on the screen
-	 * @param shape : The shape which is to be added on the screen.
+	 * @param shape  The shape which is to be added on the screen.
 	 */
 	public void addShape(Shapes shape){
 		if(shape == null){
@@ -43,7 +43,7 @@ public class Screen{
 
 	/**
 	 * Method to remove the shape from the screen.
-	 * @param shape : The shape which is to be removed from the screen.
+	 * @param shape  The shape which is to be removed from the screen.
 	 */
 	public void deleteShape(Shapes shape){
 		if(listOfShapes.contains(shape)){
@@ -55,7 +55,7 @@ public class Screen{
 
 	/**
 	 * Method to remove all the shapes from the screen belonging to a particular screen type.
-	 * @param shapeType : The type of the shape which is to be removed.
+	 * @param shapeType  The type of the shape which is to be removed.
 	 */
 	public void deleteShapeType(ShapeType shapeType){
 		boolean flag = false;
@@ -75,7 +75,7 @@ public class Screen{
 
 	/**
 	 * Method to sort the shapes on the basis of their area.
-	 * @return : The sorted list of shape.
+	 * @return  The sorted list of shape.
 	 */
 	public List<Shapes> sortByArea(){
 		List<Shapes> sortedListByArea = new ArrayList<>(listOfShapes);
@@ -99,7 +99,7 @@ public class Screen{
 
 	/**
 	 * Method to sort the shapes on the basis of their perimeter.
-	 * @return : The sorted list of the shape.
+	 * @return  The sorted list of the shape.
 	 */
 	public List<Shapes> sortByPerimeter(){
 		List<Shapes> sortedListByPerimeter = listOfShapes;
@@ -123,7 +123,7 @@ public class Screen{
 
 	/**
 	 * Method to sort the shapes based on their distance from the origin of the screen.
-	 * @return : The sorted list of the shape.
+	 * @return  The sorted list of the shape.
 	 */
 	public List<Shapes> sortByOriginDistance(){
 		List<Shapes> sortedListByOriginDistance = listOfShapes;
@@ -147,7 +147,7 @@ public class Screen{
 
 	/**
 	 * Method to sort the shape on the basis of the time on which they were added on the screen.
-	 * @return : The sorted list of the shape.
+	 * @return  The sorted list of the shape.
 	 */
 	public List<Shapes> sortByTimestamp(){
 		if (listOfShapes.size() == 0){
@@ -158,8 +158,8 @@ public class Screen{
 
 	/**
 	 * Method to Check if the given point to draw the shape doesn't overlap the existing shape.
-	 * @param point : The point where the shape has to be drawn.
-	 * @return : The list of the shape.
+	 * @param point  The point where the shape has to be drawn.
+	 * @return  The list of the shape.
 	 */
 	public List<Shapes> shapesEnclosingPoint(Point point){
 		List<Shapes> listOfShapes = new ArrayList<>();

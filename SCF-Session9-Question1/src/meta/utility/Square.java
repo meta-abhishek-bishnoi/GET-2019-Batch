@@ -12,8 +12,8 @@ public class Square implements Shapes{
 
 	/**
 	 * Parameterized Constructor
-	 * @param origin : The point at which the square is to be drawn.
-	 * @param side : The length of the side of the square.
+	 * @param origin The point at which the square is to be drawn.
+	 * @param side The length of the side of the square.
 	 */
 	public Square() {
 	}

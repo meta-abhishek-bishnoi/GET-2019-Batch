@@ -1,6 +1,7 @@
 /**
  * @author Abhishek Bishnoi
  * Class to represent the Regular Polygon by implementing the Shape interface.
+ * To Know More About Area Of Polygon visit https://www.wikihow.com/Calculate-the-Area-of-a-Polygon
  */
 package meta.utility;
 
@@ -14,9 +15,13 @@ public class RegularPolygon implements Shapes{
 	private Date timeStamp;
 
 	public RegularPolygon(){
-		//this.originDistance = Math.sqrt(Math.pow(origin.getX(), 2) + Math.pow(origin.getY(), 2));
+		
 	}
 
+	/**
+	 * @return area of polygon
+	 * Source https://www.wikihow.com/Calculate-the-Area-of-a-Polygon 
+	 */
 	public double getArea(){
 		double apothem = length / (2 * Math.tan(Math.toRadians(180 / noOfSide)));
 		return 0.5 * apothem * getPerimeter();
