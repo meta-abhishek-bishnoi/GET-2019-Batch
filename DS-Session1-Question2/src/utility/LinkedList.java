@@ -16,6 +16,9 @@ public class LinkedList {
 	 * @exception : when adding of element can't be done
 	 */
 	public boolean add(Node node){
+		if(node==null){
+			throw new AssertionError("Node Can't Be Null");
+		}
 		try{
 			if(lastNode==null){
 				headNode=node;
