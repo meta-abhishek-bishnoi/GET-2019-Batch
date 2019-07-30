@@ -52,6 +52,14 @@ public class LinkedList {
 		  return false;
 	}
 	/**
+	public boolean loop(){
+		if(lastNode!=null){
+			return true;
+		}
+		return false;
+	}
+	*/
+	/**
 	 * This Method returns All Linked List Values As String 
 	 * @return String : list values in String
 	 */
