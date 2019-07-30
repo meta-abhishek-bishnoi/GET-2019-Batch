@@ -19,5 +19,9 @@ public class Main {
 		list.rotateSubList(2, 5, 2);
 		System.out.println("Rotate Linked List is : "+list.toString());
 		System.out.println("Done");
+		int arr[] = list.toArray();
+		for(int val : arr){
+			System.out.print(val+" ");
+		}
 	}
 }

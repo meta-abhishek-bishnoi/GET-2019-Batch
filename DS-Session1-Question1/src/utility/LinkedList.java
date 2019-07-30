@@ -59,28 +59,23 @@ public class LinkedList {
 				//currentNode = headNode;
 				break;
 			}
-			
 			if(nodeCount == currentStart){
 				startCurrent = currentNode;
-			}else{
+				currentNode = currentNode.next;
+				nodeCount++;
+			}else if(nodeCount<currentStart){
 				startLast = currentNode;
 				currentNode = currentNode.next;
 				nodeCount++;
-			}
-			
-			if(nodeCount == currentEnd){
+			}else if(nodeCount == currentEnd){
 				endCurrent = currentNode;
-				startLast = endCurrent;
-				Node tempLastNext = endCurrent.next;
-				endCurrent.next = startCurrent.next;
-				endLast = startCurrent;
-				startCurrent.next = tempLastNext;
+				endLast.next = endCurrent.next;
+				startLast.next = endCurrent;
+				endCurrent.next = startCurrent;
 				currentNode = headNode;
 				nodeCount=1;
 				opeartionCount++;
-				currentStart++;
-				currentEnd--;
-				
+					
 			}else{
 				endLast = currentNode;
 				currentNode = currentNode.next;
@@ -97,6 +92,7 @@ public class LinkedList {
 	 * @param rotateIndex
 	 */
 	private void validate(int start, int end, int rotateIndex) {
+	    
 		if(start <= 0){
 			throw new AssertionError("Start Index Must Be Positive Number");
 		}
@@ -127,8 +123,24 @@ public class LinkedList {
 		int size=0;
 		Node current = headNode;
 		while(current!=null){
+		    
 			size++;
+			current = current.next;
 		}
 		return size;
+	}
+	/**
+	 * 
+	 */
+	public int[] toArray(){
+		int size = size();
+		int resultArray[] = new int[size];
+		int index=0;
+		Node current = headNode;
+		while(current!=null){
+			resultArray[index++]=current.value;
+			current = current.next;
+		}
+		return resultArray;
 	}
 }
