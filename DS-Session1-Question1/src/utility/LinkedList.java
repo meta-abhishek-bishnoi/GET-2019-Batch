@@ -15,14 +15,15 @@ public class LinkedList {
 	 * @return boolean: true or false for operation success or not
 	 * @exception : when adding of element can't be done
 	 */
-	public boolean add(int value){
+	public boolean add(Node node){
+		if(node==null){
+			throw new AssertionError("Node Can't Be Null");
+		}
 		try{
 			if(lastNode==null){
-				Node node = new Node(value);
 				headNode=node;
 				lastNode=node;
 			}else{
-				Node node = new Node(value);
 				lastNode.next = node;
 				lastNode = node;
 			}
