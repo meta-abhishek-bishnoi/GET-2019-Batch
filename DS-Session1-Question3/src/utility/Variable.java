@@ -1,6 +1,7 @@
 /**
  * @author Abhishek Bishnoi
  * @since Jul 30, 2019
+ * This Class Contains Structure Of Variable
  */
 package utility;
 
@@ -9,7 +10,7 @@ public class Variable {
 	public int power;
 	Variable next;
 	/**
-	 * 
+	 * Constructor to add values
 	 * @param variable
 	 * @param power
 	 */
@@ -17,6 +18,9 @@ public class Variable {
 		this.variable = variable;
 		this.power = power;
 	}
+	/**
+	 * @return variable in string representation form
+	 */
 	public String toVarString() {
 		String varString;
 		if(power==0){
@@ -28,6 +32,10 @@ public class Variable {
 		}
 		return varString;
 	}
+	/**
+	 * 
+	 * @return return power of variable
+	 */
 	public int getPower(){
 		return this.power;
 	}
