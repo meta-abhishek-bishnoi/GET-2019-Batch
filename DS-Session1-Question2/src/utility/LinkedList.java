@@ -2,7 +2,8 @@
  * @author Abhishek Bishnoi
  * @slowScale Jul 29, 2019
  * This Class Provides Dynamic List as where,
- * it provides various methods like add, toString, substring, rotateSubstring etc etc
+ * it provides various methods like add, toString etc etc
+ * This class Main purpose is to check a loop in Linked List
  */
 package utility;
 
@@ -34,16 +35,18 @@ public class LinkedList {
 	}
 
 	/**
-	 * 
+	 * This Function is use to calculate if their is any loop in the Linked List or Not 
 	 * @return
 	 */
 	public boolean isLoop(){
 		Node currentNode = headNode;
 		Node checkNode = null;
-		int slowScale = 0;
-		int fastScale = 2;
+		int slowScale = 0; // tracing flag 
+		int fastScale = 2; // fast tracing flag
+		// these flags are use to trace nodes  
 		do {
-		   if (checkNode == currentNode) return true;
+		   if (checkNode == currentNode) return true; 
+		   // if slower flag reaches fast flag then checking for next value of faster flag
 		   if (slowScale >= fastScale){
 		      checkNode = currentNode;
 		      slowScale = 0;
@@ -89,7 +92,7 @@ public class LinkedList {
 		return size;
 	}
 	/**
-	 * 
+	 * return LinkedList in toArray()
 	 */
 	public int[] toArray(){
 		int size = size();
