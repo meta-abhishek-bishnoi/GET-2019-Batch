@@ -57,18 +57,41 @@ public class LinkedList {
 		int currentEnd = end;
 		while(true){
 			if(opeartionCount>=rotateIndex || currentStart == currentEnd){
-				//currentNode = headNode;
+				currentNode = headNode;
 				break;
 			}
 			if(nodeCount == currentStart){
 				startCurrent = currentNode;
 				currentNode = currentNode.next;
 				nodeCount++;
-			}else if(nodeCount<currentStart){
+			}
+			else if(nodeCount<currentStart){
 				startLast = currentNode;
 				currentNode = currentNode.next;
 				nodeCount++;
-			}else if(nodeCount == currentEnd){
+			}
+			else if(nodeCount == currentEnd && currentStart == 1){
+				endCurrent = currentNode;
+				endLast.next = endCurrent.next;
+				headNode = endCurrent;
+				endCurrent.next = startCurrent;
+				currentNode = headNode;
+				nodeCount=1;
+				opeartionCount++;
+					
+			}
+			else if(nodeCount == currentEnd && (currentEnd-currentStart) == 1){
+				endCurrent = currentNode;
+				startCurrent.next = endCurrent.next;
+				startLast.next = endCurrent;
+				endCurrent.next = startCurrent;
+				currentNode = headNode;
+				nodeCount=1;
+				opeartionCount++;
+					
+			}
+			
+			else if(nodeCount == currentEnd){
 				endCurrent = currentNode;
 				endLast.next = endCurrent.next;
 				startLast.next = endCurrent;
@@ -77,7 +100,8 @@ public class LinkedList {
 				nodeCount=1;
 				opeartionCount++;
 					
-			}else{
+			} 
+			else{
 				endLast = currentNode;
 				currentNode = currentNode.next;
 				nodeCount++;
