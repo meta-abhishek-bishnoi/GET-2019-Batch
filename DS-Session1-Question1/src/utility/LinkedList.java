@@ -33,10 +33,10 @@ public class LinkedList {
 		}
 	}
 	/**
-	 * 
-	 * @param start
-	 * @param end
-	 * @return
+	 * This Method is used to rotate SubList from start to end index
+	 * @param start: start index
+	 * @param end: end index
+	 * @exception AssertionError: when we get invalid start index, end index
 	 */
 	public void rotateSubList(int start, int end, int rotateIndex){
 		Node currentNode = headNode;
@@ -87,10 +87,11 @@ public class LinkedList {
 		//return currentNode;
 	}
 	/**
-	 * 
+	 * this function is for validation of index or validation for index
 	 * @param start
 	 * @param end
 	 * @param rotateIndex
+	 * @exception through Exception when got any flase condition
 	 */
 	private void validate(int start, int end, int rotateIndex) {
 	    
@@ -131,10 +132,10 @@ public class LinkedList {
 		return size;
 	}
 	/**
-	 * 
+	 * @return convert list to Array()
 	 */
 	public int[] toArray(){
-		int size = size();
+		int size = this.size();
 		int resultArray[] = new int[size];
 		int index=0;
 		Node current = headNode;
