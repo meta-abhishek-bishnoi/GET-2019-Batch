@@ -1,7 +1,7 @@
 /**
  * @author Abhishek Bishnoi
  * @since Jul 30, 2019
- * Assumption all queue values are either positive or negative number
+ * Assumption all queue values are non zero values
  */
 package meta.utility;
 
@@ -16,7 +16,10 @@ public class CircularQueue implements Queue {
 		end = size-1;
 	}
 	/**
-	 * 
+	 *  This function is adding items to Queue
+	 *  @param item: int value
+	 *  @return boolean value for success or failure
+	 *  @exception when queue is fill (Assertion Error)
 	 */
 	@Override
 	public boolean add(int item) {
@@ -28,13 +31,15 @@ public class CircularQueue implements Queue {
 				addIndex++;
 			}
 		}else{
-			return false;
+			throw new AssertionError("Queue Is Full");
 		}
 		return true;
 	}
 
 	/**
-	 * 
+	 * delete element from queue
+	 * @exception Assertion Error when queue is empty
+	 * @return boolean value for success or failure
 	 */
 	@Override
 	public boolean delete() {
@@ -46,11 +51,15 @@ public class CircularQueue implements Queue {
 				deleteIndex++;
 			}
 		}else{
-			return false;
+			throw new AssertionError("Queue Is Empty");
 		}
 		return true;
 	}
 
+	/**
+	 * this function is returns if queue is empty or not
+	 * @return boolean value for success or failure
+	 */
 	@Override
 	public boolean isEmpty() {
 		for(int value: circularQueue){
@@ -61,6 +70,10 @@ public class CircularQueue implements Queue {
 		return false;
 	}
 
+	/**
+	 * this function evolute is queue is full or not
+	 * @return boolean value for success or failure
+	 */
 	@Override
 	public boolean isFull() {
 		for(int value: circularQueue){

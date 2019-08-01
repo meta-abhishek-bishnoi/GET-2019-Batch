@@ -1,3 +1,8 @@
+/**
+ * @author Abhishek Bishnoi
+ * @since Aug 1, 2019
+ * 
+ */
 package meta.utility;
 
 public interface Queue {
