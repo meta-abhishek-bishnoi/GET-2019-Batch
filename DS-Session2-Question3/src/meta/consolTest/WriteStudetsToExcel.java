@@ -1,4 +1,4 @@
-package meta.test;
+package meta.consolTest;
 import jxl.write.Number;
 import jxl.write.WriteException;
 import jxl.Workbook;
@@ -6,7 +6,7 @@ import jxl.write.*;
 
 import java.io.File;
 import java.io.IOException;
-public class WriteCourseToExcel {
+public class WriteStudetsToExcel {
 		public static void main(String[] args) {
 			final String filePath = "shortlist.xls";
 			  WritableWorkbook workBook = null;
@@ -30,11 +30,12 @@ public class WriteCourseToExcel {
 				  label = new Label(7, 0, "Choice 5");
 				  excelSheet.addCell(label);
 				 String StudentId[]={"Meta-05","Meta-09","Meta-20","Meta-14","Meta-15",
-						 "Meta-25","Meta-04","Meta-01","Meta-11","Meta-17","Meta-12","Meta-02"};
+						 "Meta-25","Meta-04","Meta-01","Meta-11","Meta-17","Meta-12","Meta-02",
+						 "meta-56","meta-43"};
 				 String studentName[]={"Abhishek","Babbar","Yatika","Manoj","Bharat","Rahul",
-						 "Harsh","Radheshyam","Bharti","kiran","Arav","Sahil"};
+						 "Harsh","Radheshyam","Bharti","kiran","Arav","Sahil","Pankaj","Shresh"};
 				 String course[]={"B.Tech-CSE","B.Tech-IT","B.Tech-ECE","B.Tech-EE","B.Tech-ME","B.Tech-Civil","BCA","BSC-CSE"};
-				  for(int i=1; i<=8; i++){
+				  for(int i=1; i<=14; i++){
 					  Number rank = new Number(0, i, i);
 					  Label id = new Label(1,i,StudentId[i-1]);
 					  Label name= new Label(2,i,studentName[i-1]);

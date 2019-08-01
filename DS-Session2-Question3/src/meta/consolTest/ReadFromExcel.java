@@ -1,4 +1,4 @@
-package meta.test;
+package meta.consolTest;
 
 import java.io.File;
 import java.io.IOException;

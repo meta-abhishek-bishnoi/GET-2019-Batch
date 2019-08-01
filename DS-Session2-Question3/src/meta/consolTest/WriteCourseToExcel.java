@@ -1,4 +1,4 @@
-package meta.test;
+package meta.consolTest;
 import jxl.write.Number;
 import jxl.write.WriteException;
 import jxl.Workbook;
@@ -6,7 +6,7 @@ import jxl.write.*;
 
 import java.io.File;
 import java.io.IOException;
-public class WriteStudentToExcel {
+public class WriteCourseToExcel {
 		public static void main(String[] args) {
 			final String filePath = "course.xls";
 			  WritableWorkbook workBook = null;
@@ -21,7 +21,7 @@ public class WriteStudentToExcel {
 				  excelSheet.addCell(label);
 				  String courseId[] = {"CS","IT","EC","EE","ME","CE","BC","BCS"};
 				  String course[]={"B.Tech-CSE","B.Tech-IT","B.Tech-ECE","B.Tech-EE","B.Tech-ME","B.Tech-Civil","BCA","BSC-CSE"};
-				  int seats[]={70,45,40,40,70,40,25,25};
+				  int seats[]={2,1,2,1,1,1,2,2};
 				  for(int i=1; i<=8; i++){
 					  //Number courseNo = new Number(0, i, i);
 					  Label id = new Label(0,i,courseId[i-1]);
