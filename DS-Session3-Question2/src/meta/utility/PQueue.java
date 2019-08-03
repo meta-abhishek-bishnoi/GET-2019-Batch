@@ -15,6 +15,9 @@ public class PQueue {
 	 * @param size
 	 */
 	public PQueue(int size){
+		if(size<=0){
+			throw new AssertionError("-Ve Size Value");
+		}
 		SIZE = size+1;
 		queue = new int[SIZE];
 	}
