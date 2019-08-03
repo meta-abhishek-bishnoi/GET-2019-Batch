@@ -1,19 +1,26 @@
+/**
+ * @author Abhishek Bishnoi
+ * @since Aug 2, 2019
+ * This class is Data Structure which provides various functionalities of Max Heap
+ * in Player with priority of balls
+ */
 package meta.utility;
 
 public class MaxHeap {
-	private Player[] Heap; 
+	private Player[] Heap; // To store objects of player
     private int size; 
     private int maxsize; 
   
     // Constructor to initialize an 
-    // empty max heap with given maximum 
-    // capacity. 
+    // empty max heap with given maximum wrt to Balls In Player
     public MaxHeap(int maxsize) 
     { 
         this.maxsize = maxsize; 
         this.size = 0; 
         Heap = new Player[this.maxsize + 1]; 
         Heap[0] = new Player(Integer.MAX_VALUE, Integer.MAX_VALUE); 
+        // Heap[0] is root node of Heap.
+        // we are adding another node as child of Heap[0] into MaxHeap.
         for(int i=1; i<=maxsize; i++){
         	Heap[i] = new Player(0,0);
         }
@@ -25,12 +32,12 @@ public class MaxHeap {
         return pos / 2; 
     } 
   
-    // Below two functions return left and 
-    // right children. 
+    // return left child 
     private int leftChild(int pos) 
     { 
         return (2 * pos); 
     } 
+    // return right child
     private int rightChild(int pos) 
     { 
         return (2 * pos) + 1; 
@@ -44,7 +51,7 @@ public class MaxHeap {
         } 
         return false; 
     } 
-  
+    // swap nodes position
     private void swap(int fpos, int spos) 
     { 
         Player tmp; 
@@ -53,10 +60,7 @@ public class MaxHeap {
         Heap[spos] = tmp; 
     } 
   
-    // A recursive function to max heapify the given 
-    // subtree. This function assumes that the left and 
-    // right subtrees are already heapified, we only need 
-    // to fix the root. 
+    // A recursive function to max heapify the given tree
     private void maxHeapify(int pos) 
     { 
         if (isLeaf(pos)) 
@@ -90,14 +94,15 @@ public class MaxHeap {
     } 
   
     // Remove an element from max heap 
+    // here Max refer to max Player with Balls Excluding Heap[0]/root node.
+    // so in this business sense Heap[1] is the larger node
     public Player extractMax() 
     { 
         Player popped = Heap[1]; 
-        Heap[1] = new Player(0,0);
-        maxHeapify(1); 
+        Heap[1] = new Player(0,0); 
         return popped; 
     }
-    //
+    // return reaming heap in array form
     public Player[] getHeap(){
     	return Heap;
     }
