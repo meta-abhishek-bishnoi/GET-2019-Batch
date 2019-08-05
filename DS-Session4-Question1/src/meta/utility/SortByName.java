@@ -1,3 +1,8 @@
+/**
+ * This Class Defines ComapreTo() for Name Wise Sorting
+ * @author Abhishek Bishnoi
+ * @since Aug 3, 2019
+ */
 package meta.utility;
 
 import java.util.Comparator;
@@ -22,6 +27,11 @@ public class SortByName implements Comparable<SortByName>{
 	public String getEmployeeAddress() {
 		return employee.getEmployeeAddress();
 	}
+	/**
+	 * @java.lang.Override
+	 * Method Overriding for defining comparing objects 
+	 * on the basis of employee name 
+	 */
 	@Override
 	public int compareTo(SortByName obj) {
 		return this.employee.getEmployeeName().compareTo(obj.employee.getEmployeeName());
