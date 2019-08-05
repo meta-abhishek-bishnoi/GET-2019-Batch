@@ -1,19 +1,25 @@
+/**
+ * This Class Contains Methods to Calculate Unique Characters in a string 
+ * if string is searched before then it will returns you in O(1)
+ * else it will take O(n) Complexity 
+ * @author Abhishek Bishnoi
+ */
 package meta.utility;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class UniqueChar {
+	// cache map to store cache results
 	Map<String, Integer> cacheResult = new HashMap<String, Integer>();
 	/**
-	 * 
-	 * @param string
-	 * @return
+	 * This Function Counts and return Unique characters in string 
+	 * @param string To check Unique Characters
+	 * @return unique character count
 	 */
 	public int countUniqueCharacters(String string){
 		try{
 			if(cacheResult.containsKey(string)){
-				//System.out.println("Yahoo");
 				return cacheResult.get(string);
 			}else{
 				int countUnique = 0;
