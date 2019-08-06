@@ -23,20 +23,30 @@ public class Service {
 		}
 		return true;
 	}
-	public List<Employee> sort(){
-		Employee firstFollower;
-		Employee first;
-		Employee lastFollower;
-		Employee last;
-		int size = size();
-		for(int i=0; i<size()-2; i++){
-			for(int j=i+1; j<size()-1; j++){
-				if(i == 0){
-					
+	public void sort(){
+		Employee current = head;
+		Employee index = null;
+		Employee temporary;
+		while (current != null) {
+			index = current.next;
+			while (index != null) {
+				if (current.getSalary() < index.getSalary()) {
+					temporary = current;
+					current = index;
+					index = temporary;
 				}
+				if (current.getSalary() == index.getSalary()) {/*In case salary is equal then the one having the lower age would be given preference*/
+					if (current.getAge() >= index.getAge()) {//Comparing age
+						temporary = current;
+						current = index;
+						index = temporary;
+					}
+				}
+				index = index.next;
 			}
+			current = current.next;
 		}
-		return null;
+
 	}
 	/**
 	 * 
@@ -50,4 +60,8 @@ public class Service {
 		}
 		return size;
 	}
+	/**
+	 * 
+	 */
+
 }
