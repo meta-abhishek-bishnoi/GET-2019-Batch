@@ -1,5 +1,6 @@
 DBMS Session 1 Question 1 :
-https://drive.google.com/file/d/1Pm0CTz165gfbxyKkfydA2Gk-r268jMu-/view?usp=sharing
+https://drive.google.com/file/d/1Pm0CTz165gfbxyKkfydA2Gk-r268jMu-/view?usp=sharing (Flow Chart)
+https://drive.google.com/file/d/1E1K3_yaLxstEnqyZ9DEvNbsAo8QFcccR/view?usp=sharing (ER Diagram)
 
 DBMS Session 1 Question 2 :
 https://docs.google.com/document/d/1NfEV5uY5SzcG0AjadoSxqpaNPOJCuaBGi7WetGtK0jA/edit?usp=sharing
