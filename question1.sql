@@ -58,7 +58,8 @@ create table product(
 	product_name varchar(50),
 	price double,
 	stock int,
-	description varchar(200)
+	description varchar(200),
+	status varchar(20) default 'active' check(status IN ('active','inactive'))
 );
 
 
@@ -104,7 +105,7 @@ create table items(
 	address_id int,
 	product_id int,
 	quantity int,
-	status varchar(50) check(status IN ('shipped','delivered','pending')),
+	status varchar(50) check(status IN ('shipped','delivered','pending','cancelled','returned')),
 	foreign key(address_id) REFERENCES address(address_id),
 	foreign key(product_id) REFERENCES product(product_id),
 	foreign key(order_id) REFERENCES orders(order_id)
