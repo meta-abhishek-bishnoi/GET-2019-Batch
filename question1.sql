@@ -3,7 +3,6 @@
 */
 create database storefront;
 use storefront;
-
 /**
 * user table contaions password of all users and their authentication type
 */
@@ -59,7 +58,7 @@ create table product(
 	price double,
 	stock int,
 	description varchar(200),
-	status varchar(20) default 'active' check(status IN ('active','inactive'))
+	productstatus varchar(20) default 'active' check(status IN ('active','inactive'))
 );
 
 
@@ -128,5 +127,6 @@ create table product(
 	product_name varchar(50),
 	price double,
 	stock int,
-	description varchar(200)
+	description varchar(200),
+	productstatus varchar(20) default 'active' check(status IN ('active','inactive'))
 );
