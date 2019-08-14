@@ -37,6 +37,7 @@ select EXTRACT(MONTH FROM o.ordertime) as MONTH, sum(i.quantity*p.price) as TOTA
 from orders as o 
 inner join items as i on i.order_id = o.order_id
 inner join product as p on p.product_id = i.product_id
+where datediff(curdate(),o.ordertime)/365 < 1
 group by MONTH
 limit 6;
 
