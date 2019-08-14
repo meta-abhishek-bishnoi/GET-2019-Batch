@@ -55,7 +55,7 @@ insert into product(product_name, price, stock, description) values ('oopo-9x',1
 /**
 * adding relation of products and categories
 */
-insert into productrelation(product_id, category_id) values(1,5),
+insert into productrelation(product_id, category_id) values(1,5),(1,6)
 (2,5),(3,5),(4,5),(5,5),(6,5),(10,5),(7,6),(8,6),(9,7),(11,8),
 (12,8),(13,8),(14,9),(15,9),(16,10),(17,10),(18,10),(19,10),(20,11),
 (21,11),(22,11),(23,11),(24,12),(25,12),(26,12),(27,12);
