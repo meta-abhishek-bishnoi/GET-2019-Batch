@@ -1,0 +1,68 @@
+/**
+* this query show users with their order counts in last 30 days
+*/
+select distinct  s.fullname as NAME, 
+(select count(order_id)from orders where customer_id = s.user_id AND DATEDIFF(CURRENT_TIMESTAMP(), o.ordertime)<30) as LATEST_ORDER
+from shopper as s
+left join orders as o on o.customer_id = s.user_id
+order by LATEST_ORDER desc;
+/**
+* 10 shoppers with max revenue
+*/
+select s.fullname as NAME , sum(p.price*i.quantity) as AMOUNT
+from shopper as s
+inner join orders as o on s.user_id = o.customer_id
+inner join items as i on o.order_id = i.order_id
+inner join product as p on p.product_id = i.product_id
+group by s.fullname
+order by AMOUNT desc
+limit 10;
+
+/**
+* top 20 products ordered most
+*/
+select p.product_name as NAME , sum(i.quantity) as Quantity
+from orders as o
+inner join items as i on i.order_id = o.order_id
+inner join product as p on p.product_id = i.product_id
+where datediff(curdate(),o.ordertime) <= 60
+group by NAME
+order by Quantity desc
+limit 20;
+
+/**
+* mothwise sales revenue of last 3 months 
+*/
+select EXTRACT(MONTH FROM o.ordertime) as MONTH, sum(i.quantity*p.price) as TOTAL
+from orders as o 
+inner join items as i on i.order_id = o.order_id
+inner join product as p on p.product_id = i.product_id
+group by MONTH
+limit 6;
+
+/**
+* inactivating product which are not sold from last 90 days
+*/
+update product as pr
+left join items as i on i.product_id = pr.product_id 
+left join orders as o on o.order_id = i.order_id 
+set productstatus='inactive'
+where datediff(curdate(),o.ordertime) > 90; 
+/**
+* show all products of category/categries
+*/
+select p.product_name as PRODUCT, c.category_name as CATEGORY
+from category as c
+inner join productrelation as pr on pr.category_id = c.category_id
+inner join product as p on p.product_id = pr.product_id
+where  category_name like '%men%';
+/**
+* top 10 cancelled items
+*/
+select p.product_name as NAME, count(i.status) as COUNT
+from items as i 
+inner join orders as o on i.order_id = o.order_id
+inner join product as p on i.product_id = p.product_id
+where i.status like 'cancelled'
+group by NAME
+limit 10;
