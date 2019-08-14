@@ -90,16 +90,25 @@ create table images(
 */
 
 create table orders(
-	order_no int auto_increment not null primary key,
+	order_id int auto_increment not null primary key,
 	customer_id int,
+	ordertime datetime,
+	foreign key(customer_id) references user(user_id)
+);
+/**
+* This table contains records of items with respect to each order 
+*/
+create table items(
+	sn int auto_increment not null primary key,
+	order_id int,
 	address_id int,
 	product_id int,
-	ordertime datetime,
 	quantity int,
 	status varchar(50) check(status IN ('shipped','delivered','pending')),
-	foreign key(customer_id) references user(user_id),
-	foreign key(address_id) references address(address_id),
-	foreign key(product_id) REFERENCES product(product_id)
+	foreign key(address_id) REFERENCES address(address_id),
+	foreign key(product_id) REFERENCES product(product_id),
+	foreign key(order_id) REFERENCES orders(order_id)
+
 );
 
 /**
