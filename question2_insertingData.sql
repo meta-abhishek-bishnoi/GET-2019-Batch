@@ -1,25 +1,55 @@
-/**
-* adding users
+/** creating users
 */
-insert into user(username, password, role) values('meta-abhi','metacube','A');
-insert into user(username, password, role) values('meta-yashi','metacube','S');
-insert into user(username, password, role) values('meta-manoj','metacube','S');
-insert into user(username, password, role) values('abhi29','metacube','S');
-/**
-* adding shoppers
+INSERT INTO `user` (`username`,`password`,`first_name`,`last_name`,`email`,`contact_no`) VALUES ('meta-abhi','metacube','Abhishek','Bishnoi','abhishek.bishnoi@metacube.com',8976568778),
+('meta-manoj','metacube','manoj','sharma','manoj@metacube.com',47253765),
+('meta-shreyash','metacube','shreyash','khandelwal','shresyash@metacube.com',31340543),
+('meta-babbar','metacube','anmol','babbar','anmol.babbar@metacube.com',41462340),
+('meta-pankaj','metacube','pankaj','kumar','pankaj.kumar@metacube.com',48730116),
+('meta-yatika','metacube','yatika','bansal','yatika.bansal@metacube.com',51312773),
+('meta-aman','metacube','aman','kumar','aman@metacube.com',16987243),
+('ecb-monika','ecb','monika','suthar','monika.suthar@ecb.ac.in',55612233),
+('ecb-ashwani','ecb','ashwani','dev','ashwani@ecb.ac.in',97088102),
+('ecb-nitin','ecb','nitin','chahuhan','nitin@ecb.ac.in',45255458),
+('ecb-mini','ecb','minakshi','malav','mini@ecb.ac.in',2601667),
+('ecb-anshu','ecb','anhsuman','galav','anshu@ecb.ac.in',52655608),
+('ecb-bhagraj','ecb','bhagraj','choudhary','bhag@ecb.ac.in',93665842),
+('ecb-bhagu','ecb','bhagyashree','arya','bhagu@ecb.ac.in',83890911),
+('ecb-nidhi','ecb','nidhi','jan','nidhi@ecb.ac.in',50765936),
+('ecb-naag','ecb','ramnarayan','vishnoi','naag@ecb.ac.in',45967131),
+('ecb-siya','ecb','siya','goyal','coder_siya@ecb.ac.in',28963916);
+/** assigning roles
 */
-insert into shopper(user_id, fullname) values (2, 'Yatika Bansal');
-insert into shopper(user_id, fullname) values (3, 'Manoj Sharma');
-insert into shopper(user_id, fullname) values (4, 'Abhishek Bishnoi');
-/**
-* adding shopers delivery address
+INSERT INTO `role` (`user_id`,`role`) VALUES (1,'Admin'),
+(1,'Shopper'),(2,'Shopper'),(3,'Admin'),(3,'Shopper'),
+(4,'Shopper'),(5,'Shopper'),(6,'Shopper'),(7,'Admin'),
+(8,'Shopper'),(8,'Admin'),(9,'Admin'),(10,'Shopper'),
+(11,'Shopper'),(12,'Admin'),(12,'Shopper'),(13,'Shopper'),
+(14,'Admin'),(14,'Shopper'),(15,'Shopper'),(16,'Shopper'),
+(17,'Shopper');
+/** adding address
 */
-insert into address(user_id, contact_person, address, contact_no, email) values (2,'Yatika','Jaipur',129865,'yb@xu.in');
-insert into address(user_id, contact_person, address, contact_no, email) values (2,'Yatika','Jodhpur',543865,'yb@xu.in');
-insert into address(user_id, contact_person, address, contact_no, email) values (3,'Manoj','Jaipur',186565,'ms@xyu.in');
-insert into address(user_id, contact_person, address, contact_no, email) values (3,'Manoj','Kota',686565,'ms@xyu.in');
-insert into address(user_id, contact_person, address, contact_no, email) values (4,'Abhishek','Jaipur',998270,'ab@xu.in');
-insert into address(user_id, contact_person, address, contact_no, email) values (4,'Abhishek','Sri Ganganagar',6776565,'ab@xyu.in');
+INSERT INTO `address` (`user_id`,`contact_person`,`address`,`contact_no`,`email`) 
+VALUES (1,'Linus','Opwijk',670478,'eros.non@congueIn.com'),
+(1,'Leo','Baton Rouge',632985,'Phasellus.dolor.elit@erosNamconsequat.net'),
+(1,'Micah','Poitiers',306303,'Donec.sollicitudin@egetmetus.net'),
+(2,'Brendan','Roccalumera',871084,'tellus@Namnullamagna.com'),
+(3,'Trevor','Oldenburg',843291,'ut@at.org'),
+(3,'Sebastian','Connah\'s Quay',43934,'Mauris.magna@nisisem.edu'),
+(4,'Xenos','Bicinicco',853782,'id.ante@vitaesodales.co.uk'),
+(5,'Tad','New Sarepta',363020,'Ut.sagittis.lobortis@malesuada.edu'),
+(5,'Lamar','A Coruña',910476,'erat@idmollisnec.ca'),
+(6,'Brennan','De Haan',804942,'neque@Nullatemporaugue.org'),
+(8,'Norman','San Giovanni Lipioni',273359,'Vivamus@estarcuac.co.uk'),
+(8,'Fletcher','Budaun',166976,'Duis.at@facilisismagnatellus.org'),
+(8,'Damon','Mauá',93611,'ipsum.dolor.sit@Lorem.co.uk'),
+(10,'Emerson','Omaha',386630,'ante.Vivamus.non@ullamcorpermagna.net'),
+(11,'Xavier','South Portland',619604,'tincidunt.congue@elementum.net'),
+(12,'Fritz','Sassocorvaro',675672,'malesuada.id@ipsumleo.ca'),
+(13,'Kieran','Essene',937086,'arcu.ac@Integer.edu'),
+(14,'Lawrence','Chaudfontaine',964195,'placerat.eget@vestibulum.co.uk'),
+(15,'Lewis','San Sostene',433631,'feugiat.nec@Aenean.org'),
+(16,'Maxwell','Newmarket',743144,'dignissim.pharetra.Nam@vel.net'),
+(17,'Ryan','Detroit',132157,'euismod.mauris.eu@cursus.org');
 /**
 * adding category
 */
@@ -76,10 +106,21 @@ insert into images(image_url,product_id) values ("1-front.jpg",1),
 insert into orders(customer_id, ordertime) values (4,CURRENT_TIMESTAMP()),
 (2,CURRENT_TIMESTAMP()),
 (2,CURRENT_TIMESTAMP()),
-(4,CURRENT_TIMESTAMP());
-/**
-* items placed
-*/
-insert into items(order_id, address_id,product_id,quantity,status) values(1,5,4,1,'pending'),(1,6,21,2,'pending'),
-(2,1,6,2,'delivered'),(3,1,7,2,'shipped'),(3,1,25,3,'delivered'),(4,5,6,1,'pending');
-
+(4,CURRENT_TIMESTAMP()),
+(12,CURRENT_TIMESTAMP()),
+(11,CURRENT_TIMESTAMP()),
+(13,CURRENT_TIMESTAMP()),
+(8,CURRENT_TIMESTAMP()),
+(8,CURRENT_TIMESTAMP()),
+(14,CURRENT_TIMESTAMP()),
+(16,CURRENT_TIMESTAMP()),
+(9,CURRENT_TIMESTAMP()),
+(3,CURRENT_TIMESTAMP()),
+(7,CURRENT_TIMESTAMP()),
+(13,CURRENT_TIMESTAMP()),
+(17,CURRENT_TIMESTAMP()),
+(5,CURRENT_TIMESTAMP()),
+(8,CURRENT_TIMESTAMP()),
+(2,CURRENT_TIMESTAMP()),
+(8,CURRENT_TIMESTAMP())
+;

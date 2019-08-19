@@ -10,18 +10,20 @@ create table user (
 	user_id int NOT NULL AUTO_INCREMENT primary key, 
 	username varchar(50) unique, 
 	password varchar(50), 
-	role char(1) CHECK( role in ('A','S'))
+	first_name varchar(50),
+	last_name varchar(50),
+	email varchar(50),
+	contact_no BIGINT
 );
 
 
 /**
-* shopper is a classification of user class
-* this class contains user_id as a foreign key of user table
+* 
 */
-create table shopper(
-	sn int not null auto_increment primary key, 
+create table role (
+	sn int not null auto_increment primary key,
 	user_id int, 
-	fullname varchar(50), 
+	role varchar(20),
 	foreign key(user_id) references user(user_id)
 );
 
