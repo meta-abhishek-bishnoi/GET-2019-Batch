@@ -2,8 +2,9 @@ package consol;
 
 import java.util.List;
 
-import dao.CategoryCount;
-import util.Service;
+import dao.Service;
+import pojo.CategoryCount;
+
 
 public class testCategoryCount {
 	public static void main(String[] args) {

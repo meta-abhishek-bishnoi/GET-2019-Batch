@@ -3,7 +3,8 @@
  * @author Abhishek Bishnoi
  * @since Aug 19, 2019
  */
-package util;
+package dao;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,8 +12,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.CategoryCount;
-import dao.UserOrder;
+import pojo.CategoryCount;
+import pojo.UserOrder;
+import util.Connector;
+import util.Query;
 
 public class Service {
 	Connector connector = new Connector();
@@ -45,8 +48,10 @@ public class Service {
 	 * @param urls List of urls in String
 	 * @param productId product id
 	 * @return boolean value
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
 	 */
-	public boolean addImage(List<String> urls, int productId){
+	public boolean addImage(List<String> urls, int productId) throws ClassNotFoundException, IOException{
 		String query = Query.getInsertProductImageQuery();
 		try(Connection connect = connector.getConnection();
 			PreparedStatement preparedStatement = connect.prepareStatement(query)){
@@ -66,8 +71,10 @@ public class Service {
 	/**
 	 * deleting those products which are not sold more then one year (Soft delete)
 	 * @return effected rows or deleted products
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
 	 */
-	public int deleteProductsMoreThenOneYear(){
+	public int deleteProductsMoreThenOneYear() throws ClassNotFoundException, IOException{
 		String query = Query.getDeleteProductQuery();
 		int effectedRow =0;
 		try( Connection connect = connector.getConnection();

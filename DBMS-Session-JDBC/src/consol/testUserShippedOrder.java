@@ -2,8 +2,8 @@ package consol;
 
 import java.util.List;
 
-import dao.UserOrder;
-import util.Service;
+import dao.Service;
+import pojo.UserOrder;
 
 public class testUserShippedOrder {
  public static void main(String[] args) {

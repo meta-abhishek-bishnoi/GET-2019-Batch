@@ -4,13 +4,15 @@
  */
 package consol;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import util.Service;
+import dao.Service;
+
 
 public class testInsertImages {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		List<String> images = new ArrayList<String>();
 		int productId = 11;
 		images.add("kitchenSet-Box-Front");

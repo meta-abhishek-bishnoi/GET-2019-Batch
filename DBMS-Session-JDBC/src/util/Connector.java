@@ -13,35 +13,26 @@ public class Connector {
 	/**
 	 * this function establish a JDBC Connection
 	 * @return Object Of Connection
+	 * @throws IOException 
 	 * @throws ClassNotFoundException any class is missing from enviornment
 	 * @throws SQLException when some Exception occurs in SQL queries
 	 */
-	public Connection getConnection(){
+	public Connection getConnection() throws IOException, ClassNotFoundException, SQLException{
 		Connection connect = null;
 		LoadMessages message = null;
 		/**
 		 * getting username password from .properties file 
 		 * using LoadMessages class
 		 */
-		try { //
-			message = new LoadMessages( "connection.properties" );
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+		message = new LoadMessages( "connection.properties" );
 		String url = message.getMessage( "url" ); 
 		String username = message.getMessage( "username" );
 		String password = message.getMessage( "password" );
 		/**
 		 * establishing connection
 		 */
-		try { //
-				Class.forName( "com.mysql.jdbc.Driver" );
-				connect = DriverManager.getConnection(url,username,password);
-		} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-		}catch (SQLException e) {
-			e.printStackTrace();
-		}	
+		Class.forName( "com.mysql.jdbc.Driver" );
+		connect = DriverManager.getConnection(url,username,password);
 		return connect;
 	}
 }
