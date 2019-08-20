@@ -124,3 +124,15 @@ insert into orders(customer_id, ordertime) values (4,CURRENT_TIMESTAMP()),
 (2,CURRENT_TIMESTAMP()),
 (8,CURRENT_TIMESTAMP())
 ;
+/**
+*/
+INSERT INTO `items` (`sn`,`order_id`,`address_id`,`product_id`,`quantity`,`status`) VALUES (1,3,4,19,3,'shipped'),
+(2,12,13,1,5,'pending'),(3,3,4,17,3,'delivered'),(4,19,4,19,4,'pending'),(5,4,7,20,1,'pending'),
+(6,18,12,18,2,'pending'),(7,6,15,2,2,'pending'),(8,4,7,11,4,'shipped'),(9,20,12,24,4,'cancelled'),
+(10,7,17,10,1,'returned'),(11,15,17,24,3,'delivered'),(12,12,13,24,4,'returned'),(13,4,7,22,5,'shipped'),
+(14,20,12,22,4,'shipped'),(15,14,11,5,1,'shipped'),(16,8,12,20,4,'delivered'),(17,13,5,16,4,'shipped'),
+(18,5,16,2,5,'shipped'),(19,17,8,3,2,'cancelled'),(20,16,21,1,3,'delivered'),(21,6,15,19,3,'shipped'),
+(22,6,15,19,5,'pending'),(23,2,4,6,2,'cancelled'),(24,9,12,3,1,'shipped'),(25,7,17,2,5,'delivered'),
+(26,13,6,2,2,'delivered'),(27,10,18,20,4,'shipped'),(28,7,17,22,3,'returned'),(29,2,4,2,2,'returned'),
+(30,15,17,3,1,'pending'),(31,11,20,20,3,'pending'),(32,5,16,10,4,'shipped'),(33,16,21,24,2,'shipped'),
+(34,1,7,24,3,'returned'),(35,18,12,18,4,'delivered');

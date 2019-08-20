@@ -27,15 +27,17 @@ where i.status like 'pending' AND DATEDIFF(CURRENT_TIMESTAMP(), o.ordertime)>10;
 /**
 * showing name of users who doesn't orders more then 1 month
 */
-select fullname
-from shopper as s inner join orders as o on s.user_id = o.customer_id
-where datediff(curdate(),o.ordertime)/30 >= 1;
+select u.first_name as FIRST_NAME, u.last_name as LAST_NAME
+from user as u inner join orders as o on u.user_id = o.customer_id
+inner join role as r on u.user_id = r.user_id
+where datediff(curdate(),o.ordertime)/30 >= 1 and r.role = 'Shopper';
 /**
 * list of users ordered in last 15 days
 */
-select s.fullname, o.order_id
-from shopper as s inner join orders as o on s.user_id = o.customer_id
-where datediff(curdate(),o.ordertime) < 15;
+select u.first_name as FIRST_NAME, u.last_name as LAST_NAME, o.order_id as ORDER_ID
+from user as u inner join orders as o on u.user_id = o.customer_id
+inner join role as r on u.user_id = r.user_id
+where datediff(curdate(),o.ordertime) < 15  and r.role = 'Shopper';
 /**
 * products which are shipped for a particular order id
 */
