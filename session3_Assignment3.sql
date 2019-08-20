@@ -1,20 +1,22 @@
 /**
 * this query show users with their order counts in last 30 days
 */
-select distinct  s.fullname as NAME, 
-(select count(order_id)from orders where customer_id = s.user_id AND DATEDIFF(CURRENT_TIMESTAMP(), o.ordertime)<30) as LATEST_ORDER
-from shopper as s
-left join orders as o on o.customer_id = s.user_id
+select distinct u.first_name as FIRST_NAME, u.last_name as LAST_NAME, 
+(select count(order_id)from orders where customer_id = u.user_id AND DATEDIFF(CURRENT_TIMESTAMP(), o.ordertime)<30) as LATEST_ORDER
+from user as u
+left join orders as o on o.customer_id = u.user_id
+inner join role as r on u.user_id = r.user_id
 order by LATEST_ORDER desc;
 /**
 * 10 shoppers with max revenue
 */
-select s.fullname as NAME , sum(p.price*i.quantity) as AMOUNT
-from shopper as s
-inner join orders as o on s.user_id = o.customer_id
+select u.first_name as FIRST_NAME, u.last_name as LAST_NAME, sum(p.price*i.quantity) as AMOUNT
+from user as u
+inner join orders as o on u.user_id = o.customer_id
 inner join items as i on o.order_id = i.order_id
 inner join product as p on p.product_id = i.product_id
-group by s.fullname
+inner join role as r on u.user_id = r.user_id
+group by u.first_name, u.last_name
 order by AMOUNT desc
 limit 10;
 
