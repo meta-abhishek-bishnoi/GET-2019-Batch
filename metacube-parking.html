@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="form.js"> </script>
+    <title>Parking System</title>
+</head>
+<body>
+    <div align="center" id="message"></div>
+    <div align="center" id="register">
+        <h2>Register Employee</h2> 
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name"> Employee Name: </label>
+                    </td>
+                    <td>
+                            <input type="text" placeholder="Employee's Full Name" id="name" name="name">
+                    </td>
+                </tr>
+                <tr> 
+                    <td></td><td><span id="errorname"></span> </td>
+                </tr>
+                <tr>
+                    <td> 
+                        <label> Gender:</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="gender" name="gender" value="male" checked>
+                        <label for="male"> male</label>
+                        <input type="radio" id="gender" name="gender" value="female">
+                        <label for="female"> female</label>
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                            <label for="email"> Email Id: </label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Email Id" id="email" name="email">
+                        </td>
+                </tr>
+                <tr> <td> </td><td> <span id="erroremail"> </span> </td></tr>
+                <tr>
+                    <td>
+                        <label for="password"> Password: </label>
+                    </td>
+                    <td>
+                        <input type="password" placeholder="Password" id="password" name="password">
+                    </td>
+                </tr>
+                <tr> 
+                    <td>
+                        <label type="password"> Confirm Password: </label>
+                    </td>
+                    <td> 
+                        <input type="password" placeholder="Confirm Password" id="confirm" name="confirm">
+                    </td>
+                </tr>
+                <tr> <td></td> <td> <span id="errorpassword"> </span></td></tr>
+                <tr>
+                    <td> 
+                        <label for="contact"> Contact No: </label>
+                    </td>
+                    <td>
+                        <input type="number" pattern="[1-9]{1}[0-9]{9}" placeholder="Contact Number" id="contact" name="contact">
+                    </td>
+                </tr>
+                <tr>
+                	<td></td>
+                	<td><input type="button" value="register" onclick="register()"></td>
+                </tr>
+            </table>      
+        </form>
+    </div>
+    <div align="center" id="vehical">
+    	<h2>Register Vehical</h2>
+    	<form>
+    		<table>
+    			<tr>
+                    <td>
+                        <label for="employeeName"> Employee Name: </label>
+                    </td>
+                    <td>
+                            <input type="text" placeholder="Employee's Full Name" id="employeeName" name="employee_name">
+                    </td>
+                </tr>
+                <tr>
+                	<td><label for="type"> Vehical Type</label></td>
+                	<td>
+                		<select id="type" name="type">
+                			<option value="byCycle">by cycle</option>
+                			<option value="motorCycle">MotorCycle</option>
+                			<option value="fourWheeler">Four Wheeler</option>
+                		</select>
+                	</td>
+                </tr>
+                <tr>
+                	<td><label for="number">Vehical Number *</label></td>
+                	<td><input type="text" name="number" id="number"></td>
+                </tr>
+                <tr>
+                	<td><label for="employeeId">Employee Id *</label></td>
+                	<td><input type="text" id="employeeId" name="employeeId"></td>
+                </tr>
+                <tr>
+                	<td><label for="identification">Identification</label></td>
+                	<td> <textarea rows="4" cols="22" id="identification" name="identification"></textarea>
+                	</td>
+                </tr>
+                <tr>
+                	<td></td>
+                	<td>
+                		<input type="button" value="addVehical" onclick="addVehical()">
+                	</td>
+                </tr>
+    		</table>
+    	</form>
+    </div>
+    <div align="center" id="price">
+    </div>
+</body>
+</html>
