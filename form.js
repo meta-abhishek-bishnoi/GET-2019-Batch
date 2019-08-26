@@ -74,6 +74,8 @@ function resetRegisterElementColor(){
     document.getElementById("password").style.borderColor = '';
     document.getElementById("confirm").style.borderColor = '';
     document.getElementById("errorpassword").innerHTML = "";
+    document.getElementById("id").style.borderColor = '';
+        document.getElementById("errorid").innerHTML = "";
 }
 
 /**
