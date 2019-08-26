@@ -31,6 +31,7 @@ function register(){
         document.getElementById("register").innerHTML = "";
         document.getElementById("message").innerHTML = "You Are Registerd Sucessfully, Your Registration Id meta-0001";
         document.getElementById("message").style.color = "#90ee90";
+        document.getElementById("vehical").style.display = "block";
         document.getElementById("employeeName").value = name;
         document.getElementById("employeeName").disabled = true;
     }
@@ -69,7 +70,7 @@ function resetRegisterElementColor(){
 
 /**
 */
-function addVehical(){
+function addVehicle(){
     var isValid = true;
     resetVehicalElements();
     var employeeName = document.getElementById("employeeName").value;
