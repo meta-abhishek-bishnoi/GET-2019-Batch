@@ -6,20 +6,20 @@ function register(){
     var name = document.getElementById("name").value;
     // validating name's format
     if(!validateName(name)){
-        document.getElementById("name").style.borderColor = 'red';
+        document.getElementById("name").style.borderColor = 'orange';
         document.getElementById("errorname").innerHTML = "Invalid Name";
         isValid = false;
     }
     var empid = document.getElementById("id").value;
     if(empid.length == 0){
-        document.getElementById("id").style.borderColor = 'red';
+        document.getElementById("id").style.borderColor = 'orange';
         document.getElementById("errorid").innerHTML = "Employee Id Can't Be Null";
         isValid = false;
     }
     // validating email format
     var email = document.getElementById("email").value;
     if(!validateEmail(email)){
-        document.getElementById("email").style.borderColor = 'red';
+        document.getElementById("email").style.borderColor = 'orange';
         document.getElementById("erroremail").innerHTML = "Invalid Email";
         isValid = false;
     }
@@ -27,8 +27,8 @@ function register(){
     var confirmPassword = document.getElementById("confirm".value);
     // validating passwords
     if(!validatePassword(password,confirmPassword)){
-        document.getElementById("password").style.borderColor = 'red';
-        document.getElementById("confirm").style.borderColor = 'red';
+        document.getElementById("password").style.borderColor = 'orange';
+        document.getElementById("confirm").style.borderColor = 'orange';
         document.getElementById("errorpassword").innerHTML = "Password Mismatch<br> Invalid Password Format <br>Password must >= 8 <br>password must be alpha numeric<br> it must at least apecial character";
         isValid = false;
     }
@@ -65,7 +65,7 @@ function validatePassword(password,confirmPassword){
     }
     return validPassword.test(password);
 }
-// resetting all error values, so we can get only occured errors on resubmit
+// resetting all error values, so we can get only occuorange errors on resubmit
 function resetRegisterElementColor(){
     document.getElementById("name").style.borderColor = '';
     document.getElementById("errorname").innerHTML = "";
@@ -83,17 +83,17 @@ function addVehicle(){
     resetVehicalElements();
     var employeeName = document.getElementById("employeeName").value;
     if(employeeName==""){
-        document.getElementById("employeeName").style.borderColor = "red";
+        document.getElementById("employeeName").style.borderColor = "orange";
         isValid = false;
     }
     var number = document.getElementById("number").value;
     if(number==""){
-        document.getElementById("number").style.borderColor = 'red';
+        document.getElementById("number").style.borderColor = 'orange';
         isValid = false;
     }
     var employeeId = document.getElementById("employeeId").value;
     if(employeeId==""){
-        document.getElementById("employeeId").style.borderColor = 'red';
+        document.getElementById("employeeId").style.borderColor = 'orange';
         isValid = false;
     }
     var dailyRent = 0;
@@ -139,7 +139,7 @@ function addVehicle(){
  function resetVehicalElements(){
     document.getElementById("employeeName").style.borderColor = "";
     document.getElementById("number").style.borderColor = "";
-    document.getElementById("employeeId").style.borderColor = 'red';
+    document.getElementById("employeeId").style.borderColor = 'orange';
  }
 
  function selectPlan(){
