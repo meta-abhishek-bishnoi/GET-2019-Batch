@@ -10,6 +10,12 @@ function register(){
         document.getElementById("errorname").innerHTML = "Invalid Name";
         isValid = false;
     }
+    var empid = document.getElementById("id").value;
+    if(empid.length == 0){
+        document.getElementById("id").style.borderColor = 'red';
+        document.getElementById("errorid").innerHTML = "Employee Id Can't Be Null";
+        isValid = false;
+    }
     // validating email format
     var email = document.getElementById("email").value;
     if(!validateEmail(email)){
@@ -29,11 +35,13 @@ function register(){
     // validating password
     if(isValid){
         document.getElementById("register").innerHTML = "";
-        document.getElementById("message").innerHTML = "You Are Registerd Sucessfully, Your Registration Id meta-0001";
+        document.getElementById("message").innerHTML = "You Are Registerd Sucessfully, Your Registration Id is:"+empid;
         document.getElementById("message").style.color = "#90ee90";
         document.getElementById("vehical").style.display = "block";
         document.getElementById("employeeName").value = name;
+        document.getElementById("employeeId").value = empid;
         document.getElementById("employeeName").disabled = true;
+        document.getElementById("employeeId").disabled = true;
     }
 }
 // checking name validation
