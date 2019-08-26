@@ -1,0 +1,88 @@
+body{
+	background-color: DarkSlateGray; 
+	color: white;
+	font-size: 18px;
+}
+h2{
+	font-size: 36px;
+}
+span{
+	color: red;
+	font-size: 16px;
+	font-family: Times New Roman;
+}
+input[type=text]{
+	-webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    outline:0; 
+    height:25px; 
+    width: 300px;
+    background-color: DarkSlateGray;
+    color: white;
+}
+::placeholder {
+  color: white;
+}
+input[type=password]{
+	-webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px;  
+    outline:0; 
+    height:25px; 
+    width: 300px;
+    background-color: DarkSlateGray;
+    color: white;
+}
+input[type=number]{
+	-webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px;
+    outline:0; 
+    height:25px; 
+    width: 300px;
+    background-color: DarkSlateGray;
+    color: white;
+}
+textarea{
+	-webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px;
+    outline:0;  
+    width: 300px;
+    background-color: DarkSlateGray;
+    color: white;
+}
+.select{
+	-webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px;
+    outline:0; 
+    height:25px; 
+    width: 300px;
+    background-color: DarkSlateGray;
+    color: white;
+}
+.selectsmall{
+	-webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px;
+    outline:0; 
+    height:25px; 
+    width: 70px;
+    background-color: DarkSlateGray;
+    color: white;
+}
+input[type=button]{
+    -webkit-border-radius: 30px; 
+	-moz-border-radius: 30px; 
+	border-radius: 30px; 
+	border: 1px solid #848484;
+	cursor: pointer;
+	font-family: Arial;
+	outline:0; 
+	height:35px; 
+	width: 180px; 
+	padding-right:15px; 
+	padding-left:15px;
+}

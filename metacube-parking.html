@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="form.js"> </script>
     <title>Parking System</title>
 </head>
@@ -22,7 +23,7 @@
                     </td>
                 </tr>
                 <tr> 
-                    <td></td><td><span id="errorname"></span> </td>
+                    <td></td><td><span id="errorname" class="error"></span> </td>
                 </tr>
                 <tr>
                     <td> 
@@ -43,7 +44,7 @@
                             <input type="text" placeholder="Email Id" id="email" name="email">
                         </td>
                 </tr>
-                <tr> <td> </td><td> <span id="erroremail"> </span> </td></tr>
+                <tr> <td> </td><td> <span id="erroremail" class="error"> </span> </td></tr>
                 <tr>
                     <td>
                         <label for="password"> Password: </label>
@@ -60,7 +61,7 @@
                         <input type="password" placeholder="Confirm Password" id="confirm" name="confirm">
                     </td>
                 </tr>
-                <tr> <td></td> <td> <span id="errorpassword"> </span></td></tr>
+                <tr> <td></td> <td> <span id="errorpassword" class="error"> </span></td></tr>
                 <tr>
                     <td> 
                         <label for="contact"> Contact No: </label>
@@ -91,7 +92,7 @@
                 <tr>
                 	<td><label for="type"> Vehical Type</label></td>
                 	<td>
-                		<select id="type" name="type">
+                		<select id="type" name="type" class="select">
                 			<option value="byCycle">by cycle</option>
                 			<option value="motorCycle">MotorCycle</option>
                 			<option value="fourWheeler">Four Wheeler</option>

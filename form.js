@@ -23,14 +23,14 @@ function register(){
     if(!validatePassword(password,confirmPassword)){
         document.getElementById("password").style.borderColor = 'red';
         document.getElementById("confirm").style.borderColor = 'red';
-        document.getElementById("errorpassword").innerHTML = "Password Mismatch Or Invalid Password Format <br>Password must >= 8 <br>password must be alpha numeric with at least apecial character";
+        document.getElementById("errorpassword").innerHTML = "Password Mismatch<br> Invalid Password Format <br>Password must >= 8 <br>password must be alpha numeric<br> it must at least apecial character";
         isValid = false;
     }
     // validating password
     if(isValid){
         document.getElementById("register").innerHTML = "";
         document.getElementById("message").innerHTML = "You Are Registerd Sucessfully, Your Registration Id meta-0001";
-        document.getElementById("message").style.color = "green";
+        document.getElementById("message").style.color = "#90ee90";
         document.getElementById("employeeName").value = name;
         document.getElementById("employeeName").disabled = true;
     }
@@ -117,7 +117,7 @@ function addVehical(){
         document.getElementById("price").innerHTML = '<form>'+'<table>'+'<tr>'+
             '<td><label for = "plan"> Select Plan (Amount in INR)</label></td>'+
             '<td>'+
-            '<select id="plan" name="plan">'+
+            '<select id="plan" name="plan" class="select">'+
             '<option value="'+dailyRent+'">'+dailyRent+' INR Daily</option>'+
             '<option value="'+monthlyRent+'">'+monthlyRent+' INR Monthly</option>'+
             '<option value="'+yearlyRent+'">'+yearlyRent+' INR Yearly</option>'+
@@ -136,7 +136,7 @@ function addVehical(){
  function selectPlan(){
     var amountINR = document.getElementById("plan").value;
     document.getElementById("price").innerHTML = 'Your Bill Amount is  '+amountINR+ ' INR only <br>'+
-    'Convert Your Bill Amount To : <br><select id="currencyType" name = "currencyType" onchange="convertCurrency('+amountINR+')">'+
+    'Convert Your Bill Amount To : <br><select id="currencyType" name = "currencyType" onchange="convertCurrency('+amountINR+')" class="selectsmall">'+
     '<option value="usd">USD</option>'+
     '<option value="yen">YEN</option>'+    
     '</select>'+
