@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>AddStudent</servlet-name>
+    <servlet-class>meta.controller.AddStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddStudent</servlet-name>
+    <url-pattern>/addStudent</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ViewStudent</servlet-name>
+    <servlet-class>meta.controller.ViewStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewStudent</servlet-name>
+    <url-pattern>/viewStudent</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>EditStudent</servlet-name>
+    <servlet-class>meta.controller.EditStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditStudent</servlet-name>
+    <url-pattern>/editStudent</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SaveChanges</servlet-name>
+    <servlet-class>meta.controller.SaveChanges</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveChanges</servlet-name>
+    <url-pattern>/saveChanges</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SearchStudent</servlet-name>
+    <servlet-class>meta.controller.SearchStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchStudent</servlet-name>
+    <url-pattern>/searchStudent</url-pattern>
+  </servlet-mapping>
+</web-app>
