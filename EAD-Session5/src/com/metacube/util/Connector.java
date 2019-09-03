@@ -17,7 +17,7 @@ public class Connector {
 	 * @throws ClassNotFoundException any class is missing from enviornment
 	 * @throws SQLException when some Exception occurs in SQL queries
 	 */
-	public Connection getConnection() throws IOException, ClassNotFoundException, SQLException{
+	public static Connection getConnection() throws IOException, ClassNotFoundException, SQLException{
 		Connection connect = null;
 		String url = "jdbc:mysql://localhost:3306/shopping"; 
 		String username = "root";

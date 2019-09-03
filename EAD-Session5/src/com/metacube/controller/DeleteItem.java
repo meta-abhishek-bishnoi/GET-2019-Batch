@@ -5,26 +5,24 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.metacube.dao.AddProductsDAO;
+
+import com.metacube.dao.DeleteProductDAO;
 
 
-public class AddToCart extends HttpServlet {
-    
-	public AddToCart() {
-        super();
-    }
-	
+public class DeleteItem extends HttpServlet{
+	public DeleteItem(){
+		
+	}
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-		int productCode = Integer.parseInt(request.getParameter("id"));
-		boolean result = AddProductsDAO.orderProduct(productCode);
+		int orderId= Integer.parseInt(request.getParameter("id"));
+		boolean result = DeleteProductDAO.deleteProduct(orderId);
 		if(result){
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/view/registerSuccess.html");
 			PrintWriter out= response.getWriter();
-			out.println("<div align=\"center\" style=\"color: green\">Product Added Successfully</div>");
+			out.println("<div align=\"center\" style=\"color: green\">Deleted Successfully</div>");
 			rd.include(request, response);
 		}else{
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/view/registerSuccess.html");
@@ -33,5 +31,4 @@ public class AddToCart extends HttpServlet {
 			rd.include(request, response);
 		}
 	}
-
 }

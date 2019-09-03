@@ -13,4 +13,17 @@ public class Query {
 	public static String insertOrderProduct(){
 		return "insert into orders(product_code, quantity) values(?,?)";
 	}
+	public static String loadOrders() {
+		return "select o.order_id as orderId, o.product_code as productCode, o.quantity as quantity, "+
+				"p.product_type as productType, p.product_name as productName, p.product_price as productPrice from orders as o "+
+				"inner join product as p on p.product_code = o.product_code";
+	}
+	public static String deleteProduct(){
+		return "delete from orders where order_id = ?";
+	}
+	public static String loadOrdersById() {
+		return "select o.order_id as orderId, o.product_code as productCode, o.quantity as quantity, "+
+				"p.product_type as productType, p.product_name as productName, p.product_price as productPrice from orders as o "+
+				"inner join product as p on p.product_code = o.product_code where order_id=?";
+	}
 }

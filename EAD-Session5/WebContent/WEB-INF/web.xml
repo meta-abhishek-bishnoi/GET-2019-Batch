@@ -1,11 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  <servlet>
-    <servlet-name>Dashboard</servlet-name>
-    <servlet-class>com.metacube.controller.Dashboard</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Dashboard</servlet-name>
-    <url-pattern>/dashboard</url-pattern>
-  </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>Dashboard</servlet-name>
+		<servlet-class>com.metacube.controller.Dashboard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dashboard</servlet-name>
+		<url-pattern>/dashboard</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AddToCart</servlet-name>
+		<servlet-class>com.metacube.controller.AddToCart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddToCart</servlet-name>
+		<url-pattern>/addCart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CartItem</servlet-name>
+		<servlet-class>com.metacube.controller.CartItem</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CartItem</servlet-name>
+		<url-pattern>/cart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteItem</servlet-name>
+		<servlet-class>com.metacube.controller.DeleteItem</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteItem</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EditOrder</servlet-name>
+		<servlet-class>com.metacube.controller.EditOrder</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditOrder</servlet-name>
+		<url-pattern>/edit</url-pattern>
+	</servlet-mapping>
 </web-app>
