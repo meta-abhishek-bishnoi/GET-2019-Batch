@@ -15,7 +15,7 @@ public class SelectPlanHtml {
 				"<head>"+
 				"<title>Insert title here</title></head>"+
 				"<body><div align='center'>"+
-		"<form action='savePlan' method='post'>"+
+		"<form action='login/savePlan' method='post'>"+
 			"<table>"+
 			"<tr>"+
 			"<td>Select Plan</td>"+

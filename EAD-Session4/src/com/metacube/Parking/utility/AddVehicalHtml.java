@@ -13,7 +13,7 @@ public class AddVehicalHtml {
 	public static String vehicalBodyHtml(){
 		StringBuilder htmlString = new StringBuilder(); 
 		htmlString.append("<div align=\"center\">")
-	     .append("            <form action=\"addVehical\" method=\"post\">")
+	     .append("            <form action=\"login/addVehical\" method=\"post\">")
 	     .append("                    <table>")
 	     .append("                            <tr>")
 	     .append("                                <td>")

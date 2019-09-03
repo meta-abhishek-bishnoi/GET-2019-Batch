@@ -27,7 +27,7 @@ public class AddVehicle extends HttpServlet{
 		vehical.addVehical(username, vehicleType, vehicleNumber, description);
 		if( (vehicleNumber != null && vehicleNumber != "") && (description != null && description != "")){
 			if(new AddVehicleDAO().addEmployee(vehical)){
-				write.print("Vehicale Added Successfully <a href=\"loginSuccess\">Select Plan </a>");
+				write.print("Vehicale Added Successfully <a href=\"login/loginSuccess\">Select Plan </a>");
 			}else{
 				write.print("<div align=\"center\" style=\"color: red\"> Please Try After Sometime </div>");
 				write.print(AddVehicalHtml.vehicalBodyHtml());

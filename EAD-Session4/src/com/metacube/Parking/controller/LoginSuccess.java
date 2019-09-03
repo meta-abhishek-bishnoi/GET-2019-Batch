@@ -22,14 +22,14 @@ public class LoginSuccess extends HttpServlet{
     	Employee employee = Authentication.getUser(username);
     	RequestDispatcher dispatcher;
     	if(employee.getIsVehicle()==0){
-			dispatcher = getServletContext().getRequestDispatcher("/addVehical");
+			dispatcher = getServletContext().getRequestDispatcher("/login/addVehical");
 			dispatcher.forward(request, response);
 		}else if(employee.isPlan()==0){
-			dispatcher = getServletContext().getRequestDispatcher("/addPlan");
+			dispatcher = getServletContext().getRequestDispatcher("/login/addPlan");
 			dispatcher.forward(request, response);
     	}
     	else {
-    		dispatcher = getServletContext().getRequestDispatcher("/dashboard");
+    		dispatcher = getServletContext().getRequestDispatcher("/login/dashboard");
 			dispatcher.forward(request, response);
 		}
 	}

@@ -25,7 +25,7 @@ public class DashboardHtmlString {
 		     .append("            </table>")
 		     .append("        </div>")
 		     .append("        <div id=\"links\">")
-		     .append("            <a href=\"friendlist\">Click Here to get friend list</a>")
+		     .append("            <a href=\"login/friendlist\">Click Here to get friend list</a>")
 		     .append("        </div>")
 		     .append("    </body>")
 		     .append("</html>");

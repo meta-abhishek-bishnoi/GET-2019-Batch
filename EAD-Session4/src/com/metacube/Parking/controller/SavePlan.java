@@ -19,10 +19,10 @@ public class SavePlan extends HttpServlet{
 		String username = request.getSession().getAttribute("username").toString();
 		double planAmount = Double.parseDouble(request.getParameter("plan"));
 		if(new AddVehicleDAO().savePlan(planAmount,username)){
-			write.print("Vehicale Added Successfully <a href=\"loginSuccess\">DashBoard </a>");
+			write.print("Vehicale Added Successfully <a href=\"login/loginSuccess\">DashBoard </a>");
 		}else{
 			write.print("<div align=\"center\" style=\"color: red\"> Please Try After Sometime </div>");
-			write.print("<a href=\"loginSuccess\">Add Again </a>");
+			write.print("<a href=\"login/loginSuccess\">Add Again </a>");
 		}
 	}
 
