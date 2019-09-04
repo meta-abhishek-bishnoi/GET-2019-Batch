@@ -1,3 +1,8 @@
+/**
+* This DAO class is for Loading Products from DB
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.dao;
 
 import java.io.IOException;
@@ -13,6 +18,9 @@ import com.metacube.util.Connector;
 import com.metacube.util.Query;
 
 public class LoadProductDAO {
+	/**
+	* @return List of Project Objects
+	*/
 	public static List<Product> loadProducts(){
 		Connector connector = new Connector();
 		String query = Query.loadProducts();

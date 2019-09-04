@@ -1,3 +1,8 @@
+/**
+* This Servlet is a controller for Adding Product DAO
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.dao;
 
 import java.io.IOException;
@@ -10,6 +15,11 @@ import com.metacube.util.Connector;
 import com.metacube.util.Query;
 
 public class AddProductsDAO {
+	/**
+	*	this function is used to add product into cart (order in db table) 
+	* 	@param productCode is product id
+	* 	@return boolean value for success or not 
+	*/
 	public static boolean orderProduct(int productCode){
 		int quantity = getProductCount(productCode);
 		boolean result = true;
@@ -20,7 +30,10 @@ public class AddProductsDAO {
 		}
 		return true ;	
 	}
-	
+	/**
+	* @param productCode is product id
+	* @return product count available into cart(in db order)
+	*/
 	public static int getProductCount(int productCode){
 		int resultCount=0;
 		String query = Query.checkOrderProduct();
@@ -40,7 +53,11 @@ public class AddProductsDAO {
 		}
 		return resultCount;
 	}
-	
+	/**
+	* @param productCode as product id 
+	* @param quantity 
+	* @return boolean for success of result
+	*/
 	public static boolean addProduct(int productCode, int quantity){
 		String query = Query.insertOrderProduct();
 		boolean result = true;
@@ -55,7 +72,11 @@ public class AddProductsDAO {
 		}
 		return result;
 	}
-	
+	/**
+	* @param productCode as product id 
+	* @param quantity 
+	* @return boolean for success of result
+	*/
 	public static boolean updateProduct(int productCode, int quantity){
 		String query = Query.updateOrderProduct();
 		boolean result = true;

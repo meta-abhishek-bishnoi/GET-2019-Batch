@@ -1,3 +1,8 @@
+/**
+* This class is for Loading Cart Orders
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.dao;
 
 import java.io.IOException;
@@ -14,6 +19,9 @@ import com.metacube.util.Query;
 
 
 public class LoadOrderDAO {
+	/**
+	* @return List of Cart Orders
+	*/
 	public static List<Order> loadOrders(){
 		Connector connector = new Connector();
 		String query = Query.loadOrders();
@@ -35,7 +43,9 @@ public class LoadOrderDAO {
 		}
 		return orders;
 	}
-	
+	/**
+	* @return Cart Order by order id
+	*/
 	public static Order loadOrdersById(int orderId){
 		Connector connector = new Connector();
 		String query = Query.loadOrdersById();

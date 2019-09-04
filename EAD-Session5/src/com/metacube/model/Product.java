@@ -1,3 +1,8 @@
+/**
+* Model class of Product
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.model;
 
 public class Product {

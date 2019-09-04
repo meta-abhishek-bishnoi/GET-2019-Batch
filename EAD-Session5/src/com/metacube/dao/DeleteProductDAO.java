@@ -1,3 +1,8 @@
+/**
+* This Class is DAo for deleting Cart order item
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.dao;
 
 import java.io.IOException;
@@ -9,6 +14,10 @@ import com.metacube.util.Connector;
 import com.metacube.util.Query;
 
 public class DeleteProductDAO {
+	/**
+	* @param orderId order id of cart item
+	* @return boolean value for success
+	*/
 	public static boolean deleteProduct(int orderId){
 		String query = Query.deleteProduct();
 		boolean result = true;

@@ -1,3 +1,8 @@
+/**
+* This Servlet is a controller for Shopping dashboard
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.controller;
 
 import java.io.IOException;

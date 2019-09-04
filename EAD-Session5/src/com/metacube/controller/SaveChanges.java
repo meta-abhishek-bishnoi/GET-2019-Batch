@@ -1,3 +1,8 @@
+/**
+* This Servlet is a controller for Updating Item Quantity
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.controller;
 
 import java.io.IOException;
@@ -20,7 +25,7 @@ public class SaveChanges extends HttpServlet{
 		int productCode= Integer.parseInt(request.getParameter("product_id"));
 		int orderId = Integer.parseInt(request.getParameter("order_id"));
 		int quantity= Integer.parseInt(request.getParameter("quantity"));
-		if(quantity==0){
+		if(quantity==0){ // if user put quantity as zero
 			boolean result = DeleteProductDAO.deleteProduct(orderId);
 			if(result){
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/view/registerSuccess.html");
@@ -33,7 +38,7 @@ public class SaveChanges extends HttpServlet{
 				out.println("<div align=\"center\" style=\"color: red\">Please Try Again later</div>");
 				rd.include(request, response);
 			}
-		}else{
+		}else{ //otherswise
 			boolean result = AddProductsDAO.updateProduct(productCode, quantity);
 			if(result){
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/view/registerSuccess.html");

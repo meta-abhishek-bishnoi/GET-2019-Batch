@@ -1,3 +1,8 @@
+/**
+* This is utility class for return querty for each SQl Operation
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.util;
 
 public class Query {

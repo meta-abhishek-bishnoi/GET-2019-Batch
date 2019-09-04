@@ -1,3 +1,8 @@
+/**
+* Model Class For orders (Cart Items)
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.model;
 
 public class Order {

@@ -1,3 +1,8 @@
+/**
+* This Servlet is a controller for Delete Items From  Cart
+* @author Abhishek Bishnoi
+* @since Sept 2,2019
+*/
 package com.metacube.controller;
 
 import java.io.IOException;
@@ -19,12 +24,12 @@ public class DeleteItem extends HttpServlet{
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		int orderId= Integer.parseInt(request.getParameter("id"));
 		boolean result = DeleteProductDAO.deleteProduct(orderId);
-		if(result){
+		if(result){ // if deleted successfully
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/view/registerSuccess.html");
 			PrintWriter out= response.getWriter();
 			out.println("<div align=\"center\" style=\"color: green\">Deleted Successfully</div>");
 			rd.include(request, response);
-		}else{
+		}else{ // if SQL Exception raise
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/view/registerSuccess.html");
 			PrintWriter out= response.getWriter();
 			out.println("<div align=\"center\" style=\"color: red\">Please Try Again later</div>");
