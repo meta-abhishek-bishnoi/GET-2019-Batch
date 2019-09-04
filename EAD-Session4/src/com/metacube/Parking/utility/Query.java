@@ -1,3 +1,8 @@
+/**
+* this is utility class for return SQL queries for each opeartions
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.utility;
 
 public class Query {

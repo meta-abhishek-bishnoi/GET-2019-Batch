@@ -1,3 +1,8 @@
+/**
+* this is utility class for generating html string for register employee form
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.utility;
 
 import java.text.DecimalFormat;

@@ -1,3 +1,8 @@
+/**
+* this is vahical model class 
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.model;
 
 import java.util.Date;

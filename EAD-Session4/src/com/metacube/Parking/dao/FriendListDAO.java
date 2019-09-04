@@ -1,3 +1,8 @@
+/**
+* This is a DAO class for friend list  
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.dao;
 
 import java.io.IOException;
@@ -13,6 +18,11 @@ import com.metacube.Parking.utility.Connector;
 import com.metacube.Parking.utility.Query;
 
 public class FriendListDAO {
+	/**
+	* @param username Employee's Email
+	* @param oragnigation Employee's Oragnixzation
+	* @return List<Employee> List of Employees
+	*/
 	public static List<Employee> getFriends(String username, String oragnigation){
 		List<Employee> friends = new ArrayList<Employee>();
 		Connector connector = new Connector();

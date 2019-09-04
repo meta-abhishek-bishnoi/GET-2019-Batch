@@ -1,5 +1,9 @@
+/**
+* this is employee model class 
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.model;
-
 public class Employee {
 	int sn;
 	private String employeeId;

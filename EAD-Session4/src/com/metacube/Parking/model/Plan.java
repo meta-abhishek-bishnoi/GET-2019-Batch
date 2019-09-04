@@ -1,3 +1,8 @@
+/**
+* this is plan model class 
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.model;
 
 public class Plan {

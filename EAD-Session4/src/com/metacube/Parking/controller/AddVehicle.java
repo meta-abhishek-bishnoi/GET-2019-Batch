@@ -1,3 +1,8 @@
+/**
+* This Servlet is a controller to add vehicle
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.controller;
 
 import java.io.IOException;
@@ -25,15 +30,18 @@ public class AddVehicle extends HttpServlet{
 		String description = request.getParameter("description");
 		Vehical vehical  = new Vehical();
 		vehical.addVehical(username, vehicleType, vehicleNumber, description);
+		/**
+		* if variables are not null and not empty then
+		*/
 		if( (vehicleNumber != null && vehicleNumber != "") && (description != null && description != "")){
-			if(new AddVehicleDAO().addEmployee(vehical)){
+			if(new AddVehicleDAO().addEmployee(vehical)){ // if vehical added successfully
 				write.print("Vehicale Added Successfully <a href=\"login/loginSuccess\">Select Plan </a>");
-			}else{
+			}else{ //when any exception raise
 				write.print("<div align=\"center\" style=\"color: red\"> Please Try After Sometime </div>");
 				write.print(AddVehicalHtml.vehicalBodyHtml());
 			}
-		}else{
-			if(vehicleNumber == "" || description == "" ){
+		}else{ // otherwise
+			if(vehicleNumber == "" || description == "" ){ // when variables are empty
 				write.print("<div align=\"center\" style=\"color: red\"> *please enter all mandatory fields </div>");
 			}
 			write.print(AddVehicalHtml.vehicalBodyHtml());

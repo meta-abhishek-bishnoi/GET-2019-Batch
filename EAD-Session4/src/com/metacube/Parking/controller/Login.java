@@ -1,3 +1,8 @@
+/**
+* This Servlet is a controller to authenticate login of user
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.controller;
 
 import java.io.IOException;
@@ -23,20 +28,20 @@ public class Login extends HttpServlet{
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		String employeeEmail = request.getParameter("email").trim();
 		String employeePassword = request.getParameter("password");
-		boolean result = Authentication.authenticate(employeeEmail, employeePassword);
-		if(result){
-			HttpSession oldSession = request.getSession(false);
+		boolean result = Authentication.authenticate(employeeEmail, employeePassword); // authenticating user
+		if(result){ // if authentication success
+			HttpSession oldSession = request.getSession(false); // if any old session is exisiting, invalidate that
 	        if (oldSession != null) {
 	        	oldSession.invalidate();
 	        }
-	        HttpSession newSession = request.getSession(true);
+	        HttpSession newSession = request.getSession(true); // creating new session
 	        newSession.setMaxInactiveInterval(5*60);
-	        newSession.setAttribute("username", employeeEmail);
+	        newSession.setAttribute("username", employeeEmail); // adding email as username in session attribute
 	        Cookie message = new Cookie("email", employeeEmail);
             response.addCookie(message);
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/login/loginSuccess");
             rd.forward(request, response);
-		}else{
+		}else{ // if authenticatiion failed
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.html");
 			PrintWriter out= response.getWriter();
 			out.println("<div align=\"center\" style=\"color: red\">Authentication Fail, Invalid Username Or Password</div>");

@@ -1,3 +1,8 @@
+/**
+* This Servlet is a controller for ruser dashboard
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.controller;
 
 import java.io.IOException;
@@ -32,18 +37,3 @@ public class UserDashboard extends HttpServlet {
     	write.print(htmlString);
     }
 }
-/*
-Cookie[] cookies = request.getCookies();
-String email="";
-String sessionId = "";
-if(cookies !=null){
-	for(Cookie cookie : cookies){
-		if(cookie.getName().equals("email")){
-			email = cookie.getValue();
-		}
-		if(cookie.getName().equals("JSESSIONID")){
-			sessionId = cookie.getValue();
-		}
-	}
-}
-*/

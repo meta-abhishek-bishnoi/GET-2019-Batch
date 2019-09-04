@@ -1,3 +1,8 @@
+/**
+* this is utility class for generating html string for showing friend list
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.utility;
 
 import java.util.List;

@@ -1,3 +1,8 @@
+/**
+* This is a DAO class for inserting Employee In Register proceess 
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.dao;
 
 
@@ -11,6 +16,10 @@ import com.metacube.Parking.utility.Connector;
 import com.metacube.Parking.utility.Query;
 
 public class InsertEmployees {
+	/**
+	* @param employee Employee object
+	* @return booelan value for success or delete
+	*/
 	public boolean addEmployee(Employee employee){
 		Connector connector = new Connector();
 		String query = Query.registerEmployee();

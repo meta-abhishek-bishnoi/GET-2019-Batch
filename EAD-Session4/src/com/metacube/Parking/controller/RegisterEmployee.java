@@ -1,3 +1,8 @@
+/**
+* This Servlet is a controller for registering Employee With System
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.controller;
 
 import java.io.IOException;
@@ -31,22 +36,23 @@ public class RegisterEmployee extends HttpServlet{
 				employeePassword,employeeConfirmPassword,employeeContact,employeeOragnization);
 		String errorHtml = "";
 		String bodyHtml = "";
+		// if feilds are not null and not empty
 		if( (employeeName != null && employeeName != "") && (employeeId != null && employeeId != "") && 
 			(employeeEmail != null && employeeEmail != "") && (employeePassword != null && employeePassword != "") &&
 			(employeeConfirmPassword != null && employeeConfirmPassword != "") && (employeeContact != null && employeeContact != "") ){
 			String error = Validate.getValidation(employee);
-			if(error.equals("")){
-				if(new InsertEmployees().addEmployee(employee)){
+			if(error.equals("")){ // if no validation error occurs
+				if(new InsertEmployees().addEmployee(employee)){ // if added succesfully
 					bodyHtml =  "<div align=\"center\"> "+"You Are Registerd Succesfully!!<br><a href=\"login.html\">Click Here To Login</a>"+ "</div>";
-				}else{
+				}else{  // if sql exception occurs
 					errorHtml+= "<div align=\"center\" style=\"color: red\"> Sorry For Inconvenience Please Try After Sometime </div>";
 					bodyHtml = RegisterHtmlGenerator.registerBodyHtml();
 				}
-			}else{
-				errorHtml+= "<div align=\"center\" style=\"color: red\"> "+error+ "</div>";
+			}else{ // if validation error occurs
+				errorHtml+= "<div align=\"center\" style=\"color: red\"> "+Please Emter Valid Inputs+ "</div>";
 				bodyHtml = RegisterHtmlGenerator.registerBodyHtml();
 			}
-		}else{
+		}else{ // if feilds are empty
 			if(employeeName == "" || employeeId == "" || employeeEmail == "" || employeePassword == "" || employeeConfirmPassword == "" || employeeContact == ""){
 				errorHtml = "<div align=\"center\" style=\"color: red\"> *please enter all mandatory fields </div>";
 			}

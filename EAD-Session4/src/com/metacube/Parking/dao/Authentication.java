@@ -1,3 +1,8 @@
+/**
+* This is a DAO class for Authentication
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.dao;
 
 import java.io.IOException;
@@ -12,6 +17,11 @@ import com.metacube.Parking.utility.Connector;
 import com.metacube.Parking.utility.Query;
 
 public class Authentication {
+	/**
+	* @param username employeeEmail Id
+	* @param password Employee Password
+	* @return boolean return true or false for authentiction
+	*/
 	public static boolean authenticate(String username, String password){
 		Connector connector = new Connector();
 		String query = Query.login();
@@ -35,7 +45,10 @@ public class Authentication {
 		}
 		return result;
 	}
-
+	/**
+	* @param username EmployeeEmail
+	* @return Employee Object after authentication
+	*/
 	public static Employee getUser(String username) {
 		Connector connector = new Connector();
 		String query = Query.getAuthUser();
@@ -61,7 +74,10 @@ public class Authentication {
 		}
 		return employee;
 	}
-	
+	/**
+	* @param username EmployeeEmail
+	* @return Vehical Object for that user
+	*/
 	public static Vehical getVehicle(String username){
 		Connector connector = new Connector();
 		String query = Query.getvehical();

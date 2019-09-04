@@ -1,3 +1,8 @@
+/**
+* this class is for validating employee registration
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.utility;
 
 import java.util.regex.Matcher;
@@ -6,7 +11,10 @@ import java.util.regex.Pattern;
 import com.metacube.Parking.model.Employee;
 
 public class Validate {
-
+	/**
+	* @param Employee Object
+	* @return String as message if there is no error then string is empty
+	*/
 	public static String getValidation(Employee employee) {
 		StringBuilder error = new StringBuilder();
 		error.append("");

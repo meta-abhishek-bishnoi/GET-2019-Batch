@@ -1,3 +1,8 @@
+/**
+* This is a DAO class for Authenticate Users 
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.dao;
 
 import java.io.IOException;
@@ -12,6 +17,10 @@ import com.metacube.Parking.utility.Connector;
 import com.metacube.Parking.utility.Query;
 
 public class PlanDao {
+	/**
+	*	@param vehicleType type of vehical
+	*	@return Plan for that that particular vahical
+	*/
 	public static Plan getPlan(String vehicleType){
 		Connector connector = new Connector();
 		String query = Query.getPlan();
@@ -33,6 +42,10 @@ public class PlanDao {
 		}
 		return plan;
 	}
+	/**
+	* @param username 
+	* @return String vehical type
+	*/
 	public static String getVehicleType(String username){
 		Connector connector = new Connector();
 		String query = Query.getVehicleType();

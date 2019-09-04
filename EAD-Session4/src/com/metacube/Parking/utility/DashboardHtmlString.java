@@ -1,3 +1,8 @@
+/**
+* this is utility class for generating html string for user dashboard
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.utility;
 
 import com.metacube.Parking.model.Employee;

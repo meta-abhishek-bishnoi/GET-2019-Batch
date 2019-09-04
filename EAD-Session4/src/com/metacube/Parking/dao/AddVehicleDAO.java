@@ -1,3 +1,8 @@
+/**
+* This Servlet is a DAO class for Adding Vehical 
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.dao;
 
 import java.io.IOException;
@@ -11,6 +16,10 @@ import com.metacube.Parking.utility.Connector;
 import com.metacube.Parking.utility.Query;
 
 public class AddVehicleDAO {
+	/**
+	* @param vehicle Object Of Vehicle
+	* @return boolean value as success or not
+	*/
 	public boolean addEmployee(Vehical vehicle){
 		Connector connector = new Connector();
 		String query = Query.addVehicle();
@@ -44,6 +53,11 @@ public class AddVehicleDAO {
 		return result;
 	}
 
+	/**
+	* @param planAmount amount of selected plan 
+	* @param username employeeEmail
+	* @return boolean value of saving plan in db or not
+	*/
 	public boolean savePlan(double planAmount, String username) {
 		Connector connector = new Connector();
 		String query = Query.savePlan();

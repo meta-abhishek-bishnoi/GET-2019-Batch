@@ -1,3 +1,8 @@
+/**
+* This Servlet is a controller to get friendlist of user
+* @author Abhishek Bishnoi
+* @since Aug 29,2019
+*/
 package com.metacube.Parking.controller;
 
 import java.io.IOException;
