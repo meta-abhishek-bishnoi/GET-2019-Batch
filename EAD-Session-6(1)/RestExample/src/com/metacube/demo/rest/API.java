@@ -82,16 +82,12 @@ public class API {
 	@POST
     @Consumes(MediaType.APPLICATION_JSON)
 	@Path("/addAll")
-    public String addElements(String element) {
-		Gson gson=new Gson();
-		TypeToken<List<Element>> token = new TypeToken<List<Element>>() {};
-		List<Element> elements = gson.fromJson(element, token.getType());
+    public String addElements(final List<Element> elements) {
 		String inserted="";
 		for(Element e: elements){
 			Service.getInstance().addElement(e);
 			inserted += e.getName()+" Saved\n";
 		}
-        //return Response.status(201).entity(inserted).build();
 		return inserted;
     }
 	
