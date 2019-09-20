@@ -11,13 +11,14 @@ import com.metacube.MailSender.service.impl.SmtpMailSender;
  * 
  * @author Abhishek Bishnoi
  * @since Sept 4, 2019
- * this is application config file
+ * this is application config file Where We Declare Beans
  */
 @Configuration
 public class AppConfig {
 	
-	@Bean
+	@Bean  
 	//@Primary
+	// This called By default if we uncommit @Primary
 	public MailSender mockMailSender(){
 		return new MockMailSender();
 	}

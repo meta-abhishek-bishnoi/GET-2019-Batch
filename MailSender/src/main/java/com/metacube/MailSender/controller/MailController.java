@@ -16,6 +16,9 @@ import com.metacube.MailSender.service.MailSender;
 public class MailController {
 	private MailSender mailSender;
 	
+	/**
+	* Constructor Injection Using @Primary
+	*/
 	/*
 	 *  @Autowired
 	 	public MailController(MailSender mailSender){
@@ -23,32 +26,34 @@ public class MailController {
 	 	}
 	 *
 	 */
+	 // Constructor Injection using name 
 	/*
 	 * @Autowired
 	  	public MailController(MailSender mockMailSender){
 	 		this.mailSender = mockMailSender;
 	 	}
 	 */
+		// constructor injection @Qualifire
 	/*
 	 * @Autowired
 		public MailController(@Qualifier("smtpMailSender") MailSender mailSender){
 		this.mailSender = mailSender;
 	}*/
-	
+	// setter using @primary 
 	/*
 	 * @Autowired
 		public void setMailSender(MailSender mailSender) {
 			this.mailSender = mailSender;
 		}
 	*/
-	
+	// setter injection  using name
 	/*
 	 * @Autowired
 		public void setMailSender(MailSender smtpMailSender) {
 			this.mailSender = smtpMailSender;
 		}
 	*/
-	
+	// setter injection using @Qualifire
 	@Autowired
 	public void setMailSender(@Qualifier("smtpMailSender")MailSender mailSender) {
 		this.mailSender = mailSender;
