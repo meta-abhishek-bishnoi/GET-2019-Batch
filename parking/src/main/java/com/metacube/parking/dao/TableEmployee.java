@@ -8,6 +8,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import com.metacube.parking.model.pojo.Employee;
 /**
 * @author Abhishek Bishnoi
+* This is In Memory DB for Employee
+* Singleton class contains Map<String,Employee> where email as key
 **/
 public class TableEmployee {
 

@@ -1,7 +1,10 @@
 package com.metacube.parking.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+* @author Abhishek Bishnoi
+* This is dto class for Vehicle Form
+*/
 public class VehicleForm {
 	@NotBlank(message="{vehicleName}")
 	private String name;
@@ -27,6 +30,7 @@ public class VehicleForm {
 		this.employeeId = employeeId;
 		this.identification = identification;
 	}
+	// getter and setter
 	public String getName() {
 		return name;
 	}

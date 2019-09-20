@@ -4,7 +4,10 @@ import javax.validation.constraints.NotBlank;
 
 import com.metacube.parking.model.dto.RegisterEmployee;
 import com.metacube.parking.model.dto.VehicleForm;
-
+/**
+* @author Abhishek Bishnoi
+* This is DAO class of vehicle
+*/
 public class Vehicle {
 	private int id;
 	private String name;
@@ -27,6 +30,7 @@ public class Vehicle {
 		this.identification = identification;
 		this.amount = amount;
 	}
+	// getter and setter
 	public int getId() {
 		return id;
 	}

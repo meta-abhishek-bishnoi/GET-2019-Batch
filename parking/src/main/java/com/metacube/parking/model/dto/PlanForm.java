@@ -1,7 +1,10 @@
 package com.metacube.parking.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+* @author Abhishek Bishnoi
+* This is dto class for Saving Plan
+*/
 public class PlanForm {
 	@NotBlank(message="{vehicleType}")
 	private String type;
@@ -15,6 +18,7 @@ public class PlanForm {
 		this.type = type;
 		this.amount = amount;
 	}
+	// getter and setter
 	public String getType() {
 		return type;
 	}

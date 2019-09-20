@@ -1,7 +1,10 @@
 package com.metacube.parking.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+* @author Abhishek Bishnoi
+* This is dto class for editing employee
+*/
 public class EditEmployee {
 	@NotBlank(message="{employeeFullName}")
 	private String fullName;
@@ -17,6 +20,7 @@ public class EditEmployee {
 		this.fullName = fullName;
 		this.contactNo = contactNo;
 	}
+	// getter and setter
 	public String getFullName() {
 		return fullName;
 	}

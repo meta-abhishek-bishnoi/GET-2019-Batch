@@ -1,5 +1,8 @@
 package com.metacube.parking.model.dto;
-
+/**
+* @author Abhishek Bishnoi
+* This is dto class of Friend
+*/
 public class Friends {
 	private String imageUrl;
 	private String fullName;
@@ -16,6 +19,7 @@ public class Friends {
 	public Friends() {
 		super();
 	}
+	// getter and setter
 	public String getImageUrl() {
 		return imageUrl;
 	}

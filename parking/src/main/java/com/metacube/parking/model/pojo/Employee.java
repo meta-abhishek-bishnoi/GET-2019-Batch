@@ -3,7 +3,10 @@ package com.metacube.parking.model.pojo;
 import com.metacube.parking.model.dto.EditEmployee;
 import com.metacube.parking.model.dto.Friends;
 import com.metacube.parking.model.dto.RegisterEmployee;
-
+/**
+* @author Abhishek Bishnoi
+* This is DAO class of employee
+*/
 public class Employee {
 	private  int id;
 	private String employeeName;
@@ -39,7 +42,7 @@ public class Employee {
 		this.hasPlan = hasPlan;
 	}
 
-
+	// getter and setter
 	public int getId() {
 		return id;
 	}

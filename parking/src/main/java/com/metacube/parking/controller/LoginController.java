@@ -68,9 +68,9 @@ public class LoginController {
 			HttpServletRequest request,  Model model){
 		Employee employee = LoadProfile.LoadProfile(request.getSession().getAttribute("email").toString());
 		model.addAttribute(employee);
-		if(result.hasErrors()){
+		if(result.hasErrors()){ //if VehicleForm dto has error
 			return "addVehicle";
-		}else{
+		}else{ // otherwise
 			Vehicle vehicle = new Vehicle();
 			vehicle.registerVehicle(++vehicleId, vehicleForm);
 			TableVehicle.getInstance().addVehicle(vehicle.getEmployeeId(), vehicle);

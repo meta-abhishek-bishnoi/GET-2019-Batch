@@ -5,7 +5,11 @@ import java.util.Map;
 
 import com.metacube.parking.model.pojo.Vehicle;
 
-
+/**
+* @author Abhishek Bishnoi
+* This is In Memory DB for Vehicle
+* Singleton class contains Map<String,Vehicle> where Email as key
+**/
 public class TableVehicle {
 	private static TableVehicle single_instance = null;
 	private static Map<String,Vehicle> vehicles;
