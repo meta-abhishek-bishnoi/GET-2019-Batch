@@ -6,7 +6,6 @@ create table employee(sn int auto_increment primary key, employee_id varchar(20)
 employee_gender varchar(10) not null, employee_email varchar(100) unique key, employee_password varchar(40), 
 employee_contact varchar(10), employee_oragnization varchar(20), isVehicle int default 0,  isPlan int default 0);
 
-select * from employee where employee_id != 2;
 
 create table vehicle (sn int auto_increment primary key, employee_email varchar(100) unique key, 
 vehicle_type varchar(20), vehicle_number varchar(20) unique key, description varchar(100),amount double,
