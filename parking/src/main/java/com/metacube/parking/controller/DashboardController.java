@@ -20,11 +20,18 @@ import com.metacube.parking.model.dto.VehicleForm;
 import com.metacube.parking.model.pojo.Employee;
 import com.metacube.parking.model.pojo.Vehicle;
 import com.metacube.parking.service.LoadProfile;
+
+/**
+* @author Abhishek Bishnoi
+* This is Controller for Dashbord Functionalities
+**/
 @Controller
 public class DashboardController {
+
 	@GetMapping("/login/editProfile")
 	public String editProfile(HttpServletRequest request, Model model){
 		Employee employee = LoadProfile.LoadProfile(request.getSession().getAttribute("email").toString());
+		// loading employee from db
 		model.addAttribute(new EditEmployee());
 		model.addAttribute(employee);
 		return "editProfile";
@@ -35,9 +42,9 @@ public class DashboardController {
 			HttpServletRequest request,  Model model){
 		Employee employee = LoadProfile.LoadProfile(request.getSession().getAttribute("email").toString());
 		model.addAttribute(employee);
-		if(result.hasErrors()){
+		if(result.hasErrors()){ // if EditEmployee dto has validation error
 			return "editProfile";
-		}else{
+		}else{ // otherwise
 			employee.editProfile(editEmployee);
 			return "redirect:/login/sucess";
 		}
@@ -46,8 +53,10 @@ public class DashboardController {
 	@GetMapping("/login/friends")
 	public String friends(HttpServletRequest request, Model model){
 		String email = request.getSession().getAttribute("email").toString();
+		// getting email from session
 		Employee employee = LoadProfile.LoadProfile(email);
 		String oragnization = employee.getEmployeeOragnization();
+		// loading freind list from database
 		List<Friends> list = LoadProfile.loadFriends(email, oragnization);
 		model.addAttribute(employee);
 		model.addAttribute("friendList",list);

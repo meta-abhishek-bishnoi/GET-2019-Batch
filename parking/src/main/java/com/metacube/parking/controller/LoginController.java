@@ -19,25 +19,36 @@ import com.metacube.parking.model.pojo.Vehicle;
 import com.metacube.parking.service.LoadProfile;
 import com.metacube.parking.service.LoadVehicle;
 import com.metacube.parking.util.PlanAmount;
-
+/**
+* @author Abhishek Bishnoi
+* This is Controller after login, this will check about added vehicles and select plan and dashboard redirection
+**/
 @Controller
 public class LoginController {
 	public int vehicleId=0;
+	/**
+	* This Controller Works After Success Authentication
+	**/
 	@GetMapping("/login/sucess")
 	public String loginSuccess(HttpServletRequest request){
 		Employee employee = LoadProfile.LoadProfile(request.getSession().getAttribute("email").toString());
-		if(!employee.isHasVehical()){
+		if(!employee.isHasVehical()){ // is no vehicle is added
         	return "redirect:/login/addVehicle";
-        }else if(!employee.isHasPlan()){
+        }else if(!employee.isHasPlan()){ // if no plan is selected
         	return "redirect:/login/choosePlan";
-        }else{
+        }else{ // otherwise
         	return "redirect:/login/dashboard";
         }
 	}
+	/**
+	* dashbord Controller
+	**/
 	@GetMapping("/login/dashboard")
 	public String gotoDashBoardPage(Model model,HttpServletRequest request){
 		Employee employee = LoadProfile.LoadProfile(request.getSession().getAttribute("email").toString());
+		//Getting employee Object
 		Vehicle vehicle = LoadVehicle.loadVehicle(employee.getEmployeeId());
+		// getting Vehilce Object
 		model.addAttribute(vehicle);
 		model.addAttribute(employee);
 		return "dashboard";
@@ -46,6 +57,7 @@ public class LoginController {
 	@GetMapping("/login/addVehicle")
 	public String addVehicle(HttpServletRequest request, Model model){
 		Employee employee = LoadProfile.LoadProfile(request.getSession().getAttribute("email").toString());
+		// getting Employee Object
 		model.addAttribute(new VehicleForm());
 		model.addAttribute(employee);
 		return "addVehicle";

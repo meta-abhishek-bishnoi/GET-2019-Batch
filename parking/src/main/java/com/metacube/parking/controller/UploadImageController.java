@@ -15,17 +15,22 @@ import com.metacube.parking.service.LoadProfile;
 
 import java.io.File;
 import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 
+/**
+* @author Abhishek Bishnoi
+* This is Controller for Uploading Image
+**/
 @Controller
 public class UploadImageController {
+    // location where image will uploaded
     public static final String uploadingDir = System.getProperty("user.dir") + "/src/main/resources/static/images/";
 
     @GetMapping("/login/uploadImage")
     public String uploading(Model model, HttpServletRequest request) {
     	Employee employee = LoadProfile.LoadProfile(request.getSession().getAttribute("email").toString());
-    	model.addAttribute(employee);
+    	// getting Employee from it's mail
+        model.addAttribute(employee);
         File file = new File(uploadingDir);
         model.addAttribute("files", file.listFiles());
         return "uploadImage";
@@ -37,11 +42,15 @@ public class UploadImageController {
     	String email = request.getSession().getAttribute("email").toString();
     	Employee employee = LoadProfile.LoadProfile(email);
     	model.addAttribute(employee);
-    	int index = email.indexOf('@');
-    	email = email.substring(0,index);
+        /**
+        * This is uploading image from request
+        * only single file is uploading
+        */
         for(MultipartFile uploadedFile : uploadingFiles) {
             File file = new File(uploadingDir + uploadedFile.getOriginalFilename());
+            // transfering file to dir
             uploadedFile.transferTo(file);
+            // setting image path for employee object
             employee.setProfileImageUrl("/images/" + uploadedFile.getOriginalFilename());
         }
         return "redirect:/login/sucess";

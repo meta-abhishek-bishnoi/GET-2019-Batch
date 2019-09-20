@@ -6,7 +6,9 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.metacube.parking.model.pojo.Employee;
-
+/**
+* @author Abhishek Bishnoi
+**/
 public class TableEmployee {
 
 	private static TableEmployee single_instance = null;
