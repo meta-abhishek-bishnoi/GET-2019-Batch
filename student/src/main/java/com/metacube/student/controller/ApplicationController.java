@@ -20,9 +20,10 @@ import com.metacube.student.model.Student;
  */
 @Controller
 public class ApplicationController {
-	
+	// loading message from yml file	
 	@Value("${home.message}")
 	private String message;
+	// mapping for /
 	@GetMapping("/")
 	public String indexPage(Model model) {
 		model.addAttribute("message",message);
