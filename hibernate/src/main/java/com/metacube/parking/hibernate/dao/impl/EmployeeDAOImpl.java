@@ -25,13 +25,19 @@ import com.metacube.parking.hibernate.model.dto.Friend;
 import com.metacube.parking.hibernate.model.pojo.Employee;
 import com.metacube.parking.hibernate.model.pojo.Vehicle;
 import com.metacube.parking.hibernate.util.DTOMapperUtil;
-
+/**
+ * @author Abhishek Bishnoi
+ */
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
 	
 	@Autowired
 	private EntityManager entityManager;
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#addEmployee(com.metacube.parking.hibernate.model.pojo.Employee)
+	 */
 	@Override
 	public boolean addEmployee(Employee employee) {
 		Session session = entityManager.unwrap(Session.class);
@@ -39,6 +45,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return true;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#authenticate(com.metacube.parking.hibernate.model.dto.EmployeeLogin)
+	 */
 	@Override
 	public boolean authenticate(EmployeeLogin employeeLogin) {
 		Session session = entityManager.unwrap(Session.class);
@@ -54,6 +64,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#getEmployeeByMail(java.lang.String)
+	 */
 	@Override
 	public Employee getEmployeeByMail(String email) {
 		Session session = entityManager.unwrap(Session.class);
@@ -64,6 +78,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return employee;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#addVehicle(com.metacube.parking.hibernate.model.pojo.Vehicle)
+	 */
 	@Override
 	public boolean addVehicle(Vehicle vehicle) {
 		Session session = entityManager.unwrap(Session.class);
@@ -71,6 +89,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return true;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#setVehicleFalg(com.metacube.parking.hibernate.model.pojo.Employee)
+	 */
 	@Override
 	public boolean setVehicleFalg(Employee employee) {
 		Session session = entityManager.unwrap(Session.class);
@@ -78,6 +100,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return true;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#loadVehicle(java.lang.String)
+	 */
 	@Override
 	public Vehicle loadVehicle(String employeeId) {
 		Session session = entityManager.unwrap(Session.class);
@@ -88,6 +114,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return vehicle;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#savePlan(com.metacube.parking.hibernate.model.pojo.Vehicle)
+	 */
 	@Override
 	public boolean savePlan(Vehicle vehicle) {
 		Session session = entityManager.unwrap(Session.class);
@@ -95,6 +125,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return true;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#savePlanFlag(com.metacube.parking.hibernate.model.pojo.Employee)
+	 */
 	@Override
 	public boolean savePlanFlag(Employee employee) {
 		Session session = entityManager.unwrap(Session.class);
@@ -102,6 +136,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return true;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#updateProfileImage(com.metacube.parking.hibernate.model.pojo.Employee)
+	 */
 	@Override
 	public boolean updateProfileImage(Employee employee) {
 		Session session = entityManager.unwrap(Session.class);
@@ -109,6 +147,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return true;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#getFriends(com.metacube.parking.hibernate.model.pojo.Employee)
+	 */
 	@Override
 	public List<Friend> getFriends(Employee employee) {
 		Session session = entityManager.unwrap(Session.class);
@@ -122,6 +164,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return listFriend;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.metacube.parking.hibernate.dao.EmployeeDAO#updateUserProfile(com.metacube.parking.hibernate.model.pojo.Employee)
+	 */
 	@Override
 	public boolean updateUserProfile(Employee employee) {
 		Session session = entityManager.unwrap(Session.class);

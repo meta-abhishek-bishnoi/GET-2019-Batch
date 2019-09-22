@@ -20,9 +20,10 @@ import com.metacube.parking.hibernate.service.CommonService;
 import com.metacube.parking.hibernate.util.DTOMapperUtil;
 import com.metacube.parking.hibernate.util.PlanAmount;
 
-
-
-
+/**
+ * @author Abhishek Bishnoi
+ * This is Controller Class after successful login
+ */
 @Controller
 public class LoginController {
 	@Autowired

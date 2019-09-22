@@ -7,7 +7,11 @@ import com.metacube.parking.hibernate.model.dto.Friend;
 import com.metacube.parking.hibernate.model.pojo.Employee;
 import com.metacube.parking.hibernate.model.pojo.Vehicle;
 
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * This is Service class interface
+ */
 public interface CommonService {
 	/**
 	 * This method is used to register employee in db

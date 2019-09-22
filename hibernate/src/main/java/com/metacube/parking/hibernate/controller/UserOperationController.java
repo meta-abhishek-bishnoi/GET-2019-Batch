@@ -18,8 +18,10 @@ import com.metacube.parking.hibernate.model.dto.EditEmployee;
 import com.metacube.parking.hibernate.model.dto.Friend;
 import com.metacube.parking.hibernate.model.pojo.Employee;
 import com.metacube.parking.hibernate.service.CommonService;
-
-
+/**
+ * @author Abhishek Bishnoi
+ * This Controller class is for dashboard operations
+ */
 @Controller
 public class UserOperationController {
 	@Autowired

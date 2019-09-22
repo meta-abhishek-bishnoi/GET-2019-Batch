@@ -8,7 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * This is Entity Class Of Vehicle
+ */
 @Entity
 @Table(name="vehicle")
 public class Vehicle implements Serializable {

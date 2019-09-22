@@ -19,7 +19,11 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * This is Configuration file for Hibernate
+ */
 @PropertySource(value = { "classpath:application.properties" })
 @Configuration
 @EnableTransactionManagement
@@ -43,6 +47,10 @@ public class HibernateConfiguration {
 	@Value("${hibernate.dialect}")
 	private String dialect;
 	
+	/**
+	 * creating bean of data source
+	 * @return DataSource
+	 */
 	@Bean
 	public DataSource getDataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource(url,username,password);
@@ -50,6 +58,10 @@ public class HibernateConfiguration {
 		return dataSource;
 	}
 	
+	/**
+	 * Creating Session Factory
+	 * @return SessionFactoryObject
+	 */
 	@Bean
 	//@Primary
 	public LocalSessionFactoryBean sessionFactory(){
@@ -60,6 +72,10 @@ public class HibernateConfiguration {
 		return sessionFactoryBean;
 	}
 	
+	/**
+	 * loading Properties files
+	 * @return Properties
+	 */
 	public Properties hibernateProperties(){
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", dialect);
@@ -69,6 +85,11 @@ public class HibernateConfiguration {
 		return properties;
 	}
 	
+	/**
+	 * Creating Bean of Hibernate Transaction Manager
+	 * @param factory 
+	 * @return HibernateTransactionManagaer
+	 */
 	@Bean
 	@Autowired
 	public HibernateTransactionManager hibernateTransactionManager(SessionFactory factory){

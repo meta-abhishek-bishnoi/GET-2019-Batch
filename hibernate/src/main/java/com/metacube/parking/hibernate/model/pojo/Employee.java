@@ -9,6 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * This is Entity Class Of Employee
+ */
 @Entity
 @Table(name="employee")
 public class Employee implements Serializable {
@@ -46,6 +51,8 @@ public class Employee implements Serializable {
 	@Column(name="hasPlan")
 	private boolean hasPlan = false;
 
+	// getter and setter
+	
 	public Integer getId() {
 		return id;
 	}

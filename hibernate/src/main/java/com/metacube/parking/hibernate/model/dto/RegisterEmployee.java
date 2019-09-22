@@ -1,7 +1,10 @@
 package com.metacube.parking.hibernate.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+ * @author Abhishek Bishnoi
+ * Register Employee DTO
+ */
 public class RegisterEmployee {
 	@NotBlank(message = "{employeeFullName}")
 	private String fullName;
@@ -44,6 +47,7 @@ public class RegisterEmployee {
 		this.organisation = organisation;
 	}
 
+	// getter and setter
 	public String getFullName() {
 		return fullName;
 	}

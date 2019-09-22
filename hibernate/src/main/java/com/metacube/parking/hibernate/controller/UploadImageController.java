@@ -21,7 +21,10 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
-
+/**
+ * @author Abhishek Bishnoi
+ * This is controller class for for uploding image
+ */
 @Controller
 public class UploadImageController {
 	@Autowired
@@ -46,6 +49,10 @@ public class UploadImageController {
 		model.addAttribute(employee);
     	int index = email.indexOf('@');
     	email = email.substring(0,index);
+    	/**
+         * This is uploading image from request
+         * only single file is uploading
+         */
         for(MultipartFile uploadedFile : uploadingFiles) {
             File file = new File(uploadingDir + uploadedFile.getOriginalFilename());
             uploadedFile.transferTo(file);

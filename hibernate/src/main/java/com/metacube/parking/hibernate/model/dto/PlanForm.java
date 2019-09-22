@@ -1,7 +1,11 @@
 package com.metacube.parking.hibernate.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * PlanForm DTO
+ */
 public class PlanForm {
 	@NotBlank(message="{vehicleType}")
 	private String type;
@@ -15,6 +19,7 @@ public class PlanForm {
 		this.type = type;
 		this.amount = amount;
 	}
+	//getter and setter 
 	public String getType() {
 		return type;
 	}

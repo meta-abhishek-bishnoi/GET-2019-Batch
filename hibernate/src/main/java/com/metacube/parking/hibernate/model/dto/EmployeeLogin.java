@@ -1,7 +1,11 @@
 package com.metacube.parking.hibernate.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * Employee Login DTO
+ */
 public class EmployeeLogin {
 	@NotBlank(message="{emptyUsername}")
 	private String username;
@@ -17,6 +21,7 @@ public class EmployeeLogin {
 		this.username = username;
 		this.password = password;
 	}
+	// getter and setter
 	public String getUsername() {
 		return username;
 	}

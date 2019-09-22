@@ -1,10 +1,16 @@
 package com.metacube.parking.hibernate.model.dto;
 
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * DTO for Friend
+ */
 public class Friend {
 	private String profileImageUrl;
 	private String fullName;
 	private String contactNo;
 	private String emailId;
+	// getter and setter
 	public String getProfileImageUrl() {
 		return profileImageUrl;
 	}

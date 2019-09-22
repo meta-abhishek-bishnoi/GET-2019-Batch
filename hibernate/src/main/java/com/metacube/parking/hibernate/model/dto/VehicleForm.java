@@ -1,7 +1,11 @@
 package com.metacube.parking.hibernate.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * DTO vehicle Form
+ */
 public class VehicleForm {
 	@NotBlank(message = "{vehicleName}")
 	private String vehicleName;
@@ -30,6 +34,7 @@ public class VehicleForm {
 		this.identification = identification;
 	}
 
+	// getter and setter
 	public String getVehicleName() {
 		return vehicleName;
 	}
