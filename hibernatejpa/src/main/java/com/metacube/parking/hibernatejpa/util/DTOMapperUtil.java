@@ -8,6 +8,11 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * This is Object Mapper class
+ */
 @Component
 public class DTOMapperUtil {
 	public static ModelMapper mapper;

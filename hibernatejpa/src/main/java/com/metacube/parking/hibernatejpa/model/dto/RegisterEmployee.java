@@ -1,7 +1,10 @@
 package com.metacube.parking.hibernatejpa.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+ * @author Abhishek Bishnoi
+ * Register Employee DTO
+ */
 public class RegisterEmployee {
 	@NotBlank(message = "{employeeFullName}")
 	private String fullName;

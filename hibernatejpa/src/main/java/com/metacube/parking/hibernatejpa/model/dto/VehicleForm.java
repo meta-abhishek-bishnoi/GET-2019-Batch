@@ -1,7 +1,11 @@
 package com.metacube.parking.hibernatejpa.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * DTO vehicle Form
+ */
 public class VehicleForm {
 	@NotBlank(message = "{vehicleName}")
 	private String vehicleName;

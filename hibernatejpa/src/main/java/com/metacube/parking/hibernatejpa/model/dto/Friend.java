@@ -1,5 +1,10 @@
 package com.metacube.parking.hibernatejpa.model.dto;
 
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * DTO for Friend
+ */
 public class Friend {
 	private String profileImageUrl;
 	private String fullName;

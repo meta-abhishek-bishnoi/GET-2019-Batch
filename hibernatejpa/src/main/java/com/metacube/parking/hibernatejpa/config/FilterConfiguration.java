@@ -6,8 +6,11 @@ import org.springframework.context.annotation.Configuration;
 
 import com.metacube.parking.hibernatejpa.filter.SessionFilter;
 
-
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * This is Configuration file for filter
+ */
 @Configuration
 public class FilterConfiguration {
 	@Bean

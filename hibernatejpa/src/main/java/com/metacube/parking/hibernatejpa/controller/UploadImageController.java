@@ -22,7 +22,10 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
-
+/**
+ * @author Abhishek Bishnoi
+ * This is controller class for for uploding image
+ */
 @Controller
 public class UploadImageController {
 	@Autowired

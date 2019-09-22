@@ -19,8 +19,10 @@ import com.metacube.parking.hibernatejpa.model.dto.Friend;
 import com.metacube.parking.hibernatejpa.model.pojo.Employee;
 import com.metacube.parking.hibernatejpa.service.CommonService;
 
-
-
+/**
+ * @author Abhishek Bishnoi
+ * This Controller class is for dashboard operations
+ */
 @Controller
 public class UserOperationController {
 	@Autowired

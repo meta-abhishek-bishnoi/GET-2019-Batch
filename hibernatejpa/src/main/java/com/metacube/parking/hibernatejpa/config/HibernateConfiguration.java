@@ -22,6 +22,10 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * 
+ * @author Abhishek Bishnoi This is Configuration file for Hibernate
+ */
 @PropertySource(value = { "classpath:application.properties" })
 @Configuration
 @EnableTransactionManagement
@@ -29,61 +33,77 @@ public class HibernateConfiguration {
 
 	@Autowired
 	private Environment env;
-	
+
 	@Value("${db.driver}")
 	private String driverClass;
-	
+
 	@Value("${db.url}")
 	private String url;
-	
+
 	@Value("${db.username}")
 	private String username;
-	
+
 	@Value("${db.password}")
 	private String password;
-	
+
 	@Value("${hibernate.dialect}")
 	private String dialect;
-	
+
+	/**
+	 * creating bean of data source
+	 * 
+	 * @return DataSource
+	 */
 	@Bean
-	public DataSource getDataSource(){
-		DriverManagerDataSource dataSource = new DriverManagerDataSource(url,username,password);
+	public DataSource getDataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource(url,
+				username, password);
 		dataSource.setDriverClassName(driverClass);
 		return dataSource;
 	}
-	
-	public Properties hibernateProperties(){
+
+	/**
+	 * loading Properties files
+	 * 
+	 * @return Properties
+	 */
+	public Properties hibernateProperties() {
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", dialect);
-		properties.put("hibernate.hbm2ddl.auto","update");
+		properties.put("hibernate.hbm2ddl.auto", "update");
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
 		return properties;
 	}
-	
-	 @Bean
-	   public EntityManagerFactory entityManagerFactory() {
 
-	       HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-	       vendorAdapter.setGenerateDdl(true);
-	       vendorAdapter.setShowSql(false);
-	       vendorAdapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
-	       LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
-	       factory.setJpaVendorAdapter(vendorAdapter);
-	       factory.setJpaProperties(hibernateProperties());
-	       factory.setPackagesToScan("com.metacube.parking.hibernatejpa.model.pojo");
-	       factory.setDataSource(getDataSource());
-	       factory.afterPropertiesSet();
-	       return factory.getObject();
-	   }
+	/**
+	 * Bean For Entity Manager
+	 * 
+	 * @return EntityManagerFactory
+	 */
+	@Bean
+	public EntityManagerFactory entityManagerFactory() {
 
+		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		vendorAdapter.setGenerateDdl(true);
+		vendorAdapter.setShowSql(false);
+		vendorAdapter
+				.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
+		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
+		factory.setJpaVendorAdapter(vendorAdapter);
+		factory.setJpaProperties(hibernateProperties());
+		factory.setPackagesToScan("com.metacube.parking.hibernatejpa.model.pojo");
+		factory.setDataSource(getDataSource());
+		factory.afterPropertiesSet();
+		return factory.getObject();
+	}
 
-	   //JpaTransactionManager Bean
-	   @Bean
-	   public JpaTransactionManager transactionManager() {
-	       JpaTransactionManager txManager = new JpaTransactionManager();
-	       txManager.setDataSource(getDataSource());
-	       txManager.setEntityManagerFactory(entityManagerFactory());
-	       return txManager;
-	   }
+	// JpaTransactionManager Bean
+	@Bean
+	public JpaTransactionManager transactionManager() {
+		JpaTransactionManager txManager = new JpaTransactionManager();
+		txManager.setDataSource(getDataSource());
+		txManager.setEntityManagerFactory(entityManagerFactory());
+		return txManager;
+	}
 }
