@@ -1,5 +1,9 @@
 package com.metacube.parkingjdbc.model.pojo;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * POJO of vehicle
+ */
 public class Vehicle {
 	private Integer id;
 	private String vehicleName;
@@ -8,6 +12,7 @@ public class Vehicle {
 	private String employeeId;
 	private String identification;
 	private Double amount = (double) 0;
+	// getter and setter
 	public Integer getId() {
 		return id;
 	}

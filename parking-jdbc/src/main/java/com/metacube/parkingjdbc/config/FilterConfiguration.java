@@ -5,7 +5,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.metacube.parkingjdbc.filter.SessionFilter;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * This is Configuration file for filter
+ */
 @Configuration
 public class FilterConfiguration {
 	@Bean
@@ -14,6 +18,7 @@ public class FilterConfiguration {
 	      = new FilterRegistrationBean<>();
 	         
 	    registrationBean.setFilter(new SessionFilter());
+	    // applying filter on /login/*
 	    registrationBean.addUrlPatterns("/login/*");  
 	    return registrationBean;    
 	}

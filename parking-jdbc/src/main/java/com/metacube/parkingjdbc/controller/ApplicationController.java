@@ -19,9 +19,13 @@ import com.metacube.parkingjdbc.model.dto.RegisterEmployee;
 import com.metacube.parkingjdbc.model.pojo.Employee;
 import com.metacube.parkingjdbc.service.CommonService;
 import com.metacube.parkingjdbc.util.DTOMapperUtil;
-
+/**
+ * @author Abhishek Bishnoi
+ * This is Controller Class with no flitering
+ */
 @Controller
 public class ApplicationController {
+	// 
 	@Autowired
 	private CommonService commonService;
 
@@ -35,10 +39,10 @@ public class ApplicationController {
 	public String actionOnLogin(@Validated EmployeeLogin employeeLogin,
 			BindingResult result, final RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
-		if (result.hasErrors()) {
+		if (result.hasErrors()) { // if validation is not applicable
 			return "login";
-		} else {
-			if (commonService.authenticate(employeeLogin)) {
+		} else { //otherwise
+			if (commonService.authenticate(employeeLogin)) { // if authentication success
 				HttpSession oldSession = request.getSession(false);
 				if (oldSession != null) {
 					oldSession.invalidate();
@@ -47,7 +51,7 @@ public class ApplicationController {
 				newSession.setMaxInactiveInterval(5 * 60);
 				newSession.setAttribute("email", employeeLogin.getUsername());
 				return "redirect:/login/sucess";
-			} else {
+			} else { // authentication failure
 				ObjectError objectError = new ObjectError("fail", "Username Or Password Mismatch");
 				result.addError(objectError);
 				return "login";
@@ -66,15 +70,15 @@ public class ApplicationController {
 			@Validated RegisterEmployee registerEmployee, BindingResult result,
 			final RedirectAttributes redirectAttributes) {
 		if (!registerEmployee.getPassword().equals(
-				registerEmployee.getConfirmPassword())) {
+				registerEmployee.getConfirmPassword())) { // if password and confirm mismatch
 			ObjectError objectError = new ObjectError("Password",
 					"Password and Confirm Password Must Equal");
 			result.addError(objectError);
 			return "register";
 		}
-		if (result.hasErrors()) {
+		if (result.hasErrors()) { // if form is not validating as per RegisterEmployee dto
 			return "register";
-		} else {
+		} else { // if validation success
 			redirectAttributes.addFlashAttribute("success", "Register Sucess");
 			Employee employee = DTOMapperUtil.map(registerEmployee, Employee.class);
 			commonService.register(employee);

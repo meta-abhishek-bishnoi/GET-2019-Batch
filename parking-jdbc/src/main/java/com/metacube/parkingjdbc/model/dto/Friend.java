@@ -1,5 +1,9 @@
 package com.metacube.parkingjdbc.model.dto;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * DTO for Friend
+ */
 public class Friend {
 	private String imageUrl;
 	private String fullName;

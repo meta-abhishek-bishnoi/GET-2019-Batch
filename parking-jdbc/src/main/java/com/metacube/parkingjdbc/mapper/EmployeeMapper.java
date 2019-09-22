@@ -7,7 +7,10 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.metacube.parkingjdbc.model.pojo.Employee;
 
-
+/**
+ * @author Abhishek Bishnoi
+ * Employee Mapper Class
+ */
 public class EmployeeMapper implements RowMapper<Employee> {
 
 	@Override

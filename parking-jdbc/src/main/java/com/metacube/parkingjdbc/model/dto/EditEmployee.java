@@ -1,7 +1,11 @@
 package com.metacube.parkingjdbc.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * Dto class for Edit Empolyee
+ */
 public class EditEmployee {
 	@NotBlank(message="{employeeFullName}")
 	private String fullName;

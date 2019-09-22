@@ -1,5 +1,9 @@
 package com.metacube.parkingjdbc.model.pojo;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * POJO Class off employee
+ */
 public class Employee {
 	private Integer id;
 	private String employeeId;
@@ -13,6 +17,7 @@ public class Employee {
 	private boolean hasVehicle = false;
 	private boolean hasPlan = false;
 
+	//getter and setter
 	public Integer getId() {
 		return id;
 	}

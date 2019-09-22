@@ -18,7 +18,10 @@ import com.metacube.parkingjdbc.model.dto.EditEmployee;
 import com.metacube.parkingjdbc.model.dto.Friend;
 import com.metacube.parkingjdbc.model.pojo.Employee;
 import com.metacube.parkingjdbc.service.CommonService;
-
+/**
+ * @author Abhishek Bishnoi
+ * This Controller class is for dashboard operations
+ */
 @Controller
 public class UserOperationController {
 	@Autowired

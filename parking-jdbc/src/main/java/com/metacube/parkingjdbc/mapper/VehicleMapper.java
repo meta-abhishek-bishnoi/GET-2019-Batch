@@ -7,6 +7,11 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.metacube.parkingjdbc.model.pojo.Vehicle;
 
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * Vehicle Mapper Class
+ */
 public class VehicleMapper implements RowMapper<Vehicle> {
 
 	@Override

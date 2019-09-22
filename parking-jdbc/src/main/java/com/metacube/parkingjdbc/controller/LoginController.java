@@ -19,8 +19,10 @@ import com.metacube.parkingjdbc.model.pojo.Vehicle;
 import com.metacube.parkingjdbc.service.CommonService;
 import com.metacube.parkingjdbc.util.DTOMapperUtil;
 import com.metacube.parkingjdbc.util.PlanAmount;
-
-
+/**
+ * @author Abhishek Bishnoi
+ * This is Controller Class after successful login
+ */
 @Controller
 public class LoginController {
 	@Autowired

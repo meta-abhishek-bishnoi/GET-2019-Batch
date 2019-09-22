@@ -6,7 +6,11 @@ import com.metacube.parkingjdbc.model.dto.EmployeeLogin;
 import com.metacube.parkingjdbc.model.dto.Friend;
 import com.metacube.parkingjdbc.model.pojo.Employee;
 import com.metacube.parkingjdbc.model.pojo.Vehicle;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ *
+ */
 public interface CommonService {
 	/**
 	 * This method is used to register employee in db

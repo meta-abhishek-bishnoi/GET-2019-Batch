@@ -1,7 +1,11 @@
 package com.metacube.parkingjdbc.model.dto;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * PlanForm DTO
+ */
 public class PlanForm {
 	@NotBlank(message="{vehicleType}")
 	private String type;

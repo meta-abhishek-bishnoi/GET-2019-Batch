@@ -2,7 +2,9 @@ package com.metacube.parkingjdbc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+/**
+ * @author Abhishek Bishnoi
+ */
 @SpringBootApplication
 public class ParkingJdbcApplication {
 

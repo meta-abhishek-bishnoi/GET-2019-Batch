@@ -7,8 +7,11 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.metacube.parkingjdbc.model.dto.Friend;
 
-
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * Friend Mapper Class
+ */
 public class FriendMapper implements RowMapper<Friend> {
 
 	@Override
