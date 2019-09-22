@@ -7,8 +7,15 @@ import java.util.Map;
 import com.metacube.parking.dao.TableEmployee;
 import com.metacube.parking.model.dto.Friends;
 import com.metacube.parking.model.pojo.Employee;
-
+/**
+* @author Abhishek Bishnoi
+* This is Service Class Retuen Employee Object
+*/
 public class LoadProfile {
+	/**
+	* @param String emailId
+	* @return Employee
+	*/
 	public static Employee LoadProfile(String email){
 		 Map<String,Employee> data = TableEmployee.getElements();
 		 for (Map.Entry mapElement : data.entrySet()){	 
@@ -18,6 +25,11 @@ public class LoadProfile {
 		 }
 		 return null;
 	}
+	/**
+	* @param String emailId
+	* @param String oragnization
+	* @return Return List<Friends>
+	*/
 	public static List<Friends> loadFriends(String email, String oragnization){
 		List<Friends> list = new ArrayList<Friends>();
 		Map<String,Employee> data = TableEmployee.getElements();

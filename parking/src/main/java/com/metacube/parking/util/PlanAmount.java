@@ -1,5 +1,8 @@
 package com.metacube.parking.util;
-
+/**
+* @author Abhishek Bishnoi
+* This is util class which retuen plan amount
+*/
 public class PlanAmount {
 	private double daily;
 	private double monthly;
