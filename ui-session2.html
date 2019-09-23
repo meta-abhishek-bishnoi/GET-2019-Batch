@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parking System</title>
+        <link rel="stylesheet" href="navbar.css">
+    </head>
+    <body>
+        <!-- Div For Navigation Bar-->
+        <div id="nav-bar" class="topnav">
+           <nav>
+                <a href="#addEmployee" class="active">Add Employee</a>
+                <a href="#addVehicle">Add Vehicle</a>
+                <a href="#feedback">Give feedback</a>
+                <a href="#plan">Pricing</a>
+           </nav>
+        </div>
+        <!-- Cover Image-->
+        <div id="cover-image" align="center">
+            <img src="Parking.jpg" width=100%>
+        </div>
+        <!-- Add Employee Form-->
+        <div id="addEmployee" align="center">
+            <h1>Register Employee</h1>
+            <form action="" name="EmployeeForm">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="fullName">Full Name</label>
+                        </td>
+                        <td>
+                            <input type="input" id="fullName" name="fullName" placeholder="Full Name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="gender">Gender</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="gender" name="gender" value="male"> Male
+                            <input type="radio" id="gender" name="gender" value="female"> Female<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="emailId">Email Id</label>
+                        </td>
+                        <td>
+                            <input type="email" id="emailId" name="emailId" placeholder="Email Id">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">Password</label>
+                        </td>
+                        <td>
+                            <input type="password" id="password" name="password" placeholder="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="confirmPassword">Confirm Password</label>
+                        </td>
+                        <td>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="contactNo">Contact No</label>
+                        </td>
+                        <td>
+                            <input type="number" id="contactNo" name="contactNo" placeholder="Contact Number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <input type="submit" value="Add Employee">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!-- Add Vehicle Form -->
+        <div id="addVehicle" align="center">
+            <h1>Add Vehicle</h1>
+            <form action="" name="VehicleForm">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="vehicleMake">Vehicle Make (Company)</label>
+                        </td>
+                        <td>
+                            <input type="input" id="vehicleMake" name="vehicleMake" placeholder="Vehicle Make (Company)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="vehicleModel">Vehicle Model</label>
+                        </td>
+                        <td>
+                            <input type="input" id="vehicleModel" name="vehicleModel" placeholder="Vehicle Model">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="type">Vehicle Type</label>
+                        </td>
+                        <td>
+                            <select name="type" id="type">
+                                <option value="cycle">By Cycle</option>
+                                <option value="motorCycle">Motor Cycle</option>
+                                <option value="fourWheeler">Four Wheeler</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="vehicleNumber">Vehicle Number</label>
+                        </td>
+                        <td>
+                            <input type="input" id="vehicleNumber" name="vehicleNumber" placeholder= "Vehicle Number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="employeeId">Employee ID</label>
+                        </td>
+                        <td>
+                            <input type="input" id="employeeId" name="employeeId" placeholder= "Employee ID">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Identification">Identification </label>
+                        </td>
+                        <td>
+                            <textarea id="Identification" name="Identification"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <input type="submit" value="Add Vehicle">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!--FeedBack Form-->
+        <div id="feedback" align="center">
+            <form name="FeedbackForm" action="">
+			<h1>Get In Touch</h1>
+			<table>
+				<tr>
+					<td><label>Name :</label></td>
+					<td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+					<td><label>Email :</label></td>
+					<td><input type="email" name="mail" /></td>
+				</tr>
+				<tr>
+					<td><label>Subject :</label></td>
+					<td><input type="text" name="subject" /></td>
+				</tr>
+				<tr>
+					<td><label>Message :</label></td>
+					<td><textarea name="msg"></textarea></td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <input type="button" value="Send Email" />
+                    </td>
+                </tr>
+			</table>
+		    </form>
+        </div>
+        <!-- Select Plan-->
+        <div id="plan" align="center">
+                <h1>Choose Plan</h1>
+            <form name="planForm" action="">
+                <div>
+                    <strong>Cycle</strong><br>
+                    <em>&#x20B9 5 Daily</em><br>
+                    <em>&#x20B9 100 Monthly</em><br>
+                    <em>&#x20B9 500 Yearly</em><br>
+                    <button>purchase</button>
+                </div><br>
+                 <div>
+                    <strong>Motor Cycle</strong><br>
+                    <em>&#x20B9 10 Daily</em><br>
+                    <em>&#x20B9 200 Monthly</em><br>
+                    <em>&#x20B9 1000 Yearly</em><br>
+                    <button>purchase</button>
+                </div><br>
+                 <div>
+                    <strong>Four Wheeler</strong><br>
+                    <em>&#x20B9 20 Daily</em><br>
+                    <em>&#x20B9 500 Monthly</em><br>
+                    <em>&#x20B9 3500 Yearly</em><br>
+                    <button>purchase</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
