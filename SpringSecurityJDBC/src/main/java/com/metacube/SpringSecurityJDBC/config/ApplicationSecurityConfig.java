@@ -10,7 +10,12 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-
+/**
+ * 
+ * @author Abhishek Bishnoi
+ * This is Configuration File For Spring Security
+ *
+ */
 @Configuration
 @EnableWebSecurity
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
@@ -25,8 +30,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/welcome").hasAnyRole("USER", "ADMIN")
-            .antMatchers("/getUser").hasAnyRole("USER")
-            .antMatchers("/updateUser").hasAnyRole("USER")
+            .antMatchers("/getUser").hasAnyRole("USER","ADMIN")
+            .antMatchers("/updateUser").hasAnyRole("USER","ADMIN")
             .antMatchers("/getAdmin").hasAnyRole("ADMIN")
             .antMatchers("/updateAdmin").hasAnyRole("ADMIN")
             .anyRequest().authenticated().and().formLogin().loginPage("/login")
