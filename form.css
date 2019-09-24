@@ -1,0 +1,70 @@
+.fas{
+   color: #33ff33;
+   display: inline-block;
+   padding: 38%;
+}
+.feedback{
+    background-color: #33ff33;
+    margin: 15px;
+    padding: 2%;
+    height: 400px;
+}
+.formleft{
+    background:aliceblue;
+    float: left;
+    width: 30%;
+}
+.formright{
+    background:aliceblue;
+    float: left;
+    width: 70%;
+}
+
+.inputform{
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding:10px;
+    width: 100%;
+}
+
+.button{
+    background-color: #33ff33;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 20px;
+    width: 70%;
+    height: 100%;
+}
+.plan{
+    width: 30%;
+    float: left;
+    margin: 20px 20px;
+    border-style: solid;
+    font-size: 1em;
+    border-color: #004d99;
+    padding: 10px, 10px;
+}
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border-style: solid;
+    font-size: 2em;
+    color: black;
+    padding: 20px 20px;
+    line-height: 30px;
+    text-align: center;
+    background: white;
+    border-color: black;
+  }
+
+  .heading{
+      font-size: 2em;
+  }
+
+  .purchase{
+    background-color: #004d99;
+    color: aliceblue;
+    padding: 5px;
+    margin: 10px;
+  }

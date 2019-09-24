@@ -2,11 +2,15 @@
 <html>
     <head>
         <title>Parking System</title>
+        <script src="https://kit.fontawesome.com/e287b5eeec.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="navbar.css">
+        <link rel="stylesheet" href="collapse-expand-div.css">
+        <link rel="stylesheet" href="table-css.css">
+        <link rel="stylesheet" href="form.css">
     </head>
     <body>
         <!-- Div For Navigation Bar-->
-        <div id="nav-bar" class="topnav">
+        <div id="navbar" class="topnav">
            <nav>
                 <a href="#addEmployee" class="active">Add Employee</a>
                 <a href="#addVehicle">Add Vehicle</a>
@@ -18,10 +22,11 @@
         <div id="cover-image" align="center">
             <img src="Parking.jpg" width=100%>
         </div>
-        <!-- Add Employee Form-->
-        <div id="addEmployee" align="center">
-            <h1>Register Employee</h1>
-            <form action="" name="EmployeeForm">
+        <!-- Register Employee-->
+        <div id="addEmployee" align="center" class="div">
+            <a id="hideEmployee" href="#hideEmployee" class="hide">Register Employee +</a>
+            <a id="showEmployee" href="#showEmployee" class="show">Register Employee -</a>
+            <div class="details" align="center">
                 <table>
                     <tr>
                         <td>
@@ -72,21 +77,14 @@
                             <input type="number" id="contactNo" name="contactNo" placeholder="Contact Number">
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-
-                        </td>
-                        <td>
-                            <input type="submit" value="Add Employee">
-                        </td>
-                    </tr>
                 </table>
-            </form>
+            </div>
         </div>
         <!-- Add Vehicle Form -->
-        <div id="addVehicle" align="center">
-            <h1>Add Vehicle</h1>
-            <form action="" name="VehicleForm">
+        <div id="addVehicle" align="center" class="div">
+            <a id="hideVehicle" href="#hideVehicle" class="hide">Add Vehicle +</a>
+            <a id="showVehicle" href="#showVehicle" class="show">Add Vehicle -</a>
+            <div class="details" align="center">
                 <table>
                     <tr>
                         <td>
@@ -140,73 +138,71 @@
                             <textarea id="Identification" name="Identification"></textarea>
                         </td>
                     </tr>
+                </table>
+            </div>
+        </div>
+        <!--FeedBack Form-->
+        <div id="feedback" align="center" class="feedback">
+            <div class="formleft">
+                <i class="fas fa-envelope fa-5x"></i>
+            </div>
+            <div class="formright">
+                <h1>Get In Touch</h1>
+                <table>
+                    <tr>
+                        <td><label for="name">Name :</label></td>
+                        <td><input type="text" name="name" placeholder="Name" class="inputform" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email :</label></td>
+                        <td><input type="text" name="email" placeholder="Email" class="inputform"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="subject">Subject :</label></td>
+                        <td><input type="text" name="subject" placeholder="Subject" class="inputform" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="message">Message :</label></td>
+                        <td><textarea name="message" class="inputform"></textarea></td>
+                    </tr>
                     <tr>
                         <td>
-
+                            
                         </td>
                         <td>
-                            <input type="submit" value="Add Vehicle">
+                            <input type="button" class="button" value="Send Email" />
                         </td>
                     </tr>
                 </table>
-            </form>
-        </div>
-        <!--FeedBack Form-->
-        <div id="feedback" align="center">
-            <form name="FeedbackForm" action="">
-			<h1>Get In Touch</h1>
-			<table>
-				<tr>
-					<td><label>Name :</label></td>
-					<td><input type="text" name="name" /></td>
-				</tr>
-				<tr>
-					<td><label>Email :</label></td>
-					<td><input type="email" name="mail" /></td>
-				</tr>
-				<tr>
-					<td><label>Subject :</label></td>
-					<td><input type="text" name="subject" /></td>
-				</tr>
-				<tr>
-					<td><label>Message :</label></td>
-					<td><textarea name="msg"></textarea></td>
-                </tr>
-                <tr>
-                    <td>
-
-                    </td>
-                    <td>
-                        <input type="button" value="Send Email" />
-                    </td>
-                </tr>
-			</table>
-		    </form>
+            </div>
         </div>
         <!-- Select Plan-->
         <div id="plan" align="center">
                 <h1>Choose Plan</h1>
             <form name="planForm" action="">
-                <div>
-                    <strong>Cycle</strong><br>
+                <div class="plan">
+                    <strong class="heading">Cycle</strong><br>
+                    <div class="circle"><Strong>&#x20B9 100</Strong> /Month</span></div>
                     <em>&#x20B9 5 Daily</em><br>
                     <em>&#x20B9 100 Monthly</em><br>
                     <em>&#x20B9 500 Yearly</em><br>
-                    <button>purchase</button>
-                </div><br>
-                 <div>
-                    <strong>Motor Cycle</strong><br>
+                    <button class="purchase">purchase</button>
+                </div>
+                 <div class="plan">
+                    <strong class="heading">Motor Cycle</strong><br>
+                    <div class="circle"><Strong>&#x20B9 200</Strong> /Month</span></div>
                     <em>&#x20B9 10 Daily</em><br>
                     <em>&#x20B9 200 Monthly</em><br>
                     <em>&#x20B9 1000 Yearly</em><br>
-                    <button>purchase</button>
-                </div><br>
-                 <div>
-                    <strong>Four Wheeler</strong><br>
+                    <button class="purchase">purchase</button>
+                </div>
+                 <div class="plan">
+                    <strong class="heading">Four Wheeler</strong><br>
+                    <div class="circle"><Strong>&#x20B9 500</Strong> /Month</span></div>
                     <em>&#x20B9 20 Daily</em><br>
                     <em>&#x20B9 500 Monthly</em><br>
                     <em>&#x20B9 3500 Yearly</em><br>
-                    <button>purchase</button>
+                    <button class="purchase">purchase</button>
                 </div>
             </form>
         </div>
