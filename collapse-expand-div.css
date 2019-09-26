@@ -2,7 +2,8 @@
     background-color: #004d99;
     border-radius: 20px;
     padding:15px 16px;
-    margin: 15px;
+    margin: 15px auto;
+    text-align: center;
 }
 .heading{
   margin:100px;
@@ -11,14 +12,13 @@
 .show{
   color: aliceblue;
   text-decoration: none;
-  font-size: 1.5em;
+  text-align: center;
 }
 .details{
   background:aliceblue;
   border-radius: 20px;
-  font-size: 1.2em;
   color:#004d99;
-  margin:10px;
+  margin:10px auto;
 }
 .details,
 .show,
