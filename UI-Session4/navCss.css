@@ -1,0 +1,64 @@
+header{
+    background-image: url("./images/homebg.png");
+    background-size: 100% 100%;
+}
+nav{
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style-type: none;
+}
+nav a{
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    color: aliceblue;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+.navSection{
+    width: 28%;
+}
+.logo{
+    margin-top: 15px;
+    padding-left: 180px;
+    padding-top:15px;
+}
+.fab{
+    margin-top: 10px;
+    color: white;
+ }
+ .homeleft{
+     float: left;
+     width: 40%;
+     font-size: 2em;
+     color: white;
+     padding-top: 15px;
+     padding-left: 50px;
+ }
+ .homearticle{
+     padding: 130px;
+ }
+ .homecontent{
+    width: 350px;
+    font-size: 1.5em;
+    text-align: left;
+ }
+ .button{
+    width: 100px;
+    height: 40px;
+    color: white;
+ }
+ .buttondownload{
+    border:4px solid  #FC6A42;
+    background-color: #FC6A42;
+    margin: 10px;
+ }
+ .buttonfetures{
+    border: 4px solid #4466C9;
+    background-color: #4466C9;
+ }
+ 

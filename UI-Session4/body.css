@@ -1,0 +1,122 @@
+body {
+    background-image: url("./images/bodybg.png");
+    background-size: 100% 100%;
+} 
+.classnav{
+    margin: 10px auto;
+}
+.article{
+    padding: 5%;
+}
+.heading{
+    text-align: center;
+    color: #6388FB;
+    font-size: 2em;
+    margin: 10px;
+}
+.sectionimage{
+    display: flex;
+    flex-wrap: wrap;
+}
+.subheading{
+   color: gray;
+   font-size: 0.6em;
+}
+.feature{
+    display: flex;
+    flex-wrap: wrap;
+}
+.divfeature{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+    width: 30%;
+}
+.divicon{
+    width:30%;
+}
+.divdescription{
+    width:70%;
+    text-align: left;
+}
+.fas{
+    color: #FA6C48;
+}
+.divsub{
+    font-size: 1.5em;
+}
+.divdes{
+    font-size: 1em;
+}
+.featurearticle{
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.imagearticle{
+    width:40%;
+}
+.descriptionarticle{
+    width:60%;
+    text-align: left;
+}
+.iconimage{
+    margin-top:10%;
+    margin-bottom:5%;
+}
+.title{
+    font-size: 2em;
+}
+.desc{
+    font-size: 1.5em;
+    color: gray;
+    width: 550px;
+}
+.fa{
+    color: #6388FB;
+}
+.commentdiv{
+    width: 40%;
+    text-align: left;
+    margin-left: 5%;
+}
+.openquotes{
+    text-align: left;
+}
+.comment{
+    font-size: 1.4em;
+}
+.articledownload{
+    background-color: #6388FB;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top:100px;
+    padding-left: 170px;
+    color: white;
+}
+.closequotes{
+    text-align: right;
+}
+.download{
+    width: 40%;
+}
+footer{
+    background-color: black;
+    color: white;
+}
+.summary{
+    font-size: 1.5em;
+    color: white;
+    width: 350px;
+    text-align: left;
+}
+.rights,
+.rightstext{
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+.footernav{
+    padding-top: 10px;
+}

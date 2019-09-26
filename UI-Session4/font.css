@@ -1,0 +1,7 @@
+@font-face { font-family: web-font-1; 
+    src: url('./fonts/fontawesome-webfont.ttf'); } 
+@font-face { font-family: web-font-2; 
+    src: url('./fonts/bootstrapThemesCo-icon.ttf'); } 
+body{
+font-family: web-font-1, web-font-2;
+}
