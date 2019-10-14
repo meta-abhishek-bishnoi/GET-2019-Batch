@@ -1,0 +1,57 @@
+body{
+    background-color: #b3ffec;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.labelregister{
+    font-size: 2.5rem;
+    color: #00995c;
+    margin: auto;
+}
+.register,
+.vehicle{
+    margin: 20% auto;
+    width:60%;
+}
+.formclass{
+    display: none;
+}
+.inputregister{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid #00995c;
+    background-color: #b3ffec;
+    color: #00995c;
+    outline: none;
+    font-size: 1.5rem;
+}
+.classdiv{
+    display: none;
+}
+.registerradio{
+    margin: 20px;
+    color: #00995c;
+    font-size: 1.5rem;
+}
+.labelvehicle{
+    font-size: 2.5rem;
+    color: #99004d;
+    margin: auto;
+}
+.inputvehicle{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid #99004d;
+    background-color: #ffe6e6;
+    color: #99004d;
+    outline: none;
+    font-size: 1.5rem;
+}
+.vehicleradio{
+    margin: 20px;
+    color: #99004d;
+    font-size: 1.5rem;
+}

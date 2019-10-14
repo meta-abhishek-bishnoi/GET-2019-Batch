@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Meta Parking</title>
+        <script src="https://kit.fontawesome.com/e287b5eeec.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="./js/application.js"></script>
+    </head>
+    <body>
+        <form id="register" class="register">
+            <div id="employeeName">
+                <label for="inputname" id="labelforname" class="labelregister">Hello Please Tell Your Name</label>
+                <input type="input" id="inputname" name="inputname" class="inputregister" onkeypress="registername();" >
+            </div>
+            <div class="classdiv" id="employeeGender">
+                <label for="inputgender" id="labelforgender" class="labelregister"></label>
+               <div class="registerradio">
+                <input type="radio" id="inputgender" name="inputgender" value="male" onclick="registergender();">Male
+                <input type="radio" id="inputgender" name="inputgender" value="female" onclick="registergender();">Female
+               </div>
+            </div>
+            <div class="classdiv" id="employeeEmail">
+                <label for="inputemail" id="labelforemail" class="labelregister">Now Please Let Me Know Your Email Id</label>
+                <input type="input" id="inputemail" name="inputemail" class="inputregister" onkeypress="if (event.keyCode==13) registeremail();">
+            </div>
+            <div class="classdiv" id="employeeID">
+                <label for="inputemployeeid" id="labelforemail" class="labelregister">Now Please Let Me Know Your Employee Id</label>
+                <input type="input" id="inputemployeeid" name="inputemployeeid" class="inputregister" onkeypress="if (event.keyCode==13) registeremployeeid();">
+            </div>
+            <div class="classdiv" id="employeePassword">
+                <label for="inputname" id="labelforpassword" class="labelregister">Please Set Your Password</label>
+                <input type="password" id="inputpassword" name="inputpassword" class="inputregister" onkeypress="if (event.keyCode==13) registerpassword();">
+            </div>
+            <div class="classdiv" id="employeeConfirmPassword">
+                <label for="inputconfirmpassword" id="labelforconfirmpassword" class="labelregister">Please Confirm Your Password</label>
+                <input type="password" id="inputconfirmpassword" name="inputconfirmpassword" class="inputregister" onkeypress="if (event.keyCode==13) registerconfirmpassword();">
+            </div>
+            <div class="classdiv" id="employeeContact">
+                <label for="inputcontact" id="labelforconfirmpassword" class="labelregister">Please Enter Your Contact No</label>
+                <input type="input" id="inputcontact" name="inputcontact" class="inputregister" onkeypress="if (event.keyCode==13) registercontact();">
+            </div>
+        </form>
+        <form id="vehicle" class="formclass vehicle">
+            <div id="vehicleModel">
+                <label for="inputVehicleModel" id="labelformodel" class="labelvehicle">What is Your Vehicle Model ?</label>
+                <input type="input" id="inputVehicleModel" name="inputVehicleModel" class="inputvehicle" onkeypress="if (event.keyCode==13) registerVehicleModel();" >
+            </div>
+            <div class="classdiv" id="vehicleNumber">
+                <label for="inputVehicleNumber" id="labelfornumber" class="labelvehicle">What is Your Vehicle Registration Number?</label>
+                <input type="input" id="inputVehicleNumber" name="inputVehicleNumber" class="inputvehicle" onkeypress="if (event.keyCode==13) registerVehicleNumber();" >
+            </div>
+            <div class="classdiv" id="vehicleType">
+                <label for="inputtype" id="labelfortype" class="labelvehicle">Now Please Select Your Vehicle Type</label>
+               <div class="vehicleradio">
+                <input type="radio" id="inputtype" name="inputtype" value="bycycle" onclick="registertype('bycycle');">Bycycle
+                <input type="radio" id="inputtype" name="inputtype" value="motorCycle" onclick="registertype('motorCycle');">Motor Cycle
+                <input type="radio" id="inputtype" name="inputtype" value="fourwheeler" onclick="registertype('fourwheeler');">Four Wheeler
+               </div>
+            </div>
+            <div class="classdiv" id="selectPlan">
+                <label for="inputplan" id="labelforplan" class="labelvehicle"></label>
+               <div class="vehicleradio" id="radioforplan">
+                <input type="radio" id="inputplan" name="inputplan" value="" onclick="registerplan();">
+                <input type="radio" id="inputplan" name="inputplan" value="" onclick="registerplan();">
+                <input type="radio" id="inputplan" name="inputplan" value="" onclick="registerplan();">
+               </div>
+            </div>
+        </form>
+    </body>
+</html>
