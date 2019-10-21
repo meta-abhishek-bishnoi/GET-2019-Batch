@@ -55,3 +55,8 @@ body{
     color: #99004d;
     font-size: 1.5rem;
 }
+.errormessage{
+    font-size: 1.5rem;
+    color: #ff6600;
+    margin: auto;
+}

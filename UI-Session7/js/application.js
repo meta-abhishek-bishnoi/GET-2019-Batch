@@ -11,13 +11,15 @@ var vehicleType;
 function registername(){
     if (event.keyCode==13){
         employeeName = document.getElementById("inputname").value;
+        document.getElementById("errormessage").innerHTML = "";
         if(validateName(employeeName)){
             document.getElementById("employeeName").style.display="none";
             document.getElementById("employeeGender").style.display="block";
             document.getElementById("labelforgender").innerHTML= "Hello "+employeeName+", Select Your Gender";
         }else{
-            document.getElementById("inputname").style.border = "2px solid #ffd11a";
-            document.getElementById("inputname").innerHTML="";
+            errorBorder("inputname");
+            document.getElementById("inputname").innerHTML = employeeName;
+            document.getElementById("errormessage").innerHTML = "Invalid Name Format";
         }
     }
 }
@@ -27,9 +29,18 @@ function registergender(gender){
     document.getElementById("employeeEmail").style.display="block";
 }
 function registeremail(){
-    employeeEmail = document.getElementById("inputemail").value;
-    document.getElementById("employeeEmail").style.display="none";
-    document.getElementById("employeeID").style.display="block";
+    if (event.keyCode==13){
+        employeeEmail = document.getElementById("inputemail").value;
+        document.getElementById("errormessage").innerHTML = "";
+        if(validateEmail(employeeEmail)){
+            document.getElementById("employeeEmail").style.display="none";
+            document.getElementById("employeeID").style.display="block";
+        }else{
+            errorBorder("inputemail");
+            document.getElementById("inputemail").innerHTML = employeeEmail;
+            document.getElementById("errormessage").innerHTML = "Invalid Email";
+        }
+    }
 }
 function registeremployeeid(){
     employeeID = document.getElementById("inputemployeeid").value;
@@ -38,13 +49,43 @@ function registeremployeeid(){
 }
 function registerpassword(){
     employeePassword = document.getElementById("inputpassword").value;
-    document.getElementById("employeePassword").style.display="none";
-    document.getElementById("employeeConfirmPassword").style.display="block";
+    document.getElementById("errormessage").innerHTML = "";
+    if(isSecurePassword(employeePassword)){
+        document.getElementById("inputpassword").style.border = "none";
+        document.getElementById("inputpassword").style.borderBottom = "2px solid #00995c";
+        document.getElementById("errormessage").innerHTML = "Password Looks Fine You Can Go Ahead";
+        document.getElementById("errormessage").style.color = "#00995c";
+        if (event.keyCode==13){
+            document.getElementById("errormessage").innerHTML = "";
+            document.getElementById("employeePassword").style.display="none";
+            document.getElementById("employeeConfirmPassword").style.display="block";
+        }
+    }else{
+        errorBorder("inputpassword");
+        document.getElementById("inputpassword").innerHTML = employeePassword;
+        document.getElementById("errormessage").innerHTML = "Invalid Password Format <br>"+
+        "Password must >= 8 <br>password must be alpha numeric<br>"+
+        "It must have at least apecial character";
+        document.getElementById("errormessage").style.color = "#ff6600";
+    }
 }
 function registerconfirmpassword(){
     employeeConfirmPassword = document.getElementById("inputconfirmpassword").value;
-    document.getElementById("employeeConfirmPassword").style.display="none";
-    document.getElementById("employeeContact").style.display="block";
+    document.getElementById("errormessage").innerHTML = "";
+    if(validateConfirmPassword(employeePassword, employeeConfirmPassword)){
+        document.getElementById("inputconfirmpassword").style.border = "none";
+        document.getElementById("inputconfirmpassword").style.borderBottom = "2px solid #00995c";
+        document.getElementById("errormessage").innerHTML = "Hey "+employeeName+" You can go ahead";
+        if (event.keyCode==13){
+            document.getElementById("errormessage").innerHTML = "";
+            document.getElementById("employeeConfirmPassword").style.display="none";
+            document.getElementById("employeeContact").style.display="block"; 
+        }
+    }else{
+            errorBorder("inputconfirmpassword");
+            document.getElementById("inputconfirmpassword").innerHTML = employeeConfirmPassword;
+            document.getElementById("errormessage").innerHTML = "Password Mismatch";
+    }
 }
 function registercontact(){
     employeeContact = document.getElementById("inputcontact").value;
@@ -92,8 +133,32 @@ function registertype(type){
 function getit(){
 
 }
+//
+function errorBorder(inputId){
+    document.getElementById(inputId).style.border = "none";
+    document.getElementById(inputId).style.borderBottom = "2px solid #ff6600";
+}
 // validation
 function validateName(name){
     var validName =  /^[a-zA-Z ]{2,30}$/;
     return validName.test(name);
+}
+function validateEmail(email) {
+    var validMAilExpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(email.length<6 && email.length > 250){
+        return false;
+    }
+    return validMAilExpression.test(String(email).toLowerCase());
+}
+
+function isSecurePassword(password){
+    var validPassword =  new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    return validPassword.test(password);
+}
+function validateConfirmPassword(password, confirmPassword){
+    if(password.localeCompare(confirmPassword)>=1){
+        return false;
+    }else{
+        return true;
+    }
 }

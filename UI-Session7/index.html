@@ -20,7 +20,7 @@
             </div>
             <div class="classdiv" id="employeeEmail">
                 <label for="inputemail" id="labelforemail" class="labelregister">Now Please Let Me Know Your Email Id</label>
-                <input type="input" id="inputemail" name="inputemail" class="inputregister" onkeypress="if (event.keyCode==13) registeremail();">
+                <input type="input" id="inputemail" name="inputemail" class="inputregister" onkeypress="registeremail();">
             </div>
             <div class="classdiv" id="employeeID">
                 <label for="inputemployeeid" id="labelforemail" class="labelregister">Now Please Let Me Know Your Employee Id</label>
@@ -28,15 +28,18 @@
             </div>
             <div class="classdiv" id="employeePassword">
                 <label for="inputname" id="labelforpassword" class="labelregister">Please Set Your Password</label>
-                <input type="password" id="inputpassword" name="inputpassword" class="inputregister" onkeypress="if (event.keyCode==13) registerpassword();">
+                <input type="password" id="inputpassword" name="inputpassword" class="inputregister" onkeypress="registerpassword();">
             </div>
             <div class="classdiv" id="employeeConfirmPassword">
                 <label for="inputconfirmpassword" id="labelforconfirmpassword" class="labelregister">Please Confirm Your Password</label>
-                <input type="password" id="inputconfirmpassword" name="inputconfirmpassword" class="inputregister" onkeypress="if (event.keyCode==13) registerconfirmpassword();">
+                <input type="password" id="inputconfirmpassword" name="inputconfirmpassword" class="inputregister" onkeypress="registerconfirmpassword();">
             </div>
             <div class="classdiv" id="employeeContact">
                 <label for="inputcontact" id="labelforconfirmpassword" class="labelregister">Please Enter Your Contact No</label>
                 <input type="input" id="inputcontact" name="inputcontact" class="inputregister" onkeypress="if (event.keyCode==13) registercontact();">
+            </div>
+            <div id="errormessage" class="errormessage">
+                
             </div>
         </form>
         <form id="vehicle" class="formclass vehicle">
