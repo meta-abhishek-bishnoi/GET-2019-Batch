@@ -8,6 +8,7 @@ var employeeContact;
 var vehicleModel;
 var vehicleNumber;
 var vehicleType;
+var amount;
 function registername(){
     if (event.keyCode==13){
         employeeName = document.getElementById("inputname").value;
@@ -126,12 +127,16 @@ function registertype(type){
     document.getElementById("vehicleType").style.display="none";
     document.getElementById("selectPlan").style.display="block";
     document.getElementById('labelforplan').innerHTML="Your Plans are for "+vehicleType;
-    document.getElementById("radioforplan").innerHTML='<input type="radio" id="inputplan" name="inputplan" value="'+dailyRent+'" onclick="registerplan();">'+dailyRent+' $'+
-     '<input type="radio" id="inputplan" name="inputplan" value="'+monthlyRent+'" onclick="registerplan();">'+monthlyRent+' $'+
-     '<input type="radio" id="inputplan" name="inputplan" value="'+yearlyRent+'" onclick="registerplan();">'+yearlyRent+' $';
+    document.getElementById("radioforplan").innerHTML='<input type="radio" id="inputplan" name="inputplan" value="'+dailyRent+'" onclick="registerplan("'+dailyRent+'");">'+dailyRent+' $'+
+     '<input type="radio" id="inputplan" name="inputplan" value="'+monthlyRent+'" onclick="registerplan("'+monthlyRent+'");">'+monthlyRent+' $'+
+     '<input type="radio" id="inputplan" name="inputplan" value="'+yearlyRent+'" onclick="registerplan("'+yearlyRent+'");">'+yearlyRent+' $';
 }
-function getit(){
-
+function registerplan(planamount){
+    amount = planamount;
+    document.getElementById("sucessregister").innerHTML="Congratualtions !!"+
+    "<br> "+employeeName+" you have registerd your vehicle "+vehicleModel+
+    " "+vehicleNumber+" Sucessfully<br>"+
+    " You Have To Pay "+amount;
 }
 //
 function errorBorder(inputId){
