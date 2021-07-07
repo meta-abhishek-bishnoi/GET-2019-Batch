@@ -1,0 +1,38 @@
+td{
+    padding:10px 10px;
+}
+
+input[type="input"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea
+{
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: solid thin  #145aa0;
+    padding:10px;
+    width: 100%;
+}
+
+input[type="input"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover,
+textarea:hover{
+    background-color: aliceblue;
+    color: #004d99;
+    border-radius: 10px;
+    border: solid thin  #145aa0;
+    padding:10px;
+}
+select{
+    width: 110%;
+    border-radius: 10px;
+    padding:10px;
+    border: solid thin  #145aa0;
+    color: #145aa0;
+}
+::placeholder {
+    color: #145aa0;
+}

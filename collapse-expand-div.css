@@ -1,0 +1,31 @@
+.div{
+    background-color: #004d99;
+    border-radius: 20px;
+    padding:15px 16px;
+    margin: 15px auto;
+    text-align: center;
+}
+.heading{
+  margin:100px;
+}
+.hide,
+.show{
+  color: aliceblue;
+  text-decoration: none;
+  text-align: center;
+}
+.details{
+  background:aliceblue;
+  border-radius: 20px;
+  color:#004d99;
+  margin:10px auto;
+}
+.details,
+.show,
+.hide:target {
+  display: none;
+}
+.hide:target + .show,
+.hide:target ~ .details {
+  display: block;
+}
