@@ -1,0 +1,11 @@
+/*
+ * This is generalized class structure of getting area of shapes
+ * @author ABHISHEK BISHNOI
+ * @version 1.0
+ * @since 14-July-2019
+ */
+package meta.helper;
+
+public interface ShapeAreaInterface {
+	public double getArea( double dimentionOne,double dimentionTwo,String shapeName ) throws ArithmeticException;
+}
